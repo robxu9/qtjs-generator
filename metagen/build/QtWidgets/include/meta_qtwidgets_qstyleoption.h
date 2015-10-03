@@ -112,7 +112,7 @@ void buildMetaClass_QStyleOption(D _d)
     _d.CPGF_MD_TEMPLATE _field("rect", &D::ClassType::rect);
     _d.CPGF_MD_TEMPLATE _field("fontMetrics", &D::ClassType::fontMetrics);
     _d.CPGF_MD_TEMPLATE _field("palette", &D::ClassType::palette);
-    _d.CPGF_MD_TEMPLATE _field("styleObject", &D::ClassType::styleObject);
+    _d.CPGF_MD_TEMPLATE _field("styleObject", &D::ClassType::styleObject, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
     _d.CPGF_MD_TEMPLATE _method("init", &D::ClassType::init);
     _d.CPGF_MD_TEMPLATE _method("initFrom", &D::ClassType::initFrom);
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::OptionType>("OptionType")
@@ -790,7 +790,7 @@ void buildMetaClass_QStyleOptionViewItem(D _d)
     _d.CPGF_MD_TEMPLATE _field("showDecorationSelected", &D::ClassType::showDecorationSelected);
     _d.CPGF_MD_TEMPLATE _field("features", &D::ClassType::features);
     _d.CPGF_MD_TEMPLATE _field("locale", &D::ClassType::locale);
-    _d.CPGF_MD_TEMPLATE _field("widget", &D::ClassType::widget);
+    _d.CPGF_MD_TEMPLATE _field("widget", &D::ClassType::widget, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
     _d.CPGF_MD_TEMPLATE _field("index", &D::ClassType::index);
     _d.CPGF_MD_TEMPLATE _field("checkState", &D::ClassType::checkState);
     _d.CPGF_MD_TEMPLATE _field("icon", &D::ClassType::icon);

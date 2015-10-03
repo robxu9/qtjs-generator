@@ -24,6 +24,8 @@ void buildMetaClass_Global_qdebug(D _d)
     (void)_d;
     using namespace cpgf;
     
+    _d.CPGF_MD_TEMPLATE _method("qt_QMetaEnum_debugOperator", (QDebug (*) (QDebug &, int, const QMetaObject *, const char *))&qt_QMetaEnum_debugOperator);
+    _d.CPGF_MD_TEMPLATE _method("qt_QMetaEnum_flagDebugOperator", (QDebug (*) (QDebug &, quint64, const QMetaObject *, const char *))&qt_QMetaEnum_flagDebugOperator);
 }
 
 
@@ -106,11 +108,17 @@ void buildMetaClass_QDebug(D _d)
     _d.CPGF_MD_TEMPLATE _constructor<void * (QtMsgType)>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QDebug &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("swap", &D::ClassType::swap);
+    _d.CPGF_MD_TEMPLATE _method("resetFormat", &D::ClassType::resetFormat);
     _d.CPGF_MD_TEMPLATE _method("space", &D::ClassType::space);
     _d.CPGF_MD_TEMPLATE _method("nospace", &D::ClassType::nospace);
     _d.CPGF_MD_TEMPLATE _method("maybeSpace", &D::ClassType::maybeSpace);
     _d.CPGF_MD_TEMPLATE _method("autoInsertSpaces", &D::ClassType::autoInsertSpaces);
     _d.CPGF_MD_TEMPLATE _method("setAutoInsertSpaces", &D::ClassType::setAutoInsertSpaces);
+    _d.CPGF_MD_TEMPLATE _method("quote", &D::ClassType::quote);
+    _d.CPGF_MD_TEMPLATE _method("noquote", &D::ClassType::noquote);
+    _d.CPGF_MD_TEMPLATE _method("maybeQuote", &D::ClassType::maybeQuote)
+        ._default(copyVariantFromCopyable('"'))
+    ;
     _d.CPGF_MD_TEMPLATE _operator<QDebug & (*)(cpgf::GMetaSelf, const QDebug &)>(mopHolder = mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("_opAssign", (QDebug & (*) (QDebug *, const QDebug &))&opErAToRWrapper_QDebug__opAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
     _d.CPGF_MD_TEMPLATE _operator<QDebug & (*)(cpgf::GMetaSelf, QChar)>(mopHolder << mopHolder);

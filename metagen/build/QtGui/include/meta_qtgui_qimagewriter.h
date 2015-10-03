@@ -41,6 +41,15 @@ void buildMetaClass_QImageWriter(D _d)
     _d.CPGF_MD_TEMPLATE _method("compression", &D::ClassType::compression);
     _d.CPGF_MD_TEMPLATE _method("setGamma", &D::ClassType::setGamma);
     _d.CPGF_MD_TEMPLATE _method("gamma", &D::ClassType::gamma);
+    _d.CPGF_MD_TEMPLATE _method("setSubType", &D::ClassType::setSubType, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
+    _d.CPGF_MD_TEMPLATE _method("subType", &D::ClassType::subType);
+    _d.CPGF_MD_TEMPLATE _method("supportedSubTypes", &D::ClassType::supportedSubTypes);
+    _d.CPGF_MD_TEMPLATE _method("setOptimizedWrite", &D::ClassType::setOptimizedWrite);
+    _d.CPGF_MD_TEMPLATE _method("optimizedWrite", &D::ClassType::optimizedWrite);
+    _d.CPGF_MD_TEMPLATE _method("setProgressiveScanWrite", &D::ClassType::setProgressiveScanWrite);
+    _d.CPGF_MD_TEMPLATE _method("progressiveScanWrite", &D::ClassType::progressiveScanWrite);
+    _d.CPGF_MD_TEMPLATE _method("transformation", &D::ClassType::transformation);
+    _d.CPGF_MD_TEMPLATE _method("setTransformation", &D::ClassType::setTransformation);
     _d.CPGF_MD_TEMPLATE _method("setDescription", &D::ClassType::setDescription, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("description", &D::ClassType::description);
     _d.CPGF_MD_TEMPLATE _method("setText", &D::ClassType::setText, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1> >());

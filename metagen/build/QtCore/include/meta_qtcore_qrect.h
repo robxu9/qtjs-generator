@@ -55,10 +55,10 @@ inline QRect & opErAToRWrapper_QRect__opBitOrAssign(QRect * self, const QRect & 
 inline QRect & opErAToRWrapper_QRect__opBitAndAssign(QRect * self, const QRect & r) {
     return (*self) &= r;
 }
-inline QRect & opErAToRWrapper_QRect__opAddAssign(QRect * self, const QMargins & margins) {
+inline Q_DECL_RELAXED_CONSTEXPR QRect & opErAToRWrapper_QRect__opAddAssign(QRect * self, const QMargins & margins) {
     return (*self) += margins;
 }
-inline QRect & opErAToRWrapper_QRect__opSubAssign(QRect * self, const QMargins & margins) {
+inline Q_DECL_RELAXED_CONSTEXPR QRect & opErAToRWrapper_QRect__opSubAssign(QRect * self, const QMargins & margins) {
     return (*self) -= margins;
 }
 
@@ -107,12 +107,12 @@ void buildMetaClass_QRect(D _d)
     _d.CPGF_MD_TEMPLATE _method("moveTopRight", &D::ClassType::moveTopRight);
     _d.CPGF_MD_TEMPLATE _method("moveBottomLeft", &D::ClassType::moveBottomLeft);
     _d.CPGF_MD_TEMPLATE _method("moveCenter", &D::ClassType::moveCenter);
-    _d.CPGF_MD_TEMPLATE _method("translate", (void (D::ClassType::*) (int, int))&D::ClassType::translate);
-    _d.CPGF_MD_TEMPLATE _method("translate", (void (D::ClassType::*) (const QPoint &))&D::ClassType::translate);
+    _d.CPGF_MD_TEMPLATE _method("translate", (Q_DECL_RELAXED_CONSTEXPR void (D::ClassType::*) (int, int))&D::ClassType::translate);
+    _d.CPGF_MD_TEMPLATE _method("translate", (Q_DECL_RELAXED_CONSTEXPR void (D::ClassType::*) (const QPoint &))&D::ClassType::translate);
     _d.CPGF_MD_TEMPLATE _method("translated", (QRect (D::ClassType::*) (int, int) const)&D::ClassType::translated);
     _d.CPGF_MD_TEMPLATE _method("translated", (QRect (D::ClassType::*) (const QPoint &) const)&D::ClassType::translated);
-    _d.CPGF_MD_TEMPLATE _method("moveTo", (void (D::ClassType::*) (int, int))&D::ClassType::moveTo);
-    _d.CPGF_MD_TEMPLATE _method("moveTo", (void (D::ClassType::*) (const QPoint &))&D::ClassType::moveTo);
+    _d.CPGF_MD_TEMPLATE _method("moveTo", (Q_DECL_RELAXED_CONSTEXPR void (D::ClassType::*) (int, int))&D::ClassType::moveTo);
+    _d.CPGF_MD_TEMPLATE _method("moveTo", (Q_DECL_RELAXED_CONSTEXPR void (D::ClassType::*) (const QPoint &))&D::ClassType::moveTo);
     _d.CPGF_MD_TEMPLATE _method("setRect", &D::ClassType::setRect);
     _d.CPGF_MD_TEMPLATE _method("getRect", &D::ClassType::getRect);
     _d.CPGF_MD_TEMPLATE _method("setCoords", &D::ClassType::setCoords);
@@ -146,10 +146,10 @@ void buildMetaClass_QRect(D _d)
     _d.CPGF_MD_TEMPLATE _method("_opBitOrAssign", (QRect & (*) (QRect *, const QRect &))&opErAToRWrapper_QRect__opBitOrAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
     _d.CPGF_MD_TEMPLATE _operator<QRect & (*)(cpgf::GMetaSelf, const QRect &)>(mopHolder &= mopHolder);
     _d.CPGF_MD_TEMPLATE _method("_opBitAndAssign", (QRect & (*) (QRect *, const QRect &))&opErAToRWrapper_QRect__opBitAndAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QRect & (*)(cpgf::GMetaSelf, const QMargins &)>(mopHolder += mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (QRect & (*) (QRect *, const QMargins &))&opErAToRWrapper_QRect__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QRect & (*)(cpgf::GMetaSelf, const QMargins &)>(mopHolder -= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (QRect & (*) (QRect *, const QMargins &))&opErAToRWrapper_QRect__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QRect & (*)(cpgf::GMetaSelf, const QMargins &)>(mopHolder += mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (Q_DECL_RELAXED_CONSTEXPR QRect & (*) (QRect *, const QMargins &))&opErAToRWrapper_QRect__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QRect & (*)(cpgf::GMetaSelf, const QMargins &)>(mopHolder -= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (Q_DECL_RELAXED_CONSTEXPR QRect & (*) (QRect *, const QMargins &))&opErAToRWrapper_QRect__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
 }
 
 
@@ -165,10 +165,10 @@ inline QRectF & opErAToRWrapper_QRectF__opBitOrAssign(QRectF * self, const QRect
 inline QRectF & opErAToRWrapper_QRectF__opBitAndAssign(QRectF * self, const QRectF & r) {
     return (*self) &= r;
 }
-inline QRectF & opErAToRWrapper_QRectF__opAddAssign(QRectF * self, const QMarginsF & margins) {
+inline Q_DECL_RELAXED_CONSTEXPR QRectF & opErAToRWrapper_QRectF__opAddAssign(QRectF * self, const QMarginsF & margins) {
     return (*self) += margins;
 }
-inline QRectF & opErAToRWrapper_QRectF__opSubAssign(QRectF * self, const QMarginsF & margins) {
+inline Q_DECL_RELAXED_CONSTEXPR QRectF & opErAToRWrapper_QRectF__opSubAssign(QRectF * self, const QMarginsF & margins) {
     return (*self) -= margins;
 }
 
@@ -218,12 +218,12 @@ void buildMetaClass_QRectF(D _d)
     _d.CPGF_MD_TEMPLATE _method("moveTopRight", &D::ClassType::moveTopRight, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("moveBottomLeft", &D::ClassType::moveBottomLeft, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("moveCenter", &D::ClassType::moveCenter, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
-    _d.CPGF_MD_TEMPLATE _method("translate", (void (D::ClassType::*) (qreal, qreal))&D::ClassType::translate);
-    _d.CPGF_MD_TEMPLATE _method("translate", (void (D::ClassType::*) (const QPointF &))&D::ClassType::translate, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
+    _d.CPGF_MD_TEMPLATE _method("translate", (Q_DECL_RELAXED_CONSTEXPR void (D::ClassType::*) (qreal, qreal))&D::ClassType::translate);
+    _d.CPGF_MD_TEMPLATE _method("translate", (Q_DECL_RELAXED_CONSTEXPR void (D::ClassType::*) (const QPointF &))&D::ClassType::translate, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("translated", (QRectF (D::ClassType::*) (qreal, qreal) const)&D::ClassType::translated);
     _d.CPGF_MD_TEMPLATE _method("translated", (QRectF (D::ClassType::*) (const QPointF &) const)&D::ClassType::translated, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
-    _d.CPGF_MD_TEMPLATE _method("moveTo", (void (D::ClassType::*) (qreal, qreal))&D::ClassType::moveTo);
-    _d.CPGF_MD_TEMPLATE _method("moveTo", (void (D::ClassType::*) (const QPointF &))&D::ClassType::moveTo, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
+    _d.CPGF_MD_TEMPLATE _method("moveTo", (Q_DECL_RELAXED_CONSTEXPR void (D::ClassType::*) (qreal, qreal))&D::ClassType::moveTo);
+    _d.CPGF_MD_TEMPLATE _method("moveTo", (Q_DECL_RELAXED_CONSTEXPR void (D::ClassType::*) (const QPointF &))&D::ClassType::moveTo, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("setRect", &D::ClassType::setRect);
     _d.CPGF_MD_TEMPLATE _method("getRect", &D::ClassType::getRect);
     _d.CPGF_MD_TEMPLATE _method("setCoords", &D::ClassType::setCoords);
@@ -254,10 +254,10 @@ void buildMetaClass_QRectF(D _d)
     _d.CPGF_MD_TEMPLATE _method("_opBitOrAssign", (QRectF & (*) (QRectF *, const QRectF &))&opErAToRWrapper_QRectF__opBitOrAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
     _d.CPGF_MD_TEMPLATE _operator<QRectF & (*)(cpgf::GMetaSelf, const QRectF &)>(mopHolder &= mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("_opBitAndAssign", (QRectF & (*) (QRectF *, const QRectF &))&opErAToRWrapper_QRectF__opBitAndAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QRectF & (*)(cpgf::GMetaSelf, const QMarginsF &)>(mopHolder += mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (QRectF & (*) (QRectF *, const QMarginsF &))&opErAToRWrapper_QRectF__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QRectF & (*)(cpgf::GMetaSelf, const QMarginsF &)>(mopHolder -= mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (QRectF & (*) (QRectF *, const QMarginsF &))&opErAToRWrapper_QRectF__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QRectF & (*)(cpgf::GMetaSelf, const QMarginsF &)>(mopHolder += mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (Q_DECL_RELAXED_CONSTEXPR QRectF & (*) (QRectF *, const QMarginsF &))&opErAToRWrapper_QRectF__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QRectF & (*)(cpgf::GMetaSelf, const QMarginsF &)>(mopHolder -= mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (Q_DECL_RELAXED_CONSTEXPR QRectF & (*) (QRectF *, const QMarginsF &))&opErAToRWrapper_QRectF__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
 }
 
 

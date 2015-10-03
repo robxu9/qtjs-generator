@@ -19,6 +19,7 @@ GDefineMetaInfo createMetaClass_Global_qatomic();
 GDefineMetaInfo createMetaClass_Global_qbasictimer();
 GDefineMetaInfo createMetaClass_Global_qbitarray();
 GDefineMetaInfo createMetaClass_Global_qbytearray();
+GDefineMetaInfo createMetaClass_Global_qbytearraylist();
 GDefineMetaInfo createMetaClass_Global_qchar();
 GDefineMetaInfo createMetaClass_Global_qcollator();
 GDefineMetaInfo createMetaClass_Global_qconfig();
@@ -51,6 +52,7 @@ GDefineMetaInfo createMetaClass_Global_qmargins();
 GDefineMetaInfo createMetaClass_Global_qmath();
 GDefineMetaInfo createMetaClass_Global_qmetaobject();
 GDefineMetaInfo createMetaClass_Global_qmetatype();
+GDefineMetaInfo createMetaClass_Global_qmimetype();
 GDefineMetaInfo createMetaClass_Global_qmutex();
 GDefineMetaInfo createMetaClass_Global_qnamespace();
 GDefineMetaInfo createMetaClass_Global_qnumeric();
@@ -63,12 +65,13 @@ GDefineMetaInfo createMetaClass_Global_qprocess();
 GDefineMetaInfo createMetaClass_Global_qprocessordetection();
 GDefineMetaInfo createMetaClass_Global_qrect();
 GDefineMetaInfo createMetaClass_Global_qregexp();
+GDefineMetaInfo createMetaClass_Global_qset();
 GDefineMetaInfo createMetaClass_Global_qshareddata();
 GDefineMetaInfo createMetaClass_Global_qsize();
+GDefineMetaInfo createMetaClass_Global_qstorageinfo();
 GDefineMetaInfo createMetaClass_Global_qstring();
 GDefineMetaInfo createMetaClass_Global_qstringlist();
 GDefineMetaInfo createMetaClass_Global_qsystemdetection();
-GDefineMetaInfo createMetaClass_Global_qtcore();
 GDefineMetaInfo createMetaClass_Global_qtcoreversion();
 GDefineMetaInfo createMetaClass_Global_qtextstream();
 GDefineMetaInfo createMetaClass_Global_qthreadstorage();
@@ -98,6 +101,7 @@ GDefineMetaInfo createMetaClass_QCollator();
 GDefineMetaInfo createMetaClass_QCollatorSortKey();
 GDefineMetaInfo createMetaClass_QCommandLineOption();
 GDefineMetaInfo createMetaClass_QCommandLineParser();
+GDefineMetaInfo createMetaClass_QContainerImplHelper();
 GDefineMetaInfo createMetaClass_QCoreApplication();
 GDefineMetaInfo createMetaClass_QCryptographicHash();
 GDefineMetaInfo createMetaClass_QDate();
@@ -124,6 +128,8 @@ GDefineMetaInfo createMetaClass_QFinalState();
 GDefineMetaInfo createMetaClass_QFlag();
 GDefineMetaInfo createMetaClass_QGenericArgument();
 GDefineMetaInfo createMetaClass_QGenericReturnArgument();
+GDefineMetaInfo createMetaClass_QHashCombine();
+GDefineMetaInfo createMetaClass_QHashCombineCommutative();
 GDefineMetaInfo createMetaClass_QHashDummyValue();
 GDefineMetaInfo createMetaClass_QHistoryState();
 GDefineMetaInfo createMetaClass_QIODevice();
@@ -137,7 +143,9 @@ GDefineMetaInfo createMetaClass_QJsonDocument();
 GDefineMetaInfo createMetaClass_QJsonObject();
 GDefineMetaInfo createMetaClass_QJsonParseError();
 GDefineMetaInfo createMetaClass_QJsonValue();
+GDefineMetaInfo createMetaClass_QJsonValuePtr();
 GDefineMetaInfo createMetaClass_QJsonValueRef();
+GDefineMetaInfo createMetaClass_QJsonValueRefPtr();
 GDefineMetaInfo createMetaClass_QLatin1Char();
 GDefineMetaInfo createMetaClass_QLatin1String();
 GDefineMetaInfo createMetaClass_QLibrary();
@@ -195,6 +203,7 @@ GDefineMetaInfo createMetaClass_QStandardPaths();
 GDefineMetaInfo createMetaClass_QState();
 GDefineMetaInfo createMetaClass_QStateMachine();
 GDefineMetaInfo createMetaClass_QStaticPlugin();
+GDefineMetaInfo createMetaClass_QStorageInfo();
 GDefineMetaInfo createMetaClass_QString();
 GDefineMetaInfo createMetaClass_QStringDataPtr();
 GDefineMetaInfo createMetaClass_QStringList();
@@ -228,6 +237,7 @@ GDefineMetaInfo createMetaClass_ResultItem();
 GDefineMetaInfo createMetaClass_ResultIteratorBase();
 GDefineMetaInfo createMetaClass_ResultStoreBase();
 GDefineMetaInfo createMetaClass_VariantData();
+GDefineMetaInfo createMetaClass_VectorBoolElements();
 
 
 template <typename Meta>
@@ -240,6 +250,7 @@ void registerMain_QtCore(Meta _d)
     _d._class(createMetaClass_Global_qbasictimer());
     _d._class(createMetaClass_Global_qbitarray());
     _d._class(createMetaClass_Global_qbytearray());
+    _d._class(createMetaClass_Global_qbytearraylist());
     _d._class(createMetaClass_Global_qchar());
     _d._class(createMetaClass_Global_qcollator());
     _d._class(createMetaClass_Global_qconfig());
@@ -272,6 +283,7 @@ void registerMain_QtCore(Meta _d)
     _d._class(createMetaClass_Global_qmath());
     _d._class(createMetaClass_Global_qmetaobject());
     _d._class(createMetaClass_Global_qmetatype());
+    _d._class(createMetaClass_Global_qmimetype());
     _d._class(createMetaClass_Global_qmutex());
     _d._class(createMetaClass_Global_qnamespace());
     _d._class(createMetaClass_Global_qnumeric());
@@ -284,12 +296,13 @@ void registerMain_QtCore(Meta _d)
     _d._class(createMetaClass_Global_qprocessordetection());
     _d._class(createMetaClass_Global_qrect());
     _d._class(createMetaClass_Global_qregexp());
+    _d._class(createMetaClass_Global_qset());
     _d._class(createMetaClass_Global_qshareddata());
     _d._class(createMetaClass_Global_qsize());
+    _d._class(createMetaClass_Global_qstorageinfo());
     _d._class(createMetaClass_Global_qstring());
     _d._class(createMetaClass_Global_qstringlist());
     _d._class(createMetaClass_Global_qsystemdetection());
-    _d._class(createMetaClass_Global_qtcore());
     _d._class(createMetaClass_Global_qtcoreversion());
     _d._class(createMetaClass_Global_qtextstream());
     _d._class(createMetaClass_Global_qthreadstorage());
@@ -319,6 +332,7 @@ void registerMain_QtCore(Meta _d)
     _d._class(createMetaClass_QCollatorSortKey());
     _d._class(createMetaClass_QCommandLineOption());
     _d._class(createMetaClass_QCommandLineParser());
+    _d._class(createMetaClass_QContainerImplHelper());
     _d._class(createMetaClass_QCoreApplication());
     _d._class(createMetaClass_QCryptographicHash());
     _d._class(createMetaClass_QDate());
@@ -345,6 +359,8 @@ void registerMain_QtCore(Meta _d)
     _d._class(createMetaClass_QFlag());
     _d._class(createMetaClass_QGenericArgument());
     _d._class(createMetaClass_QGenericReturnArgument());
+    _d._class(createMetaClass_QHashCombine());
+    _d._class(createMetaClass_QHashCombineCommutative());
     _d._class(createMetaClass_QHashDummyValue());
     _d._class(createMetaClass_QHistoryState());
     _d._class(createMetaClass_QIODevice());
@@ -358,7 +374,9 @@ void registerMain_QtCore(Meta _d)
     _d._class(createMetaClass_QJsonObject());
     _d._class(createMetaClass_QJsonParseError());
     _d._class(createMetaClass_QJsonValue());
+    _d._class(createMetaClass_QJsonValuePtr());
     _d._class(createMetaClass_QJsonValueRef());
+    _d._class(createMetaClass_QJsonValueRefPtr());
     _d._class(createMetaClass_QLatin1Char());
     _d._class(createMetaClass_QLatin1String());
     _d._class(createMetaClass_QLibrary());
@@ -416,6 +434,7 @@ void registerMain_QtCore(Meta _d)
     _d._class(createMetaClass_QState());
     _d._class(createMetaClass_QStateMachine());
     _d._class(createMetaClass_QStaticPlugin());
+    _d._class(createMetaClass_QStorageInfo());
     _d._class(createMetaClass_QString());
     _d._class(createMetaClass_QStringDataPtr());
     _d._class(createMetaClass_QStringList());
@@ -449,6 +468,7 @@ void registerMain_QtCore(Meta _d)
     _d._class(createMetaClass_ResultIteratorBase());
     _d._class(createMetaClass_ResultStoreBase());
     _d._class(createMetaClass_VariantData());
+    _d._class(createMetaClass_VectorBoolElements());
 }
 
 } // namespace qt_metadata

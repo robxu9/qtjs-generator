@@ -24,6 +24,7 @@ void buildMetaClass_Global_qsizepolicy(D _d)
     (void)_d;
     using namespace cpgf;
     
+    _d.CPGF_MD_TEMPLATE _method("Q_DECLARE_TYPEINFO", ( (*) (QSizePolicy, Q_PRIMITIVE_TYPE))&Q_DECLARE_TYPEINFO);
     _d.CPGF_MD_TEMPLATE _operator<QDataStream & (*)(QDataStream &, const QSizePolicy &)>(mopHolder << mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1>, cpgf::GMetaRuleParamNoncopyable<0> >());
     _d.CPGF_MD_TEMPLATE _operator<QDataStream & (*)(QDataStream &, QSizePolicy &)>(mopHolder >> mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1>, cpgf::GMetaRuleParamNoncopyable<0> >());
     _d.CPGF_MD_TEMPLATE _operator<QDebug (*)(QDebug, const QSizePolicy &)>(mopHolder << mopHolder);

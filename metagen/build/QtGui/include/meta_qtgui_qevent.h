@@ -27,6 +27,7 @@ void buildMetaClass_Global_qevent(D _d)
     _d.CPGF_MD_TEMPLATE _operator<QDebug (*)(QDebug, const QEvent *)>(mopHolder << mopHolder);
     _d.CPGF_MD_TEMPLATE _operator<bool (*)(QKeyEvent *, QKeySequence::StandardKey)>(mopHolder == mopHolder);
     _d.CPGF_MD_TEMPLATE _operator<bool (*)(QKeySequence::StandardKey, QKeyEvent *)>(mopHolder == mopHolder);
+    _d.CPGF_MD_TEMPLATE _operator<QDebug (*)(QDebug, const QTouchEvent::TouchPoint &)>(mopHolder << mopHolder);
 }
 
 
@@ -422,6 +423,21 @@ void buildMetaClass_QPaintEvent(D _d)
 
 
 template <typename D>
+void buildMetaClass_QPlatformSurfaceEvent(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _constructor<void * (QPlatformSurfaceEvent::SurfaceEventType)>();
+    _d.CPGF_MD_TEMPLATE _method("surfaceEventType", &D::ClassType::surfaceEventType);
+    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::SurfaceEventType>("SurfaceEventType")
+        ._element("SurfaceCreated", D::ClassType::SurfaceCreated)
+        ._element("SurfaceAboutToBeDestroyed", D::ClassType::SurfaceAboutToBeDestroyed)
+    ;
+}
+
+
+template <typename D>
 void buildMetaClass_QResizeEvent(D _d)
 {
     (void)_d;
@@ -523,6 +539,7 @@ void buildMetaClass_QTabletEvent(D _d)
     using namespace cpgf;
     
     _d.CPGF_MD_TEMPLATE _constructor<void * (QEvent::Type, const QPointF &, const QPointF &, int, int, qreal, int, int, qreal, qreal, int, Qt::KeyboardModifiers, qint64)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleCopyConstReference<2> >());
+    _d.CPGF_MD_TEMPLATE _constructor<void * (QEvent::Type, const QPointF &, const QPointF &, int, int, qreal, int, int, qreal, qreal, int, Qt::KeyboardModifiers, qint64, Qt::MouseButton, Qt::MouseButtons)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleCopyConstReference<2> >());
     _d.CPGF_MD_TEMPLATE _method("pos", &D::ClassType::pos);
     _d.CPGF_MD_TEMPLATE _method("globalPos", &D::ClassType::globalPos);
     _d.CPGF_MD_TEMPLATE _method("posF", &D::ClassType::posF, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<-1> >());
@@ -542,6 +559,8 @@ void buildMetaClass_QTabletEvent(D _d)
     _d.CPGF_MD_TEMPLATE _method("rotation", &D::ClassType::rotation);
     _d.CPGF_MD_TEMPLATE _method("xTilt", &D::ClassType::xTilt);
     _d.CPGF_MD_TEMPLATE _method("yTilt", &D::ClassType::yTilt);
+    _d.CPGF_MD_TEMPLATE _method("button", &D::ClassType::button);
+    _d.CPGF_MD_TEMPLATE _method("buttons", &D::ClassType::buttons);
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::TabletDevice>("TabletDevice")
         ._element("NoDevice", D::ClassType::NoDevice)
         ._element("Puck", D::ClassType::Puck)
@@ -686,6 +705,7 @@ void buildMetaClass_QWheelEvent(D _d)
     ;
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QPointF &, const QPointF &, QPoint, QPoint, int, Qt::Orientation, Qt::MouseButtons, Qt::KeyboardModifiers)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QPointF &, const QPointF &, QPoint, QPoint, int, Qt::Orientation, Qt::MouseButtons, Qt::KeyboardModifiers, Qt::ScrollPhase)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _constructor<void * (const QPointF &, const QPointF &, QPoint, QPoint, int, Qt::Orientation, Qt::MouseButtons, Qt::KeyboardModifiers, Qt::ScrollPhase, Qt::MouseEventSource)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("pixelDelta", &D::ClassType::pixelDelta);
     _d.CPGF_MD_TEMPLATE _method("angleDelta", &D::ClassType::angleDelta);
     _d.CPGF_MD_TEMPLATE _method("delta", &D::ClassType::delta);
@@ -700,6 +720,10 @@ void buildMetaClass_QWheelEvent(D _d)
     _d.CPGF_MD_TEMPLATE _method("globalPosF", &D::ClassType::globalPosF, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<-1> >());
     _d.CPGF_MD_TEMPLATE _method("buttons", &D::ClassType::buttons);
     _d.CPGF_MD_TEMPLATE _method("phase", &D::ClassType::phase);
+    _d.CPGF_MD_TEMPLATE _method("source", &D::ClassType::source);
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalEnum_QtGui_1")
+        ._element("DefaultDeltasPerStep", D::ClassType::DefaultDeltasPerStep)
+    ;
 }
 
 

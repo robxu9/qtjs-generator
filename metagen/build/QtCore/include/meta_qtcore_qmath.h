@@ -44,7 +44,11 @@ void buildMetaClass_Global_qmath(D _d)
     _d.CPGF_MD_TEMPLATE _method("qDegreesToRadians", (double (*) (double))&qDegreesToRadians);
     _d.CPGF_MD_TEMPLATE _method("qRadiansToDegrees", (float (*) (float))&qRadiansToDegrees);
     _d.CPGF_MD_TEMPLATE _method("qRadiansToDegrees", (double (*) (double))&qRadiansToDegrees);
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtCore_29")
+    _d.CPGF_MD_TEMPLATE _method("qNextPowerOfTwo", (quint32 (*) (quint32))&qNextPowerOfTwo);
+    _d.CPGF_MD_TEMPLATE _method("qNextPowerOfTwo", (quint64 (*) (quint64))&qNextPowerOfTwo);
+    _d.CPGF_MD_TEMPLATE _method("qNextPowerOfTwo", (quint32 (*) (qint32))&qNextPowerOfTwo);
+    _d.CPGF_MD_TEMPLATE _method("qNextPowerOfTwo", (quint64 (*) (qint64))&qNextPowerOfTwo);
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtCore_35")
         ._element("QT_SINE_TABLE_SIZE", QT_SINE_TABLE_SIZE)
         ._element("M_E", M_E)
         ._element("M_LOG2E", M_LOG2E)

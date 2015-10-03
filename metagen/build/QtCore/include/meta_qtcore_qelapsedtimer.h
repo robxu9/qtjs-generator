@@ -32,8 +32,7 @@ void buildMetaClass_QElapsedTimer(D _d)
     (void)_d;
     using namespace cpgf;
     
-    _d.CPGF_MD_TEMPLATE _method("clockType", &D::ClassType::clockType);
-    _d.CPGF_MD_TEMPLATE _method("isMonotonic", &D::ClassType::isMonotonic);
+    _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
     _d.CPGF_MD_TEMPLATE _method("start", &D::ClassType::start);
     _d.CPGF_MD_TEMPLATE _method("restart", &D::ClassType::restart);
     _d.CPGF_MD_TEMPLATE _method("invalidate", &D::ClassType::invalidate);
@@ -44,6 +43,8 @@ void buildMetaClass_QElapsedTimer(D _d)
     _d.CPGF_MD_TEMPLATE _method("msecsSinceReference", &D::ClassType::msecsSinceReference);
     _d.CPGF_MD_TEMPLATE _method("msecsTo", &D::ClassType::msecsTo);
     _d.CPGF_MD_TEMPLATE _method("secsTo", &D::ClassType::secsTo);
+    _d.CPGF_MD_TEMPLATE _method("clockType", &D::ClassType::clockType);
+    _d.CPGF_MD_TEMPLATE _method("isMonotonic", &D::ClassType::isMonotonic);
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::ClockType>("ClockType")
         ._element("SystemTime", D::ClassType::SystemTime)
         ._element("MonotonicClock", D::ClassType::MonotonicClock)

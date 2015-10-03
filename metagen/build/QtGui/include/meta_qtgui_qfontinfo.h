@@ -46,7 +46,6 @@ void buildMetaClass_QFontInfo(D _d)
     _d.CPGF_MD_TEMPLATE _method("strikeOut", &D::ClassType::strikeOut);
     _d.CPGF_MD_TEMPLATE _method("fixedPitch", &D::ClassType::fixedPitch);
     _d.CPGF_MD_TEMPLATE _method("styleHint", &D::ClassType::styleHint);
-    _d.CPGF_MD_TEMPLATE _method("rawMode", &D::ClassType::rawMode);
     _d.CPGF_MD_TEMPLATE _method("exactMatch", &D::ClassType::exactMatch);
     _d.CPGF_MD_TEMPLATE _operator<QFontInfo & (*)(cpgf::GMetaSelf, const QFontInfo &)>(mopHolder = mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("_opAssign", (QFontInfo & (*) (QFontInfo *, const QFontInfo &))&opErAToRWrapper_QFontInfo__opAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());

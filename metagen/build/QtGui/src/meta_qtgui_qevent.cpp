@@ -366,6 +366,20 @@ GDefineMetaInfo createMetaClass_QPaintEvent()
 #ifdef CPGF_METAGEN_LINKAGE_SPEC
 CPGF_METAGEN_LINKAGE_SPEC
 #endif
+GDefineMetaInfo createMetaClass_QPlatformSurfaceEvent()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QPlatformSurfaceEvent, QEvent> _nd = GDefineMetaClass<QPlatformSurfaceEvent, QEvent>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent> >::lazyDeclare("QPlatformSurfaceEvent", &buildMetaClass_QPlatformSurfaceEvent);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
 GDefineMetaInfo createMetaClass_QResizeEvent()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();

@@ -13,6 +13,7 @@
 #include "cpgf/gmetapolicy.h"
 
 
+using namespace QImageScale;
 
 
 namespace qt_metadata { 

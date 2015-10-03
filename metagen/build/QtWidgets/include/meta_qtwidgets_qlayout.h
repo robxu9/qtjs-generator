@@ -39,7 +39,6 @@ void buildMetaClass_QLayout(D _d)
     _d.CPGF_MD_TEMPLATE _method("contentsRect", &D::ClassType::contentsRect);
     _d.CPGF_MD_TEMPLATE _method("setAlignment", (bool (D::ClassType::*) (QWidget *, Qt::Alignment))&D::ClassType::setAlignment);
     _d.CPGF_MD_TEMPLATE _method("setAlignment", (bool (D::ClassType::*) (QLayout *, Qt::Alignment))&D::ClassType::setAlignment);
-    _d.CPGF_MD_TEMPLATE _method("setAlignment", (void (D::ClassType::*) (Qt::Alignment))&D::ClassType::setAlignment);
     _d.CPGF_MD_TEMPLATE _method("setSizeConstraint", &D::ClassType::setSizeConstraint);
     _d.CPGF_MD_TEMPLATE _method("sizeConstraint", &D::ClassType::sizeConstraint);
     _d.CPGF_MD_TEMPLATE _method("setMenuBar", &D::ClassType::setMenuBar);

@@ -162,6 +162,7 @@ void buildMetaClass_QKeySequence(D _d)
         ._element("FullScreen", D::ClassType::FullScreen)
         ._element("Deselect", D::ClassType::Deselect)
         ._element("DeleteCompleteLine", D::ClassType::DeleteCompleteLine)
+        ._element("Backspace", D::ClassType::Backspace)
     ;
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::SequenceFormat>("SequenceFormat")
         ._element("NativeText", D::ClassType::NativeText)

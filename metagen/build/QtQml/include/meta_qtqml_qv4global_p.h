@@ -14,6 +14,7 @@
 
 
 using namespace QV4;
+using namespace QV4::Heap;
 using namespace QV4::Global;
 
 

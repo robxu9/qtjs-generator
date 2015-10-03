@@ -18,6 +18,15 @@
 namespace qt_metadata { 
 
 
+template <typename D>
+void buildMetaClass_Global_qset(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+}
+
+
 template <typename T>
 inline QMutableSetIterator & opErAToRWrapper_QMutableSetIterator__opAssign(QMutableSetIterator<T > * self, QSet< T > & container) {
     return (*self) = container;

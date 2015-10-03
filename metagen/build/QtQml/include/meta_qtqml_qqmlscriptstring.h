@@ -13,6 +13,7 @@
 #include "cpgf/gmetapolicy.h"
 
 
+using namespace QV4;
 
 
 namespace qt_metadata { 
@@ -20,6 +21,12 @@ namespace qt_metadata {
 
 inline QQmlScriptString & opErAToRWrapper_QQmlScriptString__opAssign(QQmlScriptString * self, const QQmlScriptString & __arg0) {
     return (*self) = __arg0;
+}
+inline bool opErAToRWrapper_QQmlScriptString__opEqual(const QQmlScriptString * self, const QQmlScriptString & __arg0) {
+    return (*self) == __arg0;
+}
+inline bool opErAToRWrapper_QQmlScriptString__opNotEqual(const QQmlScriptString * self, const QQmlScriptString & __arg0) {
+    return (*self) != __arg0;
 }
 
 
@@ -39,6 +46,10 @@ void buildMetaClass_QQmlScriptString(D _d)
     _d.CPGF_MD_TEMPLATE _method("booleanLiteral", &D::ClassType::booleanLiteral);
     _d.CPGF_MD_TEMPLATE _operator<QQmlScriptString & (*)(cpgf::GMetaSelf, const QQmlScriptString &)>(mopHolder = mopHolder);
     _d.CPGF_MD_TEMPLATE _method("_opAssign", (QQmlScriptString & (*) (QQmlScriptString *, const QQmlScriptString &))&opErAToRWrapper_QQmlScriptString__opAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QQmlScriptString &)>(mopHolder == mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opEqual", (bool (*) (const QQmlScriptString *, const QQmlScriptString &))&opErAToRWrapper_QQmlScriptString__opEqual, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QQmlScriptString &)>(mopHolder != mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opNotEqual", (bool (*) (const QQmlScriptString *, const QQmlScriptString &))&opErAToRWrapper_QQmlScriptString__opNotEqual, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
 }
 
 

@@ -58,7 +58,7 @@ GDefineMetaInfo createMetaClass_QList_TemplateInstance_QList_QString()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
     {
-        GDefineMetaClass<QList<QString> > _nd = GDefineMetaClass<QList<QString> >::lazyDeclare("QList_QString", &buildMetaClass_QList<GDefineMetaClass<QList<QString> >, QString >);
+        GDefineMetaClass<QList<QString>, QListSpecialMethods< T > > _nd = GDefineMetaClass<QList<QString>, QListSpecialMethods< T > >::lazyDeclare("QList_QString", &buildMetaClass_QList<GDefineMetaClass<QList<QString>, QListSpecialMethods< T > >, QString >);
         _d._class(_nd);
     }
     return _d.getMetaInfo();

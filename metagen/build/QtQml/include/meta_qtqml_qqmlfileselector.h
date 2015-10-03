@@ -32,7 +32,8 @@ void buildMetaClass_QQmlFileSelector(D _d)
     _d.CPGF_MD_TEMPLATE _method("qt_metacast", &D::ClassType::qt_metacast);
     _d.CPGF_MD_TEMPLATE _method("qt_metacall", &D::ClassType::qt_metacall);
     _d.CPGF_MD_TEMPLATE _method("setSelector", &D::ClassType::setSelector);
-    _d.CPGF_MD_TEMPLATE _method("setExtraSelectors", &D::ClassType::setExtraSelectors);
+    _d.CPGF_MD_TEMPLATE _method("setExtraSelectors", (void (D::ClassType::*) (QStringList &))&D::ClassType::setExtraSelectors);
+    _d.CPGF_MD_TEMPLATE _method("setExtraSelectors", (void (D::ClassType::*) (const QStringList &))&D::ClassType::setExtraSelectors, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("tr", &D::ClassType::tr)
         ._default(copyVariantFromCopyable(-1))
         ._default(copyVariantFromCopyable(0))

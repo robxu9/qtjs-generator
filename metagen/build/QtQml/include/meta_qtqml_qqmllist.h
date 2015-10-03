@@ -24,7 +24,7 @@ void buildMetaClass_Global_qqmllist(D _d)
     (void)_d;
     using namespace cpgf;
     
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtQml_51")
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtQml_15")
     ;
 }
 
@@ -39,7 +39,7 @@ void buildMetaClass_QQmlListProperty(D _d)
     _d.CPGF_MD_TEMPLATE _constructor<void * (QObject *, QList< T * > &)>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (QObject *, void *, typename QQmlListProperty<T >::AppendFunction, typename QQmlListProperty<T >::CountFunction, typename QQmlListProperty<T >::AtFunction, typename QQmlListProperty<T >::ClearFunction)>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (QObject *, void *, typename QQmlListProperty<T >::CountFunction, typename QQmlListProperty<T >::AtFunction)>();
-    _d.CPGF_MD_TEMPLATE _field("object", &D::ClassType::object);
+    _d.CPGF_MD_TEMPLATE _field("object", &D::ClassType::object, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
     _d.CPGF_MD_TEMPLATE _field("data", &D::ClassType::data);
     _d.CPGF_MD_TEMPLATE _field("append", &D::ClassType::append);
     _d.CPGF_MD_TEMPLATE _field("count", &D::ClassType::count);

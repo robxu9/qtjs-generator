@@ -80,6 +80,8 @@ void buildMetaClass_QTimeZone(D _d)
     _d.CPGF_MD_TEMPLATE _method("previousTransition", &D::ClassType::previousTransition, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("transitions", &D::ClassType::transitions, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("systemTimeZoneId", &D::ClassType::systemTimeZoneId);
+    _d.CPGF_MD_TEMPLATE _method("systemTimeZone", &D::ClassType::systemTimeZone);
+    _d.CPGF_MD_TEMPLATE _method("utc", &D::ClassType::utc);
     _d.CPGF_MD_TEMPLATE _method("isTimeZoneIdAvailable", &D::ClassType::isTimeZoneIdAvailable, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("availableTimeZoneIds", (QList< QByteArray > (*) ())&D::ClassType::availableTimeZoneIds);
     _d.CPGF_MD_TEMPLATE _method("availableTimeZoneIds", (QList< QByteArray > (*) (QLocale::Country))&D::ClassType::availableTimeZoneIds);

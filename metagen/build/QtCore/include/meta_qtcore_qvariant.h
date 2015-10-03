@@ -102,6 +102,7 @@ void buildMetaClass_QAssociativeIterable(D _d)
     
     _d.CPGF_MD_TEMPLATE _method("begin", &D::ClassType::begin);
     _d.CPGF_MD_TEMPLATE _method("end", &D::ClassType::end);
+    _d.CPGF_MD_TEMPLATE _method("find", &D::ClassType::find, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("value", &D::ClassType::value, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("size", &D::ClassType::size);
     {
@@ -312,6 +313,7 @@ void buildMetaClass_QVariant(D _d)
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QEasingCurve &)>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QUuid &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QModelIndex &)>();
+    _d.CPGF_MD_TEMPLATE _constructor<void * (const QPersistentModelIndex &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QJsonValue &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QJsonObject &)>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QJsonArray &)>();
@@ -375,6 +377,7 @@ void buildMetaClass_QVariant(D _d)
     _d.CPGF_MD_TEMPLATE _method("toEasingCurve", &D::ClassType::toEasingCurve);
     _d.CPGF_MD_TEMPLATE _method("toUuid", &D::ClassType::toUuid);
     _d.CPGF_MD_TEMPLATE _method("toModelIndex", &D::ClassType::toModelIndex);
+    _d.CPGF_MD_TEMPLATE _method("toPersistentModelIndex", &D::ClassType::toPersistentModelIndex);
     _d.CPGF_MD_TEMPLATE _method("toJsonValue", &D::ClassType::toJsonValue);
     _d.CPGF_MD_TEMPLATE _method("toJsonObject", &D::ClassType::toJsonObject);
     _d.CPGF_MD_TEMPLATE _method("toJsonArray", &D::ClassType::toJsonArray);
@@ -422,6 +425,7 @@ void buildMetaClass_QVariant(D _d)
         ._element("EasingCurve", D::ClassType::EasingCurve)
         ._element("Uuid", D::ClassType::Uuid)
         ._element("ModelIndex", D::ClassType::ModelIndex)
+        ._element("PersistentModelIndex", D::ClassType::PersistentModelIndex)
         ._element("LastCoreType", D::ClassType::LastCoreType)
         ._element("Font", D::ClassType::Font)
         ._element("Pixmap", D::ClassType::Pixmap)

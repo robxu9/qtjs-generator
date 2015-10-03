@@ -27,6 +27,7 @@ void buildMetaClass_QQuickWindow(D _d)
     _d.CPGF_MD_TEMPLATE _constructor<void * (QWindow *)>()
         ._default(copyVariantFromCopyable(0))
     ;
+    _d.CPGF_MD_TEMPLATE _constructor<void * (QQuickRenderControl *)>();
     _d.CPGF_MD_TEMPLATE _field("staticMetaObject", &D::ClassType::staticMetaObject);
     _d.CPGF_MD_TEMPLATE _method("metaObject", &D::ClassType::metaObject);
     _d.CPGF_MD_TEMPLATE _method("qt_metacast", &D::ClassType::qt_metacast);
@@ -59,6 +60,9 @@ void buildMetaClass_QQuickWindow(D _d)
     _d.CPGF_MD_TEMPLATE _method("setPersistentSceneGraph", &D::ClassType::setPersistentSceneGraph);
     _d.CPGF_MD_TEMPLATE _method("isPersistentSceneGraph", &D::ClassType::isPersistentSceneGraph);
     _d.CPGF_MD_TEMPLATE _method("openglContext", &D::ClassType::openglContext);
+    _d.CPGF_MD_TEMPLATE _method("isSceneGraphInitialized", &D::ClassType::isSceneGraphInitialized);
+    _d.CPGF_MD_TEMPLATE _method("scheduleRenderJob", &D::ClassType::scheduleRenderJob);
+    _d.CPGF_MD_TEMPLATE _method("effectiveDevicePixelRatio", &D::ClassType::effectiveDevicePixelRatio);
     _d.CPGF_MD_TEMPLATE _method("frameSwapped", &D::ClassType::frameSwapped);
     _d.CPGF_MD_TEMPLATE _method("openglContextCreated", &D::ClassType::openglContextCreated);
     _d.CPGF_MD_TEMPLATE _method("sceneGraphInitialized", &D::ClassType::sceneGraphInitialized);
@@ -85,6 +89,13 @@ void buildMetaClass_QQuickWindow(D _d)
         ._element("TextureHasMipmaps", D::ClassType::TextureHasMipmaps)
         ._element("TextureOwnsGLTexture", D::ClassType::TextureOwnsGLTexture)
         ._element("TextureCanUseAtlas", D::ClassType::TextureCanUseAtlas)
+    ;
+    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::RenderStage>("RenderStage")
+        ._element("BeforeSynchronizingStage", D::ClassType::BeforeSynchronizingStage)
+        ._element("AfterSynchronizingStage", D::ClassType::AfterSynchronizingStage)
+        ._element("BeforeRenderingStage", D::ClassType::BeforeRenderingStage)
+        ._element("AfterRenderingStage", D::ClassType::AfterRenderingStage)
+        ._element("AfterSwapStage", D::ClassType::AfterSwapStage)
     ;
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::SceneGraphError>("SceneGraphError")
         ._element("ContextNotAvailable", D::ClassType::ContextNotAvailable)

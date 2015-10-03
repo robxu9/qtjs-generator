@@ -13,6 +13,7 @@
 #include "cpgf/gmetapolicy.h"
 
 
+using namespace QV4;
 
 
 namespace qt_metadata { 
@@ -40,6 +41,7 @@ void buildMetaClass_QJSValue(D _d)
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QString &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QLatin1String &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _constructor<void * (const char *)>();
+    _d.CPGF_MD_TEMPLATE _constructor<void * (QV4::ExecutionEngine *, quint64)>();
     _d.CPGF_MD_TEMPLATE _method("isBool", &D::ClassType::isBool);
     _d.CPGF_MD_TEMPLATE _method("isNumber", &D::ClassType::isNumber);
     _d.CPGF_MD_TEMPLATE _method("isNull", &D::ClassType::isNull);

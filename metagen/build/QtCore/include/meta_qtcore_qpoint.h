@@ -55,22 +55,22 @@ void buildMetaClass_Global_qpoint(D _d)
 }
 
 
-inline QPoint & opErAToRWrapper_QPoint__opAddAssign(QPoint * self, const QPoint & p) {
+inline Q_DECL_RELAXED_CONSTEXPR QPoint & opErAToRWrapper_QPoint__opAddAssign(QPoint * self, const QPoint & p) {
     return (*self) += p;
 }
-inline QPoint & opErAToRWrapper_QPoint__opSubAssign(QPoint * self, const QPoint & p) {
+inline Q_DECL_RELAXED_CONSTEXPR QPoint & opErAToRWrapper_QPoint__opSubAssign(QPoint * self, const QPoint & p) {
     return (*self) -= p;
 }
-inline QPoint & opErAToRWrapper_QPoint__opMulAssign(QPoint * self, float factor) {
+inline Q_DECL_RELAXED_CONSTEXPR QPoint & opErAToRWrapper_QPoint__opMulAssign(QPoint * self, float factor) {
     return (*self) *= factor;
 }
-inline QPoint & opErAToRWrapper_QPoint__opMulAssign(QPoint * self, double factor) {
+inline Q_DECL_RELAXED_CONSTEXPR QPoint & opErAToRWrapper_QPoint__opMulAssign(QPoint * self, double factor) {
     return (*self) *= factor;
 }
-inline QPoint & opErAToRWrapper_QPoint__opMulAssign(QPoint * self, int factor) {
+inline Q_DECL_RELAXED_CONSTEXPR QPoint & opErAToRWrapper_QPoint__opMulAssign(QPoint * self, int factor) {
     return (*self) *= factor;
 }
-inline QPoint & opErAToRWrapper_QPoint__opDivAssign(QPoint * self, qreal divisor) {
+inline Q_DECL_RELAXED_CONSTEXPR QPoint & opErAToRWrapper_QPoint__opDivAssign(QPoint * self, qreal divisor) {
     return (*self) /= divisor;
 }
 
@@ -92,31 +92,31 @@ void buildMetaClass_QPoint(D _d)
     _d.CPGF_MD_TEMPLATE _method("rx", &D::ClassType::rx);
     _d.CPGF_MD_TEMPLATE _method("ry", &D::ClassType::ry);
     _d.CPGF_MD_TEMPLATE _method("dotProduct", &D::ClassType::dotProduct);
-    _d.CPGF_MD_TEMPLATE _operator<QPoint & (*)(cpgf::GMetaSelf, const QPoint &)>(mopHolder += mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (QPoint & (*) (QPoint *, const QPoint &))&opErAToRWrapper_QPoint__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QPoint & (*)(cpgf::GMetaSelf, const QPoint &)>(mopHolder -= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (QPoint & (*) (QPoint *, const QPoint &))&opErAToRWrapper_QPoint__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QPoint & (*)(cpgf::GMetaSelf, float)>(mopHolder *= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (QPoint & (*) (QPoint *, float))&opErAToRWrapper_QPoint__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QPoint & (*)(cpgf::GMetaSelf, double)>(mopHolder *= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (QPoint & (*) (QPoint *, double))&opErAToRWrapper_QPoint__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QPoint & (*)(cpgf::GMetaSelf, int)>(mopHolder *= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (QPoint & (*) (QPoint *, int))&opErAToRWrapper_QPoint__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QPoint & (*)(cpgf::GMetaSelf, qreal)>(mopHolder /= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opDivAssign", (QPoint & (*) (QPoint *, qreal))&opErAToRWrapper_QPoint__opDivAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QPoint & (*)(cpgf::GMetaSelf, const QPoint &)>(mopHolder += mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (Q_DECL_RELAXED_CONSTEXPR QPoint & (*) (QPoint *, const QPoint &))&opErAToRWrapper_QPoint__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QPoint & (*)(cpgf::GMetaSelf, const QPoint &)>(mopHolder -= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (Q_DECL_RELAXED_CONSTEXPR QPoint & (*) (QPoint *, const QPoint &))&opErAToRWrapper_QPoint__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QPoint & (*)(cpgf::GMetaSelf, float)>(mopHolder *= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (Q_DECL_RELAXED_CONSTEXPR QPoint & (*) (QPoint *, float))&opErAToRWrapper_QPoint__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QPoint & (*)(cpgf::GMetaSelf, double)>(mopHolder *= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (Q_DECL_RELAXED_CONSTEXPR QPoint & (*) (QPoint *, double))&opErAToRWrapper_QPoint__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QPoint & (*)(cpgf::GMetaSelf, int)>(mopHolder *= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (Q_DECL_RELAXED_CONSTEXPR QPoint & (*) (QPoint *, int))&opErAToRWrapper_QPoint__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QPoint & (*)(cpgf::GMetaSelf, qreal)>(mopHolder /= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opDivAssign", (Q_DECL_RELAXED_CONSTEXPR QPoint & (*) (QPoint *, qreal))&opErAToRWrapper_QPoint__opDivAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
 }
 
 
-inline QPointF & opErAToRWrapper_QPointF__opAddAssign(QPointF * self, const QPointF & p) {
+inline Q_DECL_RELAXED_CONSTEXPR QPointF & opErAToRWrapper_QPointF__opAddAssign(QPointF * self, const QPointF & p) {
     return (*self) += p;
 }
-inline QPointF & opErAToRWrapper_QPointF__opSubAssign(QPointF * self, const QPointF & p) {
+inline Q_DECL_RELAXED_CONSTEXPR QPointF & opErAToRWrapper_QPointF__opSubAssign(QPointF * self, const QPointF & p) {
     return (*self) -= p;
 }
-inline QPointF & opErAToRWrapper_QPointF__opMulAssign(QPointF * self, qreal c) {
+inline Q_DECL_RELAXED_CONSTEXPR QPointF & opErAToRWrapper_QPointF__opMulAssign(QPointF * self, qreal c) {
     return (*self) *= c;
 }
-inline QPointF & opErAToRWrapper_QPointF__opDivAssign(QPointF * self, qreal c) {
+inline Q_DECL_RELAXED_CONSTEXPR QPointF & opErAToRWrapper_QPointF__opDivAssign(QPointF * self, qreal c) {
     return (*self) /= c;
 }
 
@@ -140,14 +140,14 @@ void buildMetaClass_QPointF(D _d)
     _d.CPGF_MD_TEMPLATE _method("ry", &D::ClassType::ry);
     _d.CPGF_MD_TEMPLATE _method("toPoint", &D::ClassType::toPoint);
     _d.CPGF_MD_TEMPLATE _method("dotProduct", &D::ClassType::dotProduct, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _operator<QPointF & (*)(cpgf::GMetaSelf, const QPointF &)>(mopHolder += mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (QPointF & (*) (QPointF *, const QPointF &))&opErAToRWrapper_QPointF__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QPointF & (*)(cpgf::GMetaSelf, const QPointF &)>(mopHolder -= mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (QPointF & (*) (QPointF *, const QPointF &))&opErAToRWrapper_QPointF__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QPointF & (*)(cpgf::GMetaSelf, qreal)>(mopHolder *= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (QPointF & (*) (QPointF *, qreal))&opErAToRWrapper_QPointF__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QPointF & (*)(cpgf::GMetaSelf, qreal)>(mopHolder /= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opDivAssign", (QPointF & (*) (QPointF *, qreal))&opErAToRWrapper_QPointF__opDivAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QPointF & (*)(cpgf::GMetaSelf, const QPointF &)>(mopHolder += mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (Q_DECL_RELAXED_CONSTEXPR QPointF & (*) (QPointF *, const QPointF &))&opErAToRWrapper_QPointF__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QPointF & (*)(cpgf::GMetaSelf, const QPointF &)>(mopHolder -= mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (Q_DECL_RELAXED_CONSTEXPR QPointF & (*) (QPointF *, const QPointF &))&opErAToRWrapper_QPointF__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QPointF & (*)(cpgf::GMetaSelf, qreal)>(mopHolder *= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (Q_DECL_RELAXED_CONSTEXPR QPointF & (*) (QPointF *, qreal))&opErAToRWrapper_QPointF__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QPointF & (*)(cpgf::GMetaSelf, qreal)>(mopHolder /= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opDivAssign", (Q_DECL_RELAXED_CONSTEXPR QPointF & (*) (QPointF *, qreal))&opErAToRWrapper_QPointF__opDivAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
 }
 
 

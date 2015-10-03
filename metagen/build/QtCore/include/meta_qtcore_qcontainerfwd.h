@@ -37,6 +37,7 @@ void buildMetaClass_QPair(D _d)
     _d.CPGF_MD_TEMPLATE _constructor<void * (const T1 &, const T2 &)>();
     _d.CPGF_MD_TEMPLATE _field("first", &D::ClassType::first);
     _d.CPGF_MD_TEMPLATE _field("second", &D::ClassType::second);
+    _d.CPGF_MD_TEMPLATE _method("swap", &D::ClassType::swap);
 }
 
 
@@ -47,7 +48,8 @@ void buildMetaClass_QQueue(D _d)
     using namespace cpgf;
     
     _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
-    _d.CPGF_MD_TEMPLATE _method("swap", &D::ClassType::swap);
+    _d.CPGF_MD_TEMPLATE _method("swap", (void (D::ClassType::*) (QQueue< T > &))&D::ClassType::swap);
+    _d.CPGF_MD_TEMPLATE _method("swap", (void (D::ClassType::*) (int, int))&D::ClassType::swap);
     _d.CPGF_MD_TEMPLATE _method("enqueue", &D::ClassType::enqueue);
     _d.CPGF_MD_TEMPLATE _method("dequeue", &D::ClassType::dequeue);
     _d.CPGF_MD_TEMPLATE _method("head", (T & (D::ClassType::*) ())&D::ClassType::head);
@@ -494,53 +496,53 @@ void buildMetaClass_QVarLengthArray(D _d)
 }
 
 
-template <class T>
+template <typename T>
 inline QVector< T > & opErAToRWrapper_QVector__opAssign(QVector<T > * self, const QVector< T > & v) {
     return (*self) = v;
 }
-template <class T>
+template <typename T>
 inline bool opErAToRWrapper_QVector__opEqual(const QVector<T > * self, const QVector< T > & v) {
     return (*self) == v;
 }
-template <class T>
+template <typename T>
 inline bool opErAToRWrapper_QVector__opNotEqual(const QVector<T > * self, const QVector< T > & v) {
     return (*self) != v;
 }
-template <class T>
+template <typename T>
 inline T & opErAToRWrapper_QVector__opArrayGet(QVector<T > * self, int i) {
     return (*self)[i];
 }
-template <class T>
+template <typename T>
 inline void opErAToRWrapper_QVector__opArraySet(QVector<T > * self, int i, const typename cpgf::RemoveReference<T & >::Result & OpsEt_vALue) {
     (*self)[i] = OpsEt_vALue;
 }
-template <class T>
+template <typename T>
 inline const T & opErAToRWrapper_QVector__opArrayGet(const QVector<T > * self, int i) {
     return (*self)[i];
 }
-template <class T>
+template <typename T>
 inline QVector< T > & opErAToRWrapper_QVector__opAddAssign(QVector<T > * self, const QVector< T > & l) {
     return (*self) += l;
 }
-template <class T>
+template <typename T>
 inline QVector< T > opErAToRWrapper_QVector__opAdd(const QVector<T > * self, const QVector< T > & l) {
     return (*self) + l;
 }
-template <class T>
+template <typename T>
 inline QVector< T > & opErAToRWrapper_QVector__opAddAssign(QVector<T > * self, const T & t) {
     return (*self) += t;
 }
-template <class T>
+template <typename T>
 inline QVector< T > & opErAToRWrapper_QVector__opLeftShift(QVector<T > * self, const T & t) {
     return (*self) << t;
 }
-template <class T>
+template <typename T>
 inline QVector< T > & opErAToRWrapper_QVector__opLeftShift(QVector<T > * self, const QVector< T > & l) {
     return (*self) << l;
 }
 
 
-template <typename D, class T>
+template <typename D, typename T>
 void buildMetaClass_QVector(D _d)
 {
     (void)_d;
@@ -565,7 +567,8 @@ void buildMetaClass_QVector(D _d)
     _d.CPGF_MD_TEMPLATE _method("constData", &D::ClassType::constData);
     _d.CPGF_MD_TEMPLATE _method("clear", &D::ClassType::clear);
     _d.CPGF_MD_TEMPLATE _method("at", &D::ClassType::at);
-    _d.CPGF_MD_TEMPLATE _method("append", &D::ClassType::append);
+    _d.CPGF_MD_TEMPLATE _method("append", (void (D::ClassType::*) (const T &))&D::ClassType::append);
+    _d.CPGF_MD_TEMPLATE _method("append", (void (D::ClassType::*) (const QVector< T > &))&D::ClassType::append, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("prepend", &D::ClassType::prepend);
     _d.CPGF_MD_TEMPLATE _method("insert", (void (D::ClassType::*) (int, const T &))&D::ClassType::insert);
     _d.CPGF_MD_TEMPLATE _method("insert", (void (D::ClassType::*) (int, int, const T &))&D::ClassType::insert);
@@ -588,6 +591,8 @@ void buildMetaClass_QVector(D _d)
     _d.CPGF_MD_TEMPLATE _method("contains", &D::ClassType::contains);
     _d.CPGF_MD_TEMPLATE _method("count", (int (D::ClassType::*) (const T &) const)&D::ClassType::count);
     _d.CPGF_MD_TEMPLATE _method("removeAt", &D::ClassType::removeAt);
+    _d.CPGF_MD_TEMPLATE _method("removeAll", &D::ClassType::removeAll);
+    _d.CPGF_MD_TEMPLATE _method("removeOne", &D::ClassType::removeOne);
     _d.CPGF_MD_TEMPLATE _method("length", &D::ClassType::length);
     _d.CPGF_MD_TEMPLATE _method("takeAt", &D::ClassType::takeAt);
     _d.CPGF_MD_TEMPLATE _method("begin", (typename QVector<T >::iterator (D::ClassType::*) ())&D::ClassType::begin);

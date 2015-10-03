@@ -78,11 +78,11 @@ GDefineMetaInfo createMetaClass_QToolBar()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
     {
-        GDefineMetaClass<QToolBar, QWidget> _nd = GDefineMetaClass<QToolBar, QWidget>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QToolBar", &buildMetaClass_QToolBar);
+        GDefineMetaClass<QToolBar, QWidget> _nd = GDefineMetaClass<QToolBar, QWidget>::Policy<MakePolicy<GMetaRuleDestructorAbsent, GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QToolBar", &buildMetaClass_QToolBar);
         _d._class(_nd);
     }
     {
-        GDefineMetaClass<QToolBarWrapper, QToolBar> _nd = GDefineMetaClass<QToolBarWrapper, QToolBar>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QToolBarWrapper", &buildMetaClass_QToolBarWrapper);
+        GDefineMetaClass<QToolBarWrapper, QToolBar> _nd = GDefineMetaClass<QToolBarWrapper, QToolBar>::Policy<MakePolicy<GMetaRuleDestructorAbsent, GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QToolBarWrapper", &buildMetaClass_QToolBarWrapper);
         _d._class(_nd);
     }
     return _d.getMetaInfo();

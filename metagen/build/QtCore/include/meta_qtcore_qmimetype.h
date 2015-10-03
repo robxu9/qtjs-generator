@@ -18,6 +18,16 @@
 namespace qt_metadata { 
 
 
+template <typename D>
+void buildMetaClass_Global_qmimetype(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _operator<QDebug (*)(QDebug, const QMimeType &)>(mopHolder << mopHolder);
+}
+
+
 inline QMimeType & opErAToRWrapper_QMimeType__opAssign(QMimeType * self, const QMimeType & other) {
     return (*self) = other;
 }

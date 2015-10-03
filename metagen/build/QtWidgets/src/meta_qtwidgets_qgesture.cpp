@@ -74,6 +74,17 @@ namespace qt_metadata {
 #ifdef CPGF_METAGEN_LINKAGE_SPEC
 CPGF_METAGEN_LINKAGE_SPEC
 #endif
+GDefineMetaInfo createMetaClass_Global_qgesture()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    buildMetaClass_Global_qgesture(_d);
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
 GDefineMetaInfo createMetaClass_QGesture()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();

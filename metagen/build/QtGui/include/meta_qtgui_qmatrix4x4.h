@@ -82,6 +82,7 @@ void buildMetaClass_QMatrix4x4(D _d)
     using namespace cpgf;
     
     _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
+    _d.CPGF_MD_TEMPLATE _constructor<void * (Qt::Initialization)>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (const float *)>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float)>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (const float *, int, int)>();
@@ -91,6 +92,7 @@ void buildMetaClass_QMatrix4x4(D _d)
     _d.CPGF_MD_TEMPLATE _method("setColumn", &D::ClassType::setColumn, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("row", &D::ClassType::row);
     _d.CPGF_MD_TEMPLATE _method("setRow", &D::ClassType::setRow, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("isAffine", &D::ClassType::isAffine);
     _d.CPGF_MD_TEMPLATE _method("isIdentity", &D::ClassType::isIdentity);
     _d.CPGF_MD_TEMPLATE _method("setToIdentity", &D::ClassType::setToIdentity);
     _d.CPGF_MD_TEMPLATE _method("fill", &D::ClassType::fill);
@@ -118,6 +120,11 @@ void buildMetaClass_QMatrix4x4(D _d)
     _d.CPGF_MD_TEMPLATE _method("frustum", &D::ClassType::frustum);
     _d.CPGF_MD_TEMPLATE _method("perspective", &D::ClassType::perspective);
     _d.CPGF_MD_TEMPLATE _method("lookAt", &D::ClassType::lookAt, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleCopyConstReference<2> >());
+    _d.CPGF_MD_TEMPLATE _method("viewport", (void (D::ClassType::*) (const QRectF &))&D::ClassType::viewport, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
+    _d.CPGF_MD_TEMPLATE _method("viewport", (void (D::ClassType::*) (float, float, float, float, float, float))&D::ClassType::viewport)
+        ._default(copyVariantFromCopyable(1.0f))
+        ._default(copyVariantFromCopyable(0.0f))
+    ;
     _d.CPGF_MD_TEMPLATE _method("flipCoordinates", &D::ClassType::flipCoordinates);
     _d.CPGF_MD_TEMPLATE _method("copyDataTo", &D::ClassType::copyDataTo);
     _d.CPGF_MD_TEMPLATE _method("toAffine", &D::ClassType::toAffine);

@@ -13,7 +13,6 @@
 #include "cpgf/gmetapolicy.h"
 
 
-using namespace QV4;
 using namespace QQmlJS;
 using namespace QQmlJS::AST;
 

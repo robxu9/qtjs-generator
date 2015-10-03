@@ -47,6 +47,7 @@ void buildMetaClass_QOpenGLBuffer(D _d)
     _d.CPGF_MD_TEMPLATE _method("allocate", (void (D::ClassType::*) (const void *, int))&D::ClassType::allocate);
     _d.CPGF_MD_TEMPLATE _method("allocate", (void (D::ClassType::*) (int))&D::ClassType::allocate);
     _d.CPGF_MD_TEMPLATE _method("map", &D::ClassType::map);
+    _d.CPGF_MD_TEMPLATE _method("mapRange", &D::ClassType::mapRange);
     _d.CPGF_MD_TEMPLATE _method("unmap", &D::ClassType::unmap);
     _d.CPGF_MD_TEMPLATE _method("release", (void (*) (QOpenGLBuffer::Type))&D::ClassType::release);
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::Type>("Type")
@@ -71,8 +72,20 @@ void buildMetaClass_QOpenGLBuffer(D _d)
         ._element("WriteOnly", D::ClassType::WriteOnly)
         ._element("ReadWrite", D::ClassType::ReadWrite)
     ;
+    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::RangeAccessFlag>("RangeAccessFlag")
+        ._element("RangeRead", D::ClassType::RangeRead)
+        ._element("RangeWrite", D::ClassType::RangeWrite)
+        ._element("RangeInvalidate", D::ClassType::RangeInvalidate)
+        ._element("RangeInvalidateBuffer", D::ClassType::RangeInvalidateBuffer)
+        ._element("RangeFlushExplicit", D::ClassType::RangeFlushExplicit)
+        ._element("RangeUnsynchronized", D::ClassType::RangeUnsynchronized)
+    ;
     _d.CPGF_MD_TEMPLATE _operator<QOpenGLBuffer & (*)(cpgf::GMetaSelf, const QOpenGLBuffer &)>(mopHolder = mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("_opAssign", (QOpenGLBuffer & (*) (QOpenGLBuffer *, const QOpenGLBuffer &))&opErAToRWrapper_QOpenGLBuffer__opAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    {
+        GDefineMetaClass<QFlags<typename QOpenGLBuffer::RangeAccessFlag > > _t_d = GDefineMetaClass<QFlags<typename QOpenGLBuffer::RangeAccessFlag > >::lazyDeclare("RangeAccessFlags", &buildMetaClass_QFlags<GDefineMetaClass<QFlags<typename QOpenGLBuffer::RangeAccessFlag > >, typename QOpenGLBuffer::RangeAccessFlag >);
+        _d._class(_t_d);
+    }
 }
 
 

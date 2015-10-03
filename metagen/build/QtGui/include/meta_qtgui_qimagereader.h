@@ -56,6 +56,11 @@ void buildMetaClass_QImageReader(D _d)
     _d.CPGF_MD_TEMPLATE _method("setBackgroundColor", &D::ClassType::setBackgroundColor, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("backgroundColor", &D::ClassType::backgroundColor);
     _d.CPGF_MD_TEMPLATE _method("supportsAnimation", &D::ClassType::supportsAnimation);
+    _d.CPGF_MD_TEMPLATE _method("transformation", &D::ClassType::transformation);
+    _d.CPGF_MD_TEMPLATE _method("setAutoTransform", &D::ClassType::setAutoTransform);
+    _d.CPGF_MD_TEMPLATE _method("autoTransform", &D::ClassType::autoTransform);
+    _d.CPGF_MD_TEMPLATE _method("subType", &D::ClassType::subType);
+    _d.CPGF_MD_TEMPLATE _method("supportedSubTypes", &D::ClassType::supportedSubTypes);
     _d.CPGF_MD_TEMPLATE _method("canRead", &D::ClassType::canRead);
     _d.CPGF_MD_TEMPLATE _method("read", (QImage (D::ClassType::*) ())&D::ClassType::read, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1> >());
     _d.CPGF_MD_TEMPLATE _method("read", (bool (D::ClassType::*) (QImage *))&D::ClassType::read);

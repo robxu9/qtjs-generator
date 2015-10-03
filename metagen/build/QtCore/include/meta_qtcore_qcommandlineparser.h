@@ -27,6 +27,7 @@ void buildMetaClass_QCommandLineParser(D _d)
     _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
     _d.CPGF_MD_TEMPLATE _method("setSingleDashWordOptionMode", &D::ClassType::setSingleDashWordOptionMode);
     _d.CPGF_MD_TEMPLATE _method("addOption", &D::ClassType::addOption, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
+    _d.CPGF_MD_TEMPLATE _method("addOptions", &D::ClassType::addOptions);
     _d.CPGF_MD_TEMPLATE _method("addVersionOption", &D::ClassType::addVersionOption);
     _d.CPGF_MD_TEMPLATE _method("addHelpOption", &D::ClassType::addHelpOption);
     _d.CPGF_MD_TEMPLATE _method("setApplicationDescription", &D::ClassType::setApplicationDescription, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
@@ -48,6 +49,7 @@ void buildMetaClass_QCommandLineParser(D _d)
     _d.CPGF_MD_TEMPLATE _method("positionalArguments", &D::ClassType::positionalArguments);
     _d.CPGF_MD_TEMPLATE _method("optionNames", &D::ClassType::optionNames);
     _d.CPGF_MD_TEMPLATE _method("unknownOptionNames", &D::ClassType::unknownOptionNames);
+    _d.CPGF_MD_TEMPLATE _method("showVersion", &D::ClassType::showVersion);
     _d.CPGF_MD_TEMPLATE _method("showHelp", &D::ClassType::showHelp)
         ._default(copyVariantFromCopyable(0))
     ;

@@ -19,6 +19,16 @@ namespace qt_metadata {
 
 
 template <typename D>
+void buildMetaClass_Global_qtouchdevice(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _operator<QDebug (*)(QDebug, const QTouchDevice *)>(mopHolder << mopHolder);
+}
+
+
+template <typename D>
 void buildMetaClass_QTouchDevice(D _d)
 {
     (void)_d;
@@ -45,6 +55,7 @@ void buildMetaClass_QTouchDevice(D _d)
         ._element("Velocity", D::ClassType::Velocity)
         ._element("RawPositions", D::ClassType::RawPositions)
         ._element("NormalizedPosition", D::ClassType::NormalizedPosition)
+        ._element("MouseEmulation", D::ClassType::MouseEmulation)
     ;
     {
         GDefineMetaClass<QFlags<typename QTouchDevice::CapabilityFlag > > _t_d = GDefineMetaClass<QFlags<typename QTouchDevice::CapabilityFlag > >::lazyDeclare("Capabilities", &buildMetaClass_QFlags<GDefineMetaClass<QFlags<typename QTouchDevice::CapabilityFlag > >, typename QTouchDevice::CapabilityFlag >);

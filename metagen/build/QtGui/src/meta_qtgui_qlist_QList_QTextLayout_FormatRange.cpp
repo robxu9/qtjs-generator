@@ -23,7 +23,7 @@ GDefineMetaInfo createMetaClass_QList_TemplateInstance_QList_QTextLayout_FormatR
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
     {
-        GDefineMetaClass<QList<QTextLayout::FormatRange> > _nd = GDefineMetaClass<QList<QTextLayout::FormatRange> >::lazyDeclare("QList_QTextLayout_FormatRange", &buildMetaClass_QList<GDefineMetaClass<QList<QTextLayout::FormatRange> >, QTextLayout::FormatRange >);
+        GDefineMetaClass<QList<QTextLayout::FormatRange>, QListSpecialMethods< T > > _nd = GDefineMetaClass<QList<QTextLayout::FormatRange>, QListSpecialMethods< T > >::lazyDeclare("QList_QTextLayout_FormatRange", &buildMetaClass_QList<GDefineMetaClass<QList<QTextLayout::FormatRange>, QListSpecialMethods< T > >, QTextLayout::FormatRange >);
         _d._class(_nd);
     }
     return _d.getMetaInfo();

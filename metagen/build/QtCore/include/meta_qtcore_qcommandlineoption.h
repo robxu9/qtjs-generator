@@ -29,13 +29,13 @@ void buildMetaClass_QCommandLineOption(D _d)
     (void)_d;
     using namespace cpgf;
     
+    _d.CPGF_MD_TEMPLATE _constructor<void * (const QString &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
+    _d.CPGF_MD_TEMPLATE _constructor<void * (const QStringList &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QString &, const QString &, const QString &, const QString &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleCopyConstReference<2>, cpgf::GMetaRuleCopyConstReference<3> >())
-        ._default(copyVariantFromCopyable(QString()))
         ._default(copyVariantFromCopyable(QString()))
         ._default(copyVariantFromCopyable(QString()))
     ;
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QStringList &, const QString &, const QString &, const QString &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleCopyConstReference<2>, cpgf::GMetaRuleCopyConstReference<3> >())
-        ._default(copyVariantFromCopyable(QString()))
         ._default(copyVariantFromCopyable(QString()))
         ._default(copyVariantFromCopyable(QString()))
     ;

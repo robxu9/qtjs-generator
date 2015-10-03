@@ -19,6 +19,17 @@ namespace qt_metadata {
 #ifdef CPGF_METAGEN_LINKAGE_SPEC
 CPGF_METAGEN_LINKAGE_SPEC
 #endif
+GDefineMetaInfo createMetaClass_Global_qtouchdevice()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    buildMetaClass_Global_qtouchdevice(_d);
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
 GDefineMetaInfo createMetaClass_QTouchDevice()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();

@@ -30,13 +30,15 @@ void buildMetaClass_Global_quuid(D _d)
     _d.CPGF_MD_TEMPLATE _operator<QDataStream & (*)(QDataStream &, const QUuid &)>(mopHolder << mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1>, cpgf::GMetaRuleParamNoncopyable<0>, cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _operator<QDataStream & (*)(QDataStream &, QUuid &)>(mopHolder >> mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1>, cpgf::GMetaRuleParamNoncopyable<0> >());
     _d.CPGF_MD_TEMPLATE _operator<QDebug (*)(QDebug, const QUuid &)>(mopHolder << mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _operator<bool (*)(const QUuid &, const QUuid &)>(mopHolder <= mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _operator<bool (*)(const QUuid &, const QUuid &)>(mopHolder >= mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1> >());
 }
 
 
-inline bool opErAToRWrapper_QUuid__opEqual(const QUuid * self, const QUuid & orig) {
+inline Q_DECL_RELAXED_CONSTEXPR bool opErAToRWrapper_QUuid__opEqual(const QUuid * self, const QUuid & orig) {
     return (*self) == orig;
 }
-inline bool opErAToRWrapper_QUuid__opNotEqual(const QUuid * self, const QUuid & orig) {
+inline Q_DECL_RELAXED_CONSTEXPR bool opErAToRWrapper_QUuid__opNotEqual(const QUuid * self, const QUuid & orig) {
     return (*self) != orig;
 }
 inline bool opErAToRWrapper_QUuid__opLess(const QUuid * self, const QUuid & other) {
@@ -90,10 +92,10 @@ void buildMetaClass_QUuid(D _d)
         ._element("Random", D::ClassType::Random)
         ._element("Sha1", D::ClassType::Sha1)
     ;
-    _d.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QUuid &)>(mopHolder == mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _method("_opEqual", (bool (*) (const QUuid *, const QUuid &))&opErAToRWrapper_QUuid__opEqual, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QUuid &)>(mopHolder != mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _method("_opNotEqual", (bool (*) (const QUuid *, const QUuid &))&opErAToRWrapper_QUuid__opNotEqual, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR bool (*)(const cpgf::GMetaSelf &, const QUuid &)>(mopHolder == mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opEqual", (Q_DECL_RELAXED_CONSTEXPR bool (*) (const QUuid *, const QUuid &))&opErAToRWrapper_QUuid__opEqual, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR bool (*)(const cpgf::GMetaSelf &, const QUuid &)>(mopHolder != mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opNotEqual", (Q_DECL_RELAXED_CONSTEXPR bool (*) (const QUuid *, const QUuid &))&opErAToRWrapper_QUuid__opNotEqual, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
     _d.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QUuid &)>(mopHolder < mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("_opLess", (bool (*) (const QUuid *, const QUuid &))&opErAToRWrapper_QUuid__opLess, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
     _d.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QUuid &)>(mopHolder > mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());

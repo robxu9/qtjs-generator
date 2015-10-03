@@ -24,7 +24,7 @@ void buildMetaClass_Global_qmetaobject(D _d)
     (void)_d;
     using namespace cpgf;
     
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtCore_32")
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtCore_33")
         ._element("Q_METAMETHOD_INVOKE_MAX_ARGS", Q_METAMETHOD_INVOKE_MAX_ARGS)
     ;
     _d.CPGF_MD_TEMPLATE _operator<bool (*)(const QMetaMethod &, const QMetaMethod &)>(mopHolder == mopHolder);
@@ -142,6 +142,30 @@ void buildMetaClass_QMetaMethod(D _d)
         ._default(copyVariantFromCopyable(QGenericArgument()))
         ._default(copyVariantFromCopyable(QGenericArgument(0)))
     ;
+    _d.CPGF_MD_TEMPLATE _method("invokeOnGadget", (bool (D::ClassType::*) (void *, QGenericReturnArgument, QGenericArgument, QGenericArgument, QGenericArgument, QGenericArgument, QGenericArgument, QGenericArgument, QGenericArgument, QGenericArgument, QGenericArgument, QGenericArgument) const)&D::ClassType::invokeOnGadget)
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument(0)))
+    ;
+    _d.CPGF_MD_TEMPLATE _method("invokeOnGadget", (bool (D::ClassType::*) (void *, QGenericArgument, QGenericArgument, QGenericArgument, QGenericArgument, QGenericArgument, QGenericArgument, QGenericArgument, QGenericArgument, QGenericArgument, QGenericArgument) const)&D::ClassType::invokeOnGadget)
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument()))
+        ._default(copyVariantFromCopyable(QGenericArgument(0)))
+    ;
     _d.CPGF_MD_TEMPLATE _method("isValid", &D::ClassType::isValid);
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::Access>("Access")
         ._element("Private", D::ClassType::Private)
@@ -204,6 +228,9 @@ void buildMetaClass_QMetaProperty(D _d)
     _d.CPGF_MD_TEMPLATE _method("read", &D::ClassType::read);
     _d.CPGF_MD_TEMPLATE _method("write", &D::ClassType::write, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("reset", &D::ClassType::reset);
+    _d.CPGF_MD_TEMPLATE _method("readOnGadget", &D::ClassType::readOnGadget);
+    _d.CPGF_MD_TEMPLATE _method("writeOnGadget", &D::ClassType::writeOnGadget, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("resetOnGadget", &D::ClassType::resetOnGadget);
     _d.CPGF_MD_TEMPLATE _method("hasStdCppSet", &D::ClassType::hasStdCppSet);
     _d.CPGF_MD_TEMPLATE _method("isValid", &D::ClassType::isValid);
     _d.CPGF_MD_TEMPLATE _method("enclosingMetaObject", &D::ClassType::enclosingMetaObject);

@@ -137,6 +137,7 @@ void buildMetaClass_QByteArray(D _d)
     _d.CPGF_MD_TEMPLATE _constructor<void * (int, Qt::Initialization)>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QByteArray &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _constructor<void * (QByteArrayDataPtr)>();
+    _d.CPGF_MD_TEMPLATE _field("MaxSize", &D::ClassType::MaxSize);
     _d.CPGF_MD_TEMPLATE _method("swap", &D::ClassType::swap);
     _d.CPGF_MD_TEMPLATE _method("size", &D::ClassType::size);
     _d.CPGF_MD_TEMPLATE _method("isEmpty", &D::ClassType::isEmpty);
@@ -328,6 +329,7 @@ void buildMetaClass_QByteArray(D _d)
     _d.CPGF_MD_TEMPLATE _method("push_front", (void (D::ClassType::*) (char))&D::ClassType::push_front);
     _d.CPGF_MD_TEMPLATE _method("push_front", (void (D::ClassType::*) (const char *))&D::ClassType::push_front);
     _d.CPGF_MD_TEMPLATE _method("push_front", (void (D::ClassType::*) (const QByteArray &))&D::ClassType::push_front, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
+    _d.CPGF_MD_TEMPLATE _method("toStdString", &D::ClassType::toStdString);
     _d.CPGF_MD_TEMPLATE _method("count", (int (D::ClassType::*) () const)&D::ClassType::count);
     _d.CPGF_MD_TEMPLATE _method("length", &D::ClassType::length);
     _d.CPGF_MD_TEMPLATE _method("isNull", &D::ClassType::isNull);
@@ -355,6 +357,7 @@ void buildMetaClass_QByteArray(D _d)
     _d.CPGF_MD_TEMPLATE _method("fromPercentEncoding", &D::ClassType::fromPercentEncoding, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >())
         ._default(copyVariantFromCopyable('%'))
     ;
+    _d.CPGF_MD_TEMPLATE _method("fromStdString", &D::ClassType::fromStdString);
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::Base64Option>("Base64Option")
         ._element("Base64Encoding", D::ClassType::Base64Encoding)
         ._element("Base64UrlEncoding", D::ClassType::Base64UrlEncoding)

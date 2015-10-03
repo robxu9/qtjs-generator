@@ -24,7 +24,7 @@ void buildMetaClass_Global_qapplication(D _d)
     (void)_d;
     using namespace cpgf;
     
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtWidgets_5")
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtWidgets_6")
         ._element("qApp", qApp)
     ;
 }
@@ -58,7 +58,6 @@ void buildMetaClass_QApplication(D _d)
     _d.CPGF_MD_TEMPLATE _method("setStyle", (QStyle * (*) (const QString &))&D::ClassType::setStyle, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("colorSpec", &D::ClassType::colorSpec);
     _d.CPGF_MD_TEMPLATE _method("setColorSpec", &D::ClassType::setColorSpec);
-    _d.CPGF_MD_TEMPLATE _method("palette", (QPalette (*) ())&D::ClassType::palette);
     _d.CPGF_MD_TEMPLATE _method("palette", (QPalette (*) (const QWidget *))&D::ClassType::palette);
     _d.CPGF_MD_TEMPLATE _method("palette", (QPalette (*) (const char *))&D::ClassType::palette);
     _d.CPGF_MD_TEMPLATE _method("setPalette", &D::ClassType::setPalette, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >())

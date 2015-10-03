@@ -114,6 +114,7 @@ void buildMetaClass_QJsonParseError(D _d)
         ._element("MissingObject", D::ClassType::MissingObject)
         ._element("DeepNesting", D::ClassType::DeepNesting)
         ._element("DocumentTooLarge", D::ClassType::DocumentTooLarge)
+        ._element("GarbageAtEnd", D::ClassType::GarbageAtEnd)
     ;
 }
 

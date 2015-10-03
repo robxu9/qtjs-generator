@@ -107,8 +107,6 @@ void buildMetaClass_QFont(D _d)
     _d.CPGF_MD_TEMPLATE _method("capitalization", &D::ClassType::capitalization);
     _d.CPGF_MD_TEMPLATE _method("setHintingPreference", &D::ClassType::setHintingPreference);
     _d.CPGF_MD_TEMPLATE _method("hintingPreference", &D::ClassType::hintingPreference);
-    _d.CPGF_MD_TEMPLATE _method("rawMode", &D::ClassType::rawMode);
-    _d.CPGF_MD_TEMPLATE _method("setRawMode", &D::ClassType::setRawMode);
     _d.CPGF_MD_TEMPLATE _method("exactMatch", &D::ClassType::exactMatch);
     _d.CPGF_MD_TEMPLATE _method("isCopyOf", &D::ClassType::isCopyOf, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("key", &D::ClassType::key);
@@ -156,6 +154,7 @@ void buildMetaClass_QFont(D _d)
         ._element("NoAntialias", D::ClassType::NoAntialias)
         ._element("OpenGLCompatible", D::ClassType::OpenGLCompatible)
         ._element("ForceIntegerMetrics", D::ClassType::ForceIntegerMetrics)
+        ._element("NoSubpixelAntialias", D::ClassType::NoSubpixelAntialias)
         ._element("NoFontMerging", D::ClassType::NoFontMerging)
     ;
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::HintingPreference>("HintingPreference")
@@ -165,10 +164,14 @@ void buildMetaClass_QFont(D _d)
         ._element("PreferFullHinting", D::ClassType::PreferFullHinting)
     ;
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::Weight>("Weight")
+        ._element("Thin", D::ClassType::Thin)
+        ._element("ExtraLight", D::ClassType::ExtraLight)
         ._element("Light", D::ClassType::Light)
         ._element("Normal", D::ClassType::Normal)
+        ._element("Medium", D::ClassType::Medium)
         ._element("DemiBold", D::ClassType::DemiBold)
         ._element("Bold", D::ClassType::Bold)
+        ._element("ExtraBold", D::ClassType::ExtraBold)
         ._element("Black", D::ClassType::Black)
     ;
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::Style>("Style")

@@ -25,7 +25,8 @@ void buildMetaClass_Global_qstring(D _d)
     (void)_d;
     using namespace cpgf;
     
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtCore_22")
+    _d.CPGF_MD_TEMPLATE _method("QT_WARNING_DISABLE_MSVC", (QT_WARNING_PUSH (*) (4127))&QT_WARNING_DISABLE_MSVC);
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtCore_23")
     ;
     _d.CPGF_MD_TEMPLATE _operator<bool (*)(QString::Null, QString::Null)>(mopHolder == mopHolder);
     _d.CPGF_MD_TEMPLATE _operator<bool (*)(QString::Null, const QString &)>(mopHolder == mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
@@ -582,9 +583,11 @@ void buildMetaClass_QString(D _d)
     _d.CPGF_MD_TEMPLATE _method("indexOf", (int (D::ClassType::*) (const QRegularExpression &, int) const)&D::ClassType::indexOf, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >())
         ._default(copyVariantFromCopyable(0))
     ;
+    _d.CPGF_MD_TEMPLATE _method("indexOf", (int (D::ClassType::*) (const QRegularExpression &, int, QRegularExpressionMatch *) const)&D::ClassType::indexOf, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("lastIndexOf", (int (D::ClassType::*) (const QRegularExpression &, int) const)&D::ClassType::lastIndexOf, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >())
         ._default(copyVariantFromCopyable(-1))
     ;
+    _d.CPGF_MD_TEMPLATE _method("lastIndexOf", (int (D::ClassType::*) (const QRegularExpression &, int, QRegularExpressionMatch *) const)&D::ClassType::lastIndexOf, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("contains", (bool (D::ClassType::*) (const QRegularExpression &) const)&D::ClassType::contains, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("contains", (bool (D::ClassType::*) (const QRegularExpression &, QRegularExpressionMatch *) const)&D::ClassType::contains, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("count", (int (D::ClassType::*) (const QRegularExpression &) const)&D::ClassType::count, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
@@ -706,14 +709,28 @@ void buildMetaClass_QString(D _d)
         ._default(copyVariantFromCopyable(Qt::CaseSensitive))
         ._default(copyVariantFromCopyable(QString::KeepEmptyParts))
     ;
+    _d.CPGF_MD_TEMPLATE _method("splitRef", (QVector< QStringRef > (D::ClassType::*) (const QString &, QString::SplitBehavior, Qt::CaseSensitivity) const)&D::ClassType::splitRef, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >())
+        ._default(copyVariantFromCopyable(Qt::CaseSensitive))
+        ._default(copyVariantFromCopyable(QString::KeepEmptyParts))
+    ;
     _d.CPGF_MD_TEMPLATE _method("split", (QStringList (D::ClassType::*) (QChar, QString::SplitBehavior, Qt::CaseSensitivity) const)&D::ClassType::split)
+        ._default(copyVariantFromCopyable(Qt::CaseSensitive))
+        ._default(copyVariantFromCopyable(QString::KeepEmptyParts))
+    ;
+    _d.CPGF_MD_TEMPLATE _method("splitRef", (QVector< QStringRef > (D::ClassType::*) (QChar, QString::SplitBehavior, Qt::CaseSensitivity) const)&D::ClassType::splitRef)
         ._default(copyVariantFromCopyable(Qt::CaseSensitive))
         ._default(copyVariantFromCopyable(QString::KeepEmptyParts))
     ;
     _d.CPGF_MD_TEMPLATE _method("split", (QStringList (D::ClassType::*) (const QRegExp &, QString::SplitBehavior) const)&D::ClassType::split, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >())
         ._default(copyVariantFromCopyable(QString::KeepEmptyParts))
     ;
+    _d.CPGF_MD_TEMPLATE _method("splitRef", (QVector< QStringRef > (D::ClassType::*) (const QRegExp &, QString::SplitBehavior) const)&D::ClassType::splitRef, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >())
+        ._default(copyVariantFromCopyable(QString::KeepEmptyParts))
+    ;
     _d.CPGF_MD_TEMPLATE _method("split", (QStringList (D::ClassType::*) (const QRegularExpression &, QString::SplitBehavior) const)&D::ClassType::split, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >())
+        ._default(copyVariantFromCopyable(QString::KeepEmptyParts))
+    ;
+    _d.CPGF_MD_TEMPLATE _method("splitRef", (QVector< QStringRef > (D::ClassType::*) (const QRegularExpression &, QString::SplitBehavior) const)&D::ClassType::splitRef, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >())
         ._default(copyVariantFromCopyable(QString::KeepEmptyParts))
     ;
     _d.CPGF_MD_TEMPLATE _method("normalized", &D::ClassType::normalized)
@@ -832,6 +849,7 @@ void buildMetaClass_QString(D _d)
     _d.CPGF_MD_TEMPLATE _method("isSimpleText", &D::ClassType::isSimpleText);
     _d.CPGF_MD_TEMPLATE _method("isRightToLeft", &D::ClassType::isRightToLeft);
     _d.CPGF_MD_TEMPLATE _method("data_ptr", &D::ClassType::data_ptr);
+    _d.CPGF_MD_TEMPLATE _method("vasprintf", &D::ClassType::vasprintf);
     _d.CPGF_MD_TEMPLATE _method("fromLatin1", (QString (*) (const char *, int))&D::ClassType::fromLatin1)
         ._default(copyVariantFromCopyable(-1))
     ;
@@ -1096,6 +1114,14 @@ void buildMetaClass_QStringRef(D _d)
     _d.CPGF_MD_TEMPLATE _method("count", (int (D::ClassType::*) (const QStringRef &, Qt::CaseSensitivity) const)&D::ClassType::count, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >())
         ._default(copyVariantFromCopyable(Qt::CaseSensitive))
     ;
+    _d.CPGF_MD_TEMPLATE _method("split", (QVector< QStringRef > (D::ClassType::*) (const QString &, QString::SplitBehavior, Qt::CaseSensitivity) const)&D::ClassType::split, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >())
+        ._default(copyVariantFromCopyable(Qt::CaseSensitive))
+        ._default(copyVariantFromCopyable(QString::KeepEmptyParts))
+    ;
+    _d.CPGF_MD_TEMPLATE _method("split", (QVector< QStringRef > (D::ClassType::*) (QChar, QString::SplitBehavior, Qt::CaseSensitivity) const)&D::ClassType::split)
+        ._default(copyVariantFromCopyable(Qt::CaseSensitive))
+        ._default(copyVariantFromCopyable(QString::KeepEmptyParts))
+    ;
     _d.CPGF_MD_TEMPLATE _method("left", &D::ClassType::left);
     _d.CPGF_MD_TEMPLATE _method("right", &D::ClassType::right);
     _d.CPGF_MD_TEMPLATE _method("mid", &D::ClassType::mid)
@@ -1128,6 +1154,10 @@ void buildMetaClass_QStringRef(D _d)
     _d.CPGF_MD_TEMPLATE _method("unicode", &D::ClassType::unicode);
     _d.CPGF_MD_TEMPLATE _method("data", &D::ClassType::data);
     _d.CPGF_MD_TEMPLATE _method("constData", &D::ClassType::constData);
+    _d.CPGF_MD_TEMPLATE _method("begin", &D::ClassType::begin);
+    _d.CPGF_MD_TEMPLATE _method("cbegin", &D::ClassType::cbegin);
+    _d.CPGF_MD_TEMPLATE _method("end", &D::ClassType::end);
+    _d.CPGF_MD_TEMPLATE _method("cend", &D::ClassType::cend);
     _d.CPGF_MD_TEMPLATE _method("toLatin1", &D::ClassType::toLatin1);
     _d.CPGF_MD_TEMPLATE _method("toUtf8", &D::ClassType::toUtf8);
     _d.CPGF_MD_TEMPLATE _method("toLocal8Bit", &D::ClassType::toLocal8Bit);

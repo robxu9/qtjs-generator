@@ -202,6 +202,9 @@ void buildMetaClass_QTextStream(D _d)
     _d.CPGF_MD_TEMPLATE _method("readLine", &D::ClassType::readLine)
         ._default(copyVariantFromCopyable(0))
     ;
+    _d.CPGF_MD_TEMPLATE _method("readLineInto", &D::ClassType::readLineInto)
+        ._default(copyVariantFromCopyable(0))
+    ;
     _d.CPGF_MD_TEMPLATE _method("readAll", &D::ClassType::readAll);
     _d.CPGF_MD_TEMPLATE _method("read", &D::ClassType::read);
     _d.CPGF_MD_TEMPLATE _method("setFieldAlignment", &D::ClassType::setFieldAlignment);

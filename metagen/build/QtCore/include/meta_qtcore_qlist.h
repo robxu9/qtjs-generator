@@ -69,7 +69,7 @@ inline const T & opErAToRWrapper_QList_const_iterator__opDerefer(const typename 
     return *(*self);
 }
 template <typename T>
-inline const T & opErAToRWrapper_QList_const_iterator__opArrayGet(const typename QList<T >::const_iterator * self, int j) {
+inline const T & opErAToRWrapper_QList_const_iterator__opArrayGet(const typename QList<T >::const_iterator * self, typename QList<T >::const_iterator::difference_type j) {
     return (*self)[j];
 }
 template <typename T>
@@ -113,19 +113,19 @@ inline typename QList<T >::const_iterator opErAToRWrapper_QList_const_iterator__
     return (*self)--;
 }
 template <typename T>
-inline typename QList<T >::const_iterator& opErAToRWrapper_QList_const_iterator__opAddAssign(typename QList<T >::const_iterator * self, int j) {
+inline typename QList<T >::const_iterator& opErAToRWrapper_QList_const_iterator__opAddAssign(typename QList<T >::const_iterator * self, typename QList<T >::const_iterator::difference_type j) {
     return (*self) += j;
 }
 template <typename T>
-inline typename QList<T >::const_iterator& opErAToRWrapper_QList_const_iterator__opSubAssign(typename QList<T >::const_iterator * self, int j) {
+inline typename QList<T >::const_iterator& opErAToRWrapper_QList_const_iterator__opSubAssign(typename QList<T >::const_iterator * self, typename QList<T >::const_iterator::difference_type j) {
     return (*self) -= j;
 }
 template <typename T>
-inline typename QList<T >::const_iterator opErAToRWrapper_QList_const_iterator__opAdd(const typename QList<T >::const_iterator * self, int j) {
+inline typename QList<T >::const_iterator opErAToRWrapper_QList_const_iterator__opAdd(const typename QList<T >::const_iterator * self, typename QList<T >::const_iterator::difference_type j) {
     return (*self) + j;
 }
 template <typename T>
-inline typename QList<T >::const_iterator opErAToRWrapper_QList_const_iterator__opSub(const typename QList<T >::const_iterator * self, int j) {
+inline typename QList<T >::const_iterator opErAToRWrapper_QList_const_iterator__opSub(const typename QList<T >::const_iterator * self, typename QList<T >::const_iterator::difference_type j) {
     return (*self) - j;
 }
 template <typename T>
@@ -139,11 +139,11 @@ inline T & opErAToRWrapper_QList_iterator__opDerefer(const typename QList<T >::i
     return *(*self);
 }
 template <typename T>
-inline T & opErAToRWrapper_QList_iterator__opArrayGet(const typename QList<T >::iterator * self, int j) {
+inline T & opErAToRWrapper_QList_iterator__opArrayGet(const typename QList<T >::iterator * self, typename QList<T >::iterator::difference_type j) {
     return (*self)[j];
 }
 template <typename T>
-inline void opErAToRWrapper_QList_iterator__opArraySet(const typename QList<T >::iterator * self, int j, const typename cpgf::RemoveReference<T & >::Result & OpsEt_vALue) {
+inline void opErAToRWrapper_QList_iterator__opArraySet(const typename QList<T >::iterator * self, typename QList<T >::iterator::difference_type j, const typename cpgf::RemoveReference<T & >::Result & OpsEt_vALue) {
     (*self)[j] = OpsEt_vALue;
 }
 template <typename T>
@@ -211,19 +211,19 @@ inline typename QList<T >::iterator opErAToRWrapper_QList_iterator__opDecSuffix(
     return (*self)--;
 }
 template <typename T>
-inline typename QList<T >::iterator& opErAToRWrapper_QList_iterator__opAddAssign(typename QList<T >::iterator * self, int j) {
+inline typename QList<T >::iterator& opErAToRWrapper_QList_iterator__opAddAssign(typename QList<T >::iterator * self, typename QList<T >::iterator::difference_type j) {
     return (*self) += j;
 }
 template <typename T>
-inline typename QList<T >::iterator& opErAToRWrapper_QList_iterator__opSubAssign(typename QList<T >::iterator * self, int j) {
+inline typename QList<T >::iterator& opErAToRWrapper_QList_iterator__opSubAssign(typename QList<T >::iterator * self, typename QList<T >::iterator::difference_type j) {
     return (*self) -= j;
 }
 template <typename T>
-inline typename QList<T >::iterator opErAToRWrapper_QList_iterator__opAdd(const typename QList<T >::iterator * self, int j) {
+inline typename QList<T >::iterator opErAToRWrapper_QList_iterator__opAdd(const typename QList<T >::iterator * self, typename QList<T >::iterator::difference_type j) {
     return (*self) + j;
 }
 template <typename T>
-inline typename QList<T >::iterator opErAToRWrapper_QList_iterator__opSub(const typename QList<T >::iterator * self, int j) {
+inline typename QList<T >::iterator opErAToRWrapper_QList_iterator__opSub(const typename QList<T >::iterator * self, typename QList<T >::iterator::difference_type j) {
     return (*self) - j;
 }
 template <typename T>
@@ -338,12 +338,12 @@ void buildMetaClass_QList(D _d)
         _nd.CPGF_MD_TEMPLATE _constructor<void * ()>();
         _nd.CPGF_MD_TEMPLATE _constructor<void * (const typename QList<T >::const_iterator&)>();
         _nd.CPGF_MD_TEMPLATE _constructor<void * (const typename QList<T >::iterator&)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
-        _nd.CPGF_MD_TEMPLATE _field("i", &QList<T >::const_iterator::i);
+        _nd.CPGF_MD_TEMPLATE _field("i", &QList<T >::const_iterator::i, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
         _nd.CPGF_MD_TEMPLATE _operator<const T & (*)(const cpgf::GMetaSelf &)>(*mopHolder);
         _nd.CPGF_MD_TEMPLATE _method("_opDerefer", (const T & (*) (const typename QList<T >::const_iterator *))&opErAToRWrapper_QList_const_iterator__opDerefer<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
         _nd.CPGF_MD_TEMPLATE _operator<const T * (*)(const cpgf::GMetaSelf &)>(mopHolder -> mopHolder);
-        _nd.CPGF_MD_TEMPLATE _operator<const T & (*)(const cpgf::GMetaSelf &, int)>(mopHolder[0]);
-        _nd.CPGF_MD_TEMPLATE _method("_opArrayGet", (const T & (*) (const typename QList<T >::const_iterator *, int))&opErAToRWrapper_QList_const_iterator__opArrayGet<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<const T & (*)(const cpgf::GMetaSelf &, typename QList<T >::const_iterator::difference_type)>(mopHolder[0]);
+        _nd.CPGF_MD_TEMPLATE _method("_opArrayGet", (const T & (*) (const typename QList<T >::const_iterator *, typename QList<T >::const_iterator::difference_type))&opErAToRWrapper_QList_const_iterator__opArrayGet<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
         _nd.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const typename QList<T >::const_iterator&)>(mopHolder == mopHolder);
         _nd.CPGF_MD_TEMPLATE _method("_opEqual", (bool (*) (const typename QList<T >::const_iterator *, const typename QList<T >::const_iterator&))&opErAToRWrapper_QList_const_iterator__opEqual<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
         _nd.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const typename QList<T >::const_iterator&)>(mopHolder != mopHolder);
@@ -364,14 +364,14 @@ void buildMetaClass_QList(D _d)
         _nd.CPGF_MD_TEMPLATE _method("_opDec", (typename QList<T >::const_iterator& (*) (typename QList<T >::const_iterator *))&opErAToRWrapper_QList_const_iterator__opDec<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
         _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::const_iterator (*)(cpgf::GMetaSelf)>(mopHolder--);
         _nd.CPGF_MD_TEMPLATE _method("_opDecSuffix", (typename QList<T >::const_iterator (*) (typename QList<T >::const_iterator *))&opErAToRWrapper_QList_const_iterator__opDecSuffix<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::const_iterator& (*)(cpgf::GMetaSelf, int)>(mopHolder += mopHolder);
-        _nd.CPGF_MD_TEMPLATE _method("_opAddAssign", (typename QList<T >::const_iterator& (*) (typename QList<T >::const_iterator *, int))&opErAToRWrapper_QList_const_iterator__opAddAssign<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::const_iterator& (*)(cpgf::GMetaSelf, int)>(mopHolder -= mopHolder);
-        _nd.CPGF_MD_TEMPLATE _method("_opSubAssign", (typename QList<T >::const_iterator& (*) (typename QList<T >::const_iterator *, int))&opErAToRWrapper_QList_const_iterator__opSubAssign<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::const_iterator (*)(const cpgf::GMetaSelf &, int)>(mopHolder + mopHolder);
-        _nd.CPGF_MD_TEMPLATE _method("_opAdd", (typename QList<T >::const_iterator (*) (const typename QList<T >::const_iterator *, int))&opErAToRWrapper_QList_const_iterator__opAdd<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::const_iterator (*)(const cpgf::GMetaSelf &, int)>(mopHolder - mopHolder);
-        _nd.CPGF_MD_TEMPLATE _method("_opSub", (typename QList<T >::const_iterator (*) (const typename QList<T >::const_iterator *, int))&opErAToRWrapper_QList_const_iterator__opSub<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::const_iterator& (*)(cpgf::GMetaSelf, typename QList<T >::const_iterator::difference_type)>(mopHolder += mopHolder);
+        _nd.CPGF_MD_TEMPLATE _method("_opAddAssign", (typename QList<T >::const_iterator& (*) (typename QList<T >::const_iterator *, typename QList<T >::const_iterator::difference_type))&opErAToRWrapper_QList_const_iterator__opAddAssign<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::const_iterator& (*)(cpgf::GMetaSelf, typename QList<T >::const_iterator::difference_type)>(mopHolder -= mopHolder);
+        _nd.CPGF_MD_TEMPLATE _method("_opSubAssign", (typename QList<T >::const_iterator& (*) (typename QList<T >::const_iterator *, typename QList<T >::const_iterator::difference_type))&opErAToRWrapper_QList_const_iterator__opSubAssign<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::const_iterator (*)(const cpgf::GMetaSelf &, typename QList<T >::const_iterator::difference_type)>(mopHolder + mopHolder);
+        _nd.CPGF_MD_TEMPLATE _method("_opAdd", (typename QList<T >::const_iterator (*) (const typename QList<T >::const_iterator *, typename QList<T >::const_iterator::difference_type))&opErAToRWrapper_QList_const_iterator__opAdd<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::const_iterator (*)(const cpgf::GMetaSelf &, typename QList<T >::const_iterator::difference_type)>(mopHolder - mopHolder);
+        _nd.CPGF_MD_TEMPLATE _method("_opSub", (typename QList<T >::const_iterator (*) (const typename QList<T >::const_iterator *, typename QList<T >::const_iterator::difference_type))&opErAToRWrapper_QList_const_iterator__opSub<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
         _nd.CPGF_MD_TEMPLATE _operator<int (*)(const cpgf::GMetaSelf &, typename QList<T >::const_iterator)>(mopHolder - mopHolder);
         _nd.CPGF_MD_TEMPLATE _method("_opSub", (int (*) (const typename QList<T >::const_iterator *, typename QList<T >::const_iterator))&opErAToRWrapper_QList_const_iterator__opSub<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
         _d.CPGF_MD_TEMPLATE _class(_nd);
@@ -380,13 +380,13 @@ void buildMetaClass_QList(D _d)
         GDefineMetaClass<typename QList<T >::iterator> _nd = GDefineMetaClass<typename QList<T >::iterator>::declare("iterator");
         _nd.CPGF_MD_TEMPLATE _constructor<void * ()>();
         _nd.CPGF_MD_TEMPLATE _constructor<void * (const typename QList<T >::iterator&)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
-        _nd.CPGF_MD_TEMPLATE _field("i", &QList<T >::iterator::i);
+        _nd.CPGF_MD_TEMPLATE _field("i", &QList<T >::iterator::i, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
         _nd.CPGF_MD_TEMPLATE _operator<T & (*)(const cpgf::GMetaSelf &)>(*mopHolder);
         _nd.CPGF_MD_TEMPLATE _method("_opDerefer", (T & (*) (const typename QList<T >::iterator *))&opErAToRWrapper_QList_iterator__opDerefer<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
         _nd.CPGF_MD_TEMPLATE _operator<T * (*)(const cpgf::GMetaSelf &)>(mopHolder -> mopHolder);
-        _nd.CPGF_MD_TEMPLATE _operator<T & (*)(const cpgf::GMetaSelf &, int)>(mopHolder[0]);
-        _nd.CPGF_MD_TEMPLATE _method("_opArrayGet", (T & (*) (const typename QList<T >::iterator *, int))&opErAToRWrapper_QList_iterator__opArrayGet<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-        _nd.CPGF_MD_TEMPLATE _method("_opArraySet", (void (*) (const typename QList<T >::iterator *, int, const typename cpgf::RemoveReference<T & >::Result &))&opErAToRWrapper_QList_iterator__opArraySet<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<T & (*)(const cpgf::GMetaSelf &, typename QList<T >::iterator::difference_type)>(mopHolder[0]);
+        _nd.CPGF_MD_TEMPLATE _method("_opArrayGet", (T & (*) (const typename QList<T >::iterator *, typename QList<T >::iterator::difference_type))&opErAToRWrapper_QList_iterator__opArrayGet<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _method("_opArraySet", (void (*) (const typename QList<T >::iterator *, typename QList<T >::iterator::difference_type, const typename cpgf::RemoveReference<T & >::Result &))&opErAToRWrapper_QList_iterator__opArraySet<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
         _nd.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const typename QList<T >::iterator&)>(mopHolder == mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
         _nd.CPGF_MD_TEMPLATE _method("_opEqual", (bool (*) (const typename QList<T >::iterator *, const typename QList<T >::iterator&))&opErAToRWrapper_QList_iterator__opEqual<T>, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
         _nd.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const typename QList<T >::iterator&)>(mopHolder != mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
@@ -419,18 +419,31 @@ void buildMetaClass_QList(D _d)
         _nd.CPGF_MD_TEMPLATE _method("_opDec", (typename QList<T >::iterator& (*) (typename QList<T >::iterator *))&opErAToRWrapper_QList_iterator__opDec<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
         _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::iterator (*)(cpgf::GMetaSelf)>(mopHolder--);
         _nd.CPGF_MD_TEMPLATE _method("_opDecSuffix", (typename QList<T >::iterator (*) (typename QList<T >::iterator *))&opErAToRWrapper_QList_iterator__opDecSuffix<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::iterator& (*)(cpgf::GMetaSelf, int)>(mopHolder += mopHolder);
-        _nd.CPGF_MD_TEMPLATE _method("_opAddAssign", (typename QList<T >::iterator& (*) (typename QList<T >::iterator *, int))&opErAToRWrapper_QList_iterator__opAddAssign<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::iterator& (*)(cpgf::GMetaSelf, int)>(mopHolder -= mopHolder);
-        _nd.CPGF_MD_TEMPLATE _method("_opSubAssign", (typename QList<T >::iterator& (*) (typename QList<T >::iterator *, int))&opErAToRWrapper_QList_iterator__opSubAssign<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::iterator (*)(const cpgf::GMetaSelf &, int)>(mopHolder + mopHolder);
-        _nd.CPGF_MD_TEMPLATE _method("_opAdd", (typename QList<T >::iterator (*) (const typename QList<T >::iterator *, int))&opErAToRWrapper_QList_iterator__opAdd<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::iterator (*)(const cpgf::GMetaSelf &, int)>(mopHolder - mopHolder);
-        _nd.CPGF_MD_TEMPLATE _method("_opSub", (typename QList<T >::iterator (*) (const typename QList<T >::iterator *, int))&opErAToRWrapper_QList_iterator__opSub<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::iterator& (*)(cpgf::GMetaSelf, typename QList<T >::iterator::difference_type)>(mopHolder += mopHolder);
+        _nd.CPGF_MD_TEMPLATE _method("_opAddAssign", (typename QList<T >::iterator& (*) (typename QList<T >::iterator *, typename QList<T >::iterator::difference_type))&opErAToRWrapper_QList_iterator__opAddAssign<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::iterator& (*)(cpgf::GMetaSelf, typename QList<T >::iterator::difference_type)>(mopHolder -= mopHolder);
+        _nd.CPGF_MD_TEMPLATE _method("_opSubAssign", (typename QList<T >::iterator& (*) (typename QList<T >::iterator *, typename QList<T >::iterator::difference_type))&opErAToRWrapper_QList_iterator__opSubAssign<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::iterator (*)(const cpgf::GMetaSelf &, typename QList<T >::iterator::difference_type)>(mopHolder + mopHolder);
+        _nd.CPGF_MD_TEMPLATE _method("_opAdd", (typename QList<T >::iterator (*) (const typename QList<T >::iterator *, typename QList<T >::iterator::difference_type))&opErAToRWrapper_QList_iterator__opAdd<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<typename QList<T >::iterator (*)(const cpgf::GMetaSelf &, typename QList<T >::iterator::difference_type)>(mopHolder - mopHolder);
+        _nd.CPGF_MD_TEMPLATE _method("_opSub", (typename QList<T >::iterator (*) (const typename QList<T >::iterator *, typename QList<T >::iterator::difference_type))&opErAToRWrapper_QList_iterator__opSub<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
         _nd.CPGF_MD_TEMPLATE _operator<int (*)(const cpgf::GMetaSelf &, typename QList<T >::iterator)>(mopHolder - mopHolder);
         _nd.CPGF_MD_TEMPLATE _method("_opSub", (int (*) (const typename QList<T >::iterator *, typename QList<T >::iterator))&opErAToRWrapper_QList_iterator__opSub<T>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
         _d.CPGF_MD_TEMPLATE _class(_nd);
     }
+    {
+        GDefineMetaClass<typename QList<T >::MemoryLayout, QListData::IndirectLayout> _nd = GDefineMetaClass<typename QList<T >::MemoryLayout, QListData::IndirectLayout>::declare("MemoryLayout");
+        _d.CPGF_MD_TEMPLATE _class(_nd);
+    }
+}
+
+
+template <typename D, typename T>
+void buildMetaClass_QListSpecialMethods(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
 }
 
 

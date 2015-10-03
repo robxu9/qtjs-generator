@@ -15,6 +15,7 @@
 
 using namespace QV4;
 using namespace QV4::CompiledData;
+using namespace QV4::Heap;
 
 
 namespace qt_metadata { 

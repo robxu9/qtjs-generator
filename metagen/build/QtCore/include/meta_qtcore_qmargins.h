@@ -60,22 +60,22 @@ void buildMetaClass_Global_qmargins(D _d)
 }
 
 
-inline QMargins & opErAToRWrapper_QMargins__opAddAssign(QMargins * self, const QMargins & margins) {
+inline Q_DECL_RELAXED_CONSTEXPR QMargins & opErAToRWrapper_QMargins__opAddAssign(QMargins * self, const QMargins & margins) {
     return (*self) += margins;
 }
-inline QMargins & opErAToRWrapper_QMargins__opSubAssign(QMargins * self, const QMargins & margins) {
+inline Q_DECL_RELAXED_CONSTEXPR QMargins & opErAToRWrapper_QMargins__opSubAssign(QMargins * self, const QMargins & margins) {
     return (*self) -= margins;
 }
-inline QMargins & opErAToRWrapper_QMargins__opMulAssign(QMargins * self, int __arg0) {
+inline Q_DECL_RELAXED_CONSTEXPR QMargins & opErAToRWrapper_QMargins__opMulAssign(QMargins * self, int __arg0) {
     return (*self) *= __arg0;
 }
-inline QMargins & opErAToRWrapper_QMargins__opDivAssign(QMargins * self, int __arg0) {
+inline Q_DECL_RELAXED_CONSTEXPR QMargins & opErAToRWrapper_QMargins__opDivAssign(QMargins * self, int __arg0) {
     return (*self) /= __arg0;
 }
-inline QMargins & opErAToRWrapper_QMargins__opMulAssign(QMargins * self, qreal __arg0) {
+inline Q_DECL_RELAXED_CONSTEXPR QMargins & opErAToRWrapper_QMargins__opMulAssign(QMargins * self, qreal __arg0) {
     return (*self) *= __arg0;
 }
-inline QMargins & opErAToRWrapper_QMargins__opDivAssign(QMargins * self, qreal __arg0) {
+inline Q_DECL_RELAXED_CONSTEXPR QMargins & opErAToRWrapper_QMargins__opDivAssign(QMargins * self, qreal __arg0) {
     return (*self) /= __arg0;
 }
 
@@ -97,37 +97,37 @@ void buildMetaClass_QMargins(D _d)
     _d.CPGF_MD_TEMPLATE _method("setTop", &D::ClassType::setTop);
     _d.CPGF_MD_TEMPLATE _method("setRight", &D::ClassType::setRight);
     _d.CPGF_MD_TEMPLATE _method("setBottom", &D::ClassType::setBottom);
-    _d.CPGF_MD_TEMPLATE _operator<QMargins & (*)(cpgf::GMetaSelf, const QMargins &)>(mopHolder += mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (QMargins & (*) (QMargins *, const QMargins &))&opErAToRWrapper_QMargins__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QMargins & (*)(cpgf::GMetaSelf, const QMargins &)>(mopHolder -= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (QMargins & (*) (QMargins *, const QMargins &))&opErAToRWrapper_QMargins__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QMargins & (*)(cpgf::GMetaSelf, int)>(mopHolder *= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (QMargins & (*) (QMargins *, int))&opErAToRWrapper_QMargins__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QMargins & (*)(cpgf::GMetaSelf, int)>(mopHolder /= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opDivAssign", (QMargins & (*) (QMargins *, int))&opErAToRWrapper_QMargins__opDivAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QMargins & (*)(cpgf::GMetaSelf, qreal)>(mopHolder *= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (QMargins & (*) (QMargins *, qreal))&opErAToRWrapper_QMargins__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QMargins & (*)(cpgf::GMetaSelf, qreal)>(mopHolder /= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opDivAssign", (QMargins & (*) (QMargins *, qreal))&opErAToRWrapper_QMargins__opDivAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QMargins & (*)(cpgf::GMetaSelf, const QMargins &)>(mopHolder += mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (Q_DECL_RELAXED_CONSTEXPR QMargins & (*) (QMargins *, const QMargins &))&opErAToRWrapper_QMargins__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QMargins & (*)(cpgf::GMetaSelf, const QMargins &)>(mopHolder -= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (Q_DECL_RELAXED_CONSTEXPR QMargins & (*) (QMargins *, const QMargins &))&opErAToRWrapper_QMargins__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QMargins & (*)(cpgf::GMetaSelf, int)>(mopHolder *= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (Q_DECL_RELAXED_CONSTEXPR QMargins & (*) (QMargins *, int))&opErAToRWrapper_QMargins__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QMargins & (*)(cpgf::GMetaSelf, int)>(mopHolder /= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opDivAssign", (Q_DECL_RELAXED_CONSTEXPR QMargins & (*) (QMargins *, int))&opErAToRWrapper_QMargins__opDivAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QMargins & (*)(cpgf::GMetaSelf, qreal)>(mopHolder *= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (Q_DECL_RELAXED_CONSTEXPR QMargins & (*) (QMargins *, qreal))&opErAToRWrapper_QMargins__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QMargins & (*)(cpgf::GMetaSelf, qreal)>(mopHolder /= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opDivAssign", (Q_DECL_RELAXED_CONSTEXPR QMargins & (*) (QMargins *, qreal))&opErAToRWrapper_QMargins__opDivAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
 }
 
 
-inline QMarginsF & opErAToRWrapper_QMarginsF__opAddAssign(QMarginsF * self, const QMarginsF & margins) {
+inline Q_DECL_RELAXED_CONSTEXPR QMarginsF & opErAToRWrapper_QMarginsF__opAddAssign(QMarginsF * self, const QMarginsF & margins) {
     return (*self) += margins;
 }
-inline QMarginsF & opErAToRWrapper_QMarginsF__opSubAssign(QMarginsF * self, const QMarginsF & margins) {
+inline Q_DECL_RELAXED_CONSTEXPR QMarginsF & opErAToRWrapper_QMarginsF__opSubAssign(QMarginsF * self, const QMarginsF & margins) {
     return (*self) -= margins;
 }
-inline QMarginsF & opErAToRWrapper_QMarginsF__opAddAssign(QMarginsF * self, qreal addend) {
+inline Q_DECL_RELAXED_CONSTEXPR QMarginsF & opErAToRWrapper_QMarginsF__opAddAssign(QMarginsF * self, qreal addend) {
     return (*self) += addend;
 }
-inline QMarginsF & opErAToRWrapper_QMarginsF__opSubAssign(QMarginsF * self, qreal subtrahend) {
+inline Q_DECL_RELAXED_CONSTEXPR QMarginsF & opErAToRWrapper_QMarginsF__opSubAssign(QMarginsF * self, qreal subtrahend) {
     return (*self) -= subtrahend;
 }
-inline QMarginsF & opErAToRWrapper_QMarginsF__opMulAssign(QMarginsF * self, qreal factor) {
+inline Q_DECL_RELAXED_CONSTEXPR QMarginsF & opErAToRWrapper_QMarginsF__opMulAssign(QMarginsF * self, qreal factor) {
     return (*self) *= factor;
 }
-inline QMarginsF & opErAToRWrapper_QMarginsF__opDivAssign(QMarginsF * self, qreal divisor) {
+inline Q_DECL_RELAXED_CONSTEXPR QMarginsF & opErAToRWrapper_QMarginsF__opDivAssign(QMarginsF * self, qreal divisor) {
     return (*self) /= divisor;
 }
 
@@ -151,18 +151,18 @@ void buildMetaClass_QMarginsF(D _d)
     _d.CPGF_MD_TEMPLATE _method("setRight", &D::ClassType::setRight);
     _d.CPGF_MD_TEMPLATE _method("setBottom", &D::ClassType::setBottom);
     _d.CPGF_MD_TEMPLATE _method("toMargins", &D::ClassType::toMargins);
-    _d.CPGF_MD_TEMPLATE _operator<QMarginsF & (*)(cpgf::GMetaSelf, const QMarginsF &)>(mopHolder += mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (QMarginsF & (*) (QMarginsF *, const QMarginsF &))&opErAToRWrapper_QMarginsF__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QMarginsF & (*)(cpgf::GMetaSelf, const QMarginsF &)>(mopHolder -= mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (QMarginsF & (*) (QMarginsF *, const QMarginsF &))&opErAToRWrapper_QMarginsF__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QMarginsF & (*)(cpgf::GMetaSelf, qreal)>(mopHolder += mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (QMarginsF & (*) (QMarginsF *, qreal))&opErAToRWrapper_QMarginsF__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QMarginsF & (*)(cpgf::GMetaSelf, qreal)>(mopHolder -= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (QMarginsF & (*) (QMarginsF *, qreal))&opErAToRWrapper_QMarginsF__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QMarginsF & (*)(cpgf::GMetaSelf, qreal)>(mopHolder *= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (QMarginsF & (*) (QMarginsF *, qreal))&opErAToRWrapper_QMarginsF__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QMarginsF & (*)(cpgf::GMetaSelf, qreal)>(mopHolder /= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opDivAssign", (QMarginsF & (*) (QMarginsF *, qreal))&opErAToRWrapper_QMarginsF__opDivAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QMarginsF & (*)(cpgf::GMetaSelf, const QMarginsF &)>(mopHolder += mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (Q_DECL_RELAXED_CONSTEXPR QMarginsF & (*) (QMarginsF *, const QMarginsF &))&opErAToRWrapper_QMarginsF__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QMarginsF & (*)(cpgf::GMetaSelf, const QMarginsF &)>(mopHolder -= mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (Q_DECL_RELAXED_CONSTEXPR QMarginsF & (*) (QMarginsF *, const QMarginsF &))&opErAToRWrapper_QMarginsF__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QMarginsF & (*)(cpgf::GMetaSelf, qreal)>(mopHolder += mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (Q_DECL_RELAXED_CONSTEXPR QMarginsF & (*) (QMarginsF *, qreal))&opErAToRWrapper_QMarginsF__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QMarginsF & (*)(cpgf::GMetaSelf, qreal)>(mopHolder -= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (Q_DECL_RELAXED_CONSTEXPR QMarginsF & (*) (QMarginsF *, qreal))&opErAToRWrapper_QMarginsF__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QMarginsF & (*)(cpgf::GMetaSelf, qreal)>(mopHolder *= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (Q_DECL_RELAXED_CONSTEXPR QMarginsF & (*) (QMarginsF *, qreal))&opErAToRWrapper_QMarginsF__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QMarginsF & (*)(cpgf::GMetaSelf, qreal)>(mopHolder /= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opDivAssign", (Q_DECL_RELAXED_CONSTEXPR QMarginsF & (*) (QMarginsF *, qreal))&opErAToRWrapper_QMarginsF__opDivAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
 }
 
 

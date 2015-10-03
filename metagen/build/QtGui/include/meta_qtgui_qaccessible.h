@@ -29,7 +29,8 @@ void buildMetaClass_Global_qaccessible(D _d)
     
     _d.CPGF_MD_TEMPLATE _method("qAccessibleRoleString", (const char * (*) (QAccessible::Role))&qAccessibleRoleString);
     _d.CPGF_MD_TEMPLATE _method("qAccessibleEventString", (const char * (*) (QAccessible::Event))&qAccessibleEventString);
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtGui_13")
+    _d.CPGF_MD_TEMPLATE _method("qAccessibleLocalizedActionDescription", (QString (*) (const QString &))&qAccessibleLocalizedActionDescription, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtGui_14")
         ._element("QAccessibleInterface_iid", QAccessibleInterface_iid)
     ;
     _d.CPGF_MD_TEMPLATE _operator<bool (*)(const QAccessible::State &, const QAccessible::State &)>(mopHolder == mopHolder);
@@ -290,6 +291,13 @@ inline quint64 bItFiEldWrapper_QAccessible_State_supportsAutoCompletion_getter(Q
 inline void bItFiEldWrapper_QAccessible_State_supportsAutoCompletion_setter(QAccessible::State * self, quint64 value) {
     self->supportsAutoCompletion = value;
 }
+inline quint64 bItFiEldWrapper_QAccessible_State_searchEdit_getter(QAccessible::State * self) {
+    return self->searchEdit;
+}
+
+inline void bItFiEldWrapper_QAccessible_State_searchEdit_setter(QAccessible::State * self, quint64 value) {
+    self->searchEdit = value;
+}
 
 
 template <typename D>
@@ -302,6 +310,8 @@ void buildMetaClass_QAccessible(D _d)
     _d.CPGF_MD_TEMPLATE _method("removeFactory", &D::ClassType::removeFactory);
     _d.CPGF_MD_TEMPLATE _method("installUpdateHandler", &D::ClassType::installUpdateHandler);
     _d.CPGF_MD_TEMPLATE _method("installRootObjectHandler", &D::ClassType::installRootObjectHandler);
+    _d.CPGF_MD_TEMPLATE _method("installActivationObserver", &D::ClassType::installActivationObserver);
+    _d.CPGF_MD_TEMPLATE _method("removeActivationObserver", &D::ClassType::removeActivationObserver);
     _d.CPGF_MD_TEMPLATE _method("queryAccessibleInterface", &D::ClassType::queryAccessibleInterface);
     _d.CPGF_MD_TEMPLATE _method("uniqueId", &D::ClassType::uniqueId);
     _d.CPGF_MD_TEMPLATE _method("accessibleInterface", &D::ClassType::accessibleInterface);
@@ -309,6 +319,7 @@ void buildMetaClass_QAccessible(D _d)
     _d.CPGF_MD_TEMPLATE _method("deleteAccessibleInterface", &D::ClassType::deleteAccessibleInterface);
     _d.CPGF_MD_TEMPLATE _method("updateAccessibility", &D::ClassType::updateAccessibility);
     _d.CPGF_MD_TEMPLATE _method("isActive", &D::ClassType::isActive);
+    _d.CPGF_MD_TEMPLATE _method("setActive", &D::ClassType::setActive);
     _d.CPGF_MD_TEMPLATE _method("setRootObject", &D::ClassType::setRootObject);
     _d.CPGF_MD_TEMPLATE _method("cleanup", &D::ClassType::cleanup);
     _d.CPGF_MD_TEMPLATE _method("qAccessibleTextBoundaryHelper", &D::ClassType::qAccessibleTextBoundaryHelper, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
@@ -450,6 +461,15 @@ void buildMetaClass_QAccessible(D _d)
         ._element("LayeredPane", D::ClassType::LayeredPane)
         ._element("Terminal", D::ClassType::Terminal)
         ._element("Desktop", D::ClassType::Desktop)
+        ._element("Paragraph", D::ClassType::Paragraph)
+        ._element("WebDocument", D::ClassType::WebDocument)
+        ._element("Section", D::ClassType::Section)
+        ._element("ColorChooser", D::ClassType::ColorChooser)
+        ._element("Footer", D::ClassType::Footer)
+        ._element("Form", D::ClassType::Form)
+        ._element("Heading", D::ClassType::Heading)
+        ._element("Note", D::ClassType::Note)
+        ._element("ComplementaryContent", D::ClassType::ComplementaryContent)
         ._element("UserRole", D::ClassType::UserRole)
     ;
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::Text>("Text")
@@ -490,6 +510,11 @@ void buildMetaClass_QAccessible(D _d)
         _d._class(_t_d);
     }
     {
+        GDefineMetaClass<QAccessible::ActivationObserver> _nd = GDefineMetaClass<QAccessible::ActivationObserver>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::declare("ActivationObserver");
+        _nd.CPGF_MD_TEMPLATE _method("accessibilityActiveChanged", &QAccessible::ActivationObserver::accessibilityActiveChanged);
+        _d.CPGF_MD_TEMPLATE _class(_nd);
+    }
+    {
         GDefineMetaClass<QAccessible::State> _nd = GDefineMetaClass<QAccessible::State>::declare("State");
         _nd.CPGF_MD_TEMPLATE _constructor<void * ()>();
         _nd.CPGF_MD_TEMPLATE _property("disabled", &bItFiEldWrapper_QAccessible_State_disabled_getter, &bItFiEldWrapper_QAccessible_State_disabled_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
@@ -528,6 +553,7 @@ void buildMetaClass_QAccessible(D _d)
         _nd.CPGF_MD_TEMPLATE _property("multiLine", &bItFiEldWrapper_QAccessible_State_multiLine_getter, &bItFiEldWrapper_QAccessible_State_multiLine_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
         _nd.CPGF_MD_TEMPLATE _property("selectableText", &bItFiEldWrapper_QAccessible_State_selectableText_getter, &bItFiEldWrapper_QAccessible_State_selectableText_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
         _nd.CPGF_MD_TEMPLATE _property("supportsAutoCompletion", &bItFiEldWrapper_QAccessible_State_supportsAutoCompletion_getter, &bItFiEldWrapper_QAccessible_State_supportsAutoCompletion_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
+        _nd.CPGF_MD_TEMPLATE _property("searchEdit", &bItFiEldWrapper_QAccessible_State_searchEdit_getter, &bItFiEldWrapper_QAccessible_State_searchEdit_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
         _d.CPGF_MD_TEMPLATE _class(_nd);
     }
 }
@@ -550,11 +576,59 @@ void buildMetaClass_QAccessibleActionInterface(D _d)
     _d.CPGF_MD_TEMPLATE _method("showMenuAction", &D::ClassType::showMenuAction, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<-1> >());
     _d.CPGF_MD_TEMPLATE _method("setFocusAction", &D::ClassType::setFocusAction, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<-1> >());
     _d.CPGF_MD_TEMPLATE _method("toggleAction", &D::ClassType::toggleAction, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<-1> >());
+    _d.CPGF_MD_TEMPLATE _method("scrollLeftAction", &D::ClassType::scrollLeftAction);
+    _d.CPGF_MD_TEMPLATE _method("scrollRightAction", &D::ClassType::scrollRightAction);
+    _d.CPGF_MD_TEMPLATE _method("scrollUpAction", &D::ClassType::scrollUpAction);
+    _d.CPGF_MD_TEMPLATE _method("scrollDownAction", &D::ClassType::scrollDownAction);
+    _d.CPGF_MD_TEMPLATE _method("nextPageAction", &D::ClassType::nextPageAction);
+    _d.CPGF_MD_TEMPLATE _method("previousPageAction", &D::ClassType::previousPageAction);
 }
 
 
 class QAccessibleActionInterfaceWrapper : public QAccessibleActionInterface, public cpgf::GScriptWrapper {
 public:
+    
+    QStringList keyBindingsForAction(const QString & actionName) const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("keyBindingsForAction"));
+        if(func)
+        {
+            return cpgf::fromVariant<QStringList >(cpgf::invokeScriptFunctionOnObject(func.get(), this, actionName).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    QStringList super_keyBindingsForAction(const QString & actionName) const
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    QString localizedActionName(const QString & name) const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("localizedActionName"));
+        if(func)
+        {
+            return cpgf::fromVariant<QString >(cpgf::invokeScriptFunctionOnObject(func.get(), this, name).getValue());
+        }
+        return QAccessibleActionInterface::localizedActionName(name);
+    }
+    QString super_localizedActionName(const QString & name) const
+    {
+        return QAccessibleActionInterface::localizedActionName(name);
+    }
+    
+    QStringList actionNames() const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("actionNames"));
+        if(func)
+        {
+            return cpgf::fromVariant<QStringList >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    QStringList super_actionNames() const
+    {
+        throw std::runtime_error("Abstract method");
+    }
     
     QString localizedActionDescription(const QString & name) const
     {
@@ -584,58 +658,16 @@ public:
     {
         throw std::runtime_error("Abstract method");
     }
-    
-    QStringList keyBindingsForAction(const QString & actionName) const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("keyBindingsForAction"));
-        if(func)
-        {
-            return cpgf::fromVariant<QStringList >(cpgf::invokeScriptFunctionOnObject(func.get(), this, actionName).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    QStringList super_keyBindingsForAction(const QString & actionName) const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
-    QStringList actionNames() const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("actionNames"));
-        if(func)
-        {
-            return cpgf::fromVariant<QStringList >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    QStringList super_actionNames() const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
-    QString localizedActionName(const QString & name) const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("localizedActionName"));
-        if(func)
-        {
-            return cpgf::fromVariant<QString >(cpgf::invokeScriptFunctionOnObject(func.get(), this, name).getValue());
-        }
-        return QAccessibleActionInterface::localizedActionName(name);
-    }
-    QString super_localizedActionName(const QString & name) const
-    {
-        return QAccessibleActionInterface::localizedActionName(name);
-    }
     template <typename D>
     static void cpgf__register(D _d)
     {
         (void)_d;
         using namespace cpgf;
+        _d.CPGF_MD_TEMPLATE _method("super_keyBindingsForAction", (QStringList (D::ClassType::*) (const QString &) const)&D::ClassType::super_keyBindingsForAction, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
+        _d.CPGF_MD_TEMPLATE _method("super_localizedActionName", (QString (D::ClassType::*) (const QString &) const)&D::ClassType::super_localizedActionName, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
+        _d.CPGF_MD_TEMPLATE _method("super_actionNames", (QStringList (D::ClassType::*) () const)&D::ClassType::super_actionNames);
         _d.CPGF_MD_TEMPLATE _method("super_localizedActionDescription", (QString (D::ClassType::*) (const QString &) const)&D::ClassType::super_localizedActionDescription, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
         _d.CPGF_MD_TEMPLATE _method("super_doAction", (void (D::ClassType::*) (const QString &))&D::ClassType::super_doAction, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
-        _d.CPGF_MD_TEMPLATE _method("super_keyBindingsForAction", (QStringList (D::ClassType::*) (const QString &) const)&D::ClassType::super_keyBindingsForAction, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
-        _d.CPGF_MD_TEMPLATE _method("super_actionNames", (QStringList (D::ClassType::*) () const)&D::ClassType::super_actionNames);
-        _d.CPGF_MD_TEMPLATE _method("super_localizedActionName", (QString (D::ClassType::*) (const QString &) const)&D::ClassType::super_localizedActionName, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     }
 };
 
@@ -668,21 +700,6 @@ void buildMetaClass_QAccessibleEditableTextInterface(D _d)
 class QAccessibleEditableTextInterfaceWrapper : public QAccessibleEditableTextInterface, public cpgf::GScriptWrapper {
 public:
     
-    void replaceText(int startOffset, int endOffset, const QString & text)
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("replaceText"));
-        if(func)
-        {
-            cpgf::invokeScriptFunctionOnObject(func.get(), this, startOffset, endOffset, text);
-            return;
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    void super_replaceText(int startOffset, int endOffset, const QString & text)
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
     void insertText(int offset, const QString & text)
     {
         cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("insertText"));
@@ -712,14 +729,29 @@ public:
     {
         throw std::runtime_error("Abstract method");
     }
+    
+    void replaceText(int startOffset, int endOffset, const QString & text)
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("replaceText"));
+        if(func)
+        {
+            cpgf::invokeScriptFunctionOnObject(func.get(), this, startOffset, endOffset, text);
+            return;
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    void super_replaceText(int startOffset, int endOffset, const QString & text)
+    {
+        throw std::runtime_error("Abstract method");
+    }
     template <typename D>
     static void cpgf__register(D _d)
     {
         (void)_d;
         using namespace cpgf;
-        _d.CPGF_MD_TEMPLATE _method("super_replaceText", (void (D::ClassType::*) (int, int, const QString &))&D::ClassType::super_replaceText, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<2> >());
         _d.CPGF_MD_TEMPLATE _method("super_insertText", (void (D::ClassType::*) (int, const QString &))&D::ClassType::super_insertText, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
         _d.CPGF_MD_TEMPLATE _method("super_deleteText", (void (D::ClassType::*) (int, int))&D::ClassType::super_deleteText);
+        _d.CPGF_MD_TEMPLATE _method("super_replaceText", (void (D::ClassType::*) (int, int, const QString &))&D::ClassType::super_replaceText, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<2> >());
     }
 };
 
@@ -828,20 +860,6 @@ public:
         throw std::runtime_error("Abstract method");
     }
     
-    QPoint imagePosition() const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("imagePosition"));
-        if(func)
-        {
-            return cpgf::fromVariant<QPoint >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    QPoint super_imagePosition() const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
     QSize imageSize() const
     {
         cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("imageSize"));
@@ -855,14 +873,28 @@ public:
     {
         throw std::runtime_error("Abstract method");
     }
+    
+    QPoint imagePosition() const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("imagePosition"));
+        if(func)
+        {
+            return cpgf::fromVariant<QPoint >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    QPoint super_imagePosition() const
+    {
+        throw std::runtime_error("Abstract method");
+    }
     template <typename D>
     static void cpgf__register(D _d)
     {
         (void)_d;
         using namespace cpgf;
         _d.CPGF_MD_TEMPLATE _method("super_imageDescription", (QString (D::ClassType::*) () const)&D::ClassType::super_imageDescription);
-        _d.CPGF_MD_TEMPLATE _method("super_imagePosition", (QPoint (D::ClassType::*) () const)&D::ClassType::super_imagePosition);
         _d.CPGF_MD_TEMPLATE _method("super_imageSize", (QSize (D::ClassType::*) () const)&D::ClassType::super_imageSize);
+        _d.CPGF_MD_TEMPLATE _method("super_imagePosition", (QPoint (D::ClassType::*) () const)&D::ClassType::super_imagePosition);
     }
 };
 
@@ -957,6 +989,34 @@ void buildMetaClass_QAccessibleTableCellInterface(D _d)
 class QAccessibleTableCellInterfaceWrapper : public QAccessibleTableCellInterface, public cpgf::GScriptWrapper {
 public:
     
+    QAccessibleInterface * table() const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("table"));
+        if(func)
+        {
+            return cpgf::fromVariant<QAccessibleInterface * >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    QAccessibleInterface * super_table() const
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    int columnExtent() const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("columnExtent"));
+        if(func)
+        {
+            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    int super_columnExtent() const
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
     QList< QAccessibleInterface * > rowHeaderCells() const
     {
         cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("rowHeaderCells"));
@@ -967,6 +1027,20 @@ public:
         throw std::runtime_error("Abstract method");
     }
     QList< QAccessibleInterface * > super_rowHeaderCells() const
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    bool isSelected() const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("isSelected"));
+        if(func)
+        {
+            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    bool super_isSelected() const
     {
         throw std::runtime_error("Abstract method");
     }
@@ -999,20 +1073,6 @@ public:
         throw std::runtime_error("Abstract method");
     }
     
-    int columnExtent() const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("columnExtent"));
-        if(func)
-        {
-            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    int super_columnExtent() const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
     int rowIndex() const
     {
         cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("rowIndex"));
@@ -1023,20 +1083,6 @@ public:
         throw std::runtime_error("Abstract method");
     }
     int super_rowIndex() const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
-    QAccessibleInterface * table() const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("table"));
-        if(func)
-        {
-            return cpgf::fromVariant<QAccessibleInterface * >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    QAccessibleInterface * super_table() const
     {
         throw std::runtime_error("Abstract method");
     }
@@ -1054,33 +1100,19 @@ public:
     {
         throw std::runtime_error("Abstract method");
     }
-    
-    bool isSelected() const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("isSelected"));
-        if(func)
-        {
-            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    bool super_isSelected() const
-    {
-        throw std::runtime_error("Abstract method");
-    }
     template <typename D>
     static void cpgf__register(D _d)
     {
         (void)_d;
         using namespace cpgf;
+        _d.CPGF_MD_TEMPLATE _method("super_table", (QAccessibleInterface * (D::ClassType::*) () const)&D::ClassType::super_table);
+        _d.CPGF_MD_TEMPLATE _method("super_columnExtent", (int (D::ClassType::*) () const)&D::ClassType::super_columnExtent);
         _d.CPGF_MD_TEMPLATE _method("super_rowHeaderCells", (QList< QAccessibleInterface * > (D::ClassType::*) () const)&D::ClassType::super_rowHeaderCells);
+        _d.CPGF_MD_TEMPLATE _method("super_isSelected", (bool (D::ClassType::*) () const)&D::ClassType::super_isSelected);
         _d.CPGF_MD_TEMPLATE _method("super_columnHeaderCells", (QList< QAccessibleInterface * > (D::ClassType::*) () const)&D::ClassType::super_columnHeaderCells);
         _d.CPGF_MD_TEMPLATE _method("super_columnIndex", (int (D::ClassType::*) () const)&D::ClassType::super_columnIndex);
-        _d.CPGF_MD_TEMPLATE _method("super_columnExtent", (int (D::ClassType::*) () const)&D::ClassType::super_columnExtent);
         _d.CPGF_MD_TEMPLATE _method("super_rowIndex", (int (D::ClassType::*) () const)&D::ClassType::super_rowIndex);
-        _d.CPGF_MD_TEMPLATE _method("super_table", (QAccessibleInterface * (D::ClassType::*) () const)&D::ClassType::super_table);
         _d.CPGF_MD_TEMPLATE _method("super_rowExtent", (int (D::ClassType::*) () const)&D::ClassType::super_rowExtent);
-        _d.CPGF_MD_TEMPLATE _method("super_isSelected", (bool (D::ClassType::*) () const)&D::ClassType::super_isSelected);
     }
 };
 
@@ -1130,16 +1162,44 @@ void buildMetaClass_QAccessibleTableInterface(D _d)
 class QAccessibleTableInterfaceWrapper : public QAccessibleTableInterface, public cpgf::GScriptWrapper {
 public:
     
-    bool selectRow(int row)
+    QString rowDescription(int row) const
     {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("selectRow"));
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("rowDescription"));
+        if(func)
+        {
+            return cpgf::fromVariant<QString >(cpgf::invokeScriptFunctionOnObject(func.get(), this, row).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    QString super_rowDescription(int row) const
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    int columnCount() const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("columnCount"));
+        if(func)
+        {
+            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    int super_columnCount() const
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    bool unselectRow(int row)
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("unselectRow"));
         if(func)
         {
             return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this, row).getValue());
         }
         throw std::runtime_error("Abstract method");
     }
-    bool super_selectRow(int row)
+    bool super_unselectRow(int row)
     {
         throw std::runtime_error("Abstract method");
     }
@@ -1158,30 +1218,16 @@ public:
         throw std::runtime_error("Abstract method");
     }
     
-    bool unselectColumn(int column)
+    int selectedCellCount() const
     {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("unselectColumn"));
-        if(func)
-        {
-            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this, column).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    bool super_unselectColumn(int column)
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
-    int rowCount() const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("rowCount"));
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("selectedCellCount"));
         if(func)
         {
             return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
         }
         throw std::runtime_error("Abstract method");
     }
-    int super_rowCount() const
+    int super_selectedCellCount() const
     {
         throw std::runtime_error("Abstract method");
     }
@@ -1200,16 +1246,73 @@ public:
         throw std::runtime_error("Abstract method");
     }
     
-    bool selectColumn(int column)
+    bool selectRow(int row)
     {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("selectColumn"));
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("selectRow"));
         if(func)
         {
-            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this, column).getValue());
+            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this, row).getValue());
         }
         throw std::runtime_error("Abstract method");
     }
-    bool super_selectColumn(int column)
+    bool super_selectRow(int row)
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    void modelChange(QAccessibleTableModelChangeEvent * event)
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("modelChange"));
+        if(func)
+        {
+            cpgf::invokeScriptFunctionOnObject(func.get(), this, event);
+            return;
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    void super_modelChange(QAccessibleTableModelChangeEvent * event)
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    int rowCount() const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("rowCount"));
+        if(func)
+        {
+            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    int super_rowCount() const
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    QList< QAccessibleInterface * > selectedCells() const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("selectedCells"));
+        if(func)
+        {
+            return cpgf::fromVariant<QList< QAccessibleInterface * > >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    QList< QAccessibleInterface * > super_selectedCells() const
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    QAccessibleInterface * cellAt(int row, int column) const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("cellAt"));
+        if(func)
+        {
+            return cpgf::fromVariant<QAccessibleInterface * >(cpgf::invokeScriptFunctionOnObject(func.get(), this, row, column).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    QAccessibleInterface * super_cellAt(int row, int column) const
     {
         throw std::runtime_error("Abstract method");
     }
@@ -1242,34 +1345,6 @@ public:
         throw std::runtime_error("Abstract method");
     }
     
-    bool unselectRow(int row)
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("unselectRow"));
-        if(func)
-        {
-            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this, row).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    bool super_unselectRow(int row)
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
-    bool isRowSelected(int row) const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("isRowSelected"));
-        if(func)
-        {
-            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this, row).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    bool super_isRowSelected(int row) const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
     int selectedColumnCount() const
     {
         cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("selectedColumnCount"));
@@ -1280,49 +1355,6 @@ public:
         throw std::runtime_error("Abstract method");
     }
     int super_selectedColumnCount() const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
-    QList< QAccessibleInterface * > selectedCells() const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("selectedCells"));
-        if(func)
-        {
-            return cpgf::fromVariant<QList< QAccessibleInterface * > >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    QList< QAccessibleInterface * > super_selectedCells() const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
-    void modelChange(QAccessibleTableModelChangeEvent * event)
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("modelChange"));
-        if(func)
-        {
-            cpgf::invokeScriptFunctionOnObject(func.get(), this, event);
-            return;
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    void super_modelChange(QAccessibleTableModelChangeEvent * event)
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
-    QString rowDescription(int row) const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("rowDescription"));
-        if(func)
-        {
-            return cpgf::fromVariant<QString >(cpgf::invokeScriptFunctionOnObject(func.get(), this, row).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    QString super_rowDescription(int row) const
     {
         throw std::runtime_error("Abstract method");
     }
@@ -1341,20 +1373,6 @@ public:
         throw std::runtime_error("Abstract method");
     }
     
-    int selectedCellCount() const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("selectedCellCount"));
-        if(func)
-        {
-            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    int super_selectedCellCount() const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
     bool isColumnSelected(int column) const
     {
         cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("isColumnSelected"));
@@ -1369,16 +1387,16 @@ public:
         throw std::runtime_error("Abstract method");
     }
     
-    QAccessibleInterface * cellAt(int row, int column) const
+    bool isRowSelected(int row) const
     {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("cellAt"));
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("isRowSelected"));
         if(func)
         {
-            return cpgf::fromVariant<QAccessibleInterface * >(cpgf::invokeScriptFunctionOnObject(func.get(), this, row, column).getValue());
+            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this, row).getValue());
         }
         throw std::runtime_error("Abstract method");
     }
-    QAccessibleInterface * super_cellAt(int row, int column) const
+    bool super_isRowSelected(int row) const
     {
         throw std::runtime_error("Abstract method");
     }
@@ -1397,16 +1415,30 @@ public:
         throw std::runtime_error("Abstract method");
     }
     
-    int columnCount() const
+    bool selectColumn(int column)
     {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("columnCount"));
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("selectColumn"));
         if(func)
         {
-            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this, column).getValue());
         }
         throw std::runtime_error("Abstract method");
     }
-    int super_columnCount() const
+    bool super_selectColumn(int column)
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    bool unselectColumn(int column)
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("unselectColumn"));
+        if(func)
+        {
+            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this, column).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    bool super_unselectColumn(int column)
     {
         throw std::runtime_error("Abstract method");
     }
@@ -1415,26 +1447,26 @@ public:
     {
         (void)_d;
         using namespace cpgf;
-        _d.CPGF_MD_TEMPLATE _method("super_selectRow", (bool (D::ClassType::*) (int))&D::ClassType::super_selectRow);
+        _d.CPGF_MD_TEMPLATE _method("super_rowDescription", (QString (D::ClassType::*) (int) const)&D::ClassType::super_rowDescription);
+        _d.CPGF_MD_TEMPLATE _method("super_columnCount", (int (D::ClassType::*) () const)&D::ClassType::super_columnCount);
+        _d.CPGF_MD_TEMPLATE _method("super_unselectRow", (bool (D::ClassType::*) (int))&D::ClassType::super_unselectRow);
         _d.CPGF_MD_TEMPLATE _method("super_caption", (QAccessibleInterface * (D::ClassType::*) () const)&D::ClassType::super_caption);
-        _d.CPGF_MD_TEMPLATE _method("super_unselectColumn", (bool (D::ClassType::*) (int))&D::ClassType::super_unselectColumn);
-        _d.CPGF_MD_TEMPLATE _method("super_rowCount", (int (D::ClassType::*) () const)&D::ClassType::super_rowCount);
+        _d.CPGF_MD_TEMPLATE _method("super_selectedCellCount", (int (D::ClassType::*) () const)&D::ClassType::super_selectedCellCount);
         _d.CPGF_MD_TEMPLATE _method("super_selectedColumns", (QList< int > (D::ClassType::*) () const)&D::ClassType::super_selectedColumns);
-        _d.CPGF_MD_TEMPLATE _method("super_selectColumn", (bool (D::ClassType::*) (int))&D::ClassType::super_selectColumn);
+        _d.CPGF_MD_TEMPLATE _method("super_selectRow", (bool (D::ClassType::*) (int))&D::ClassType::super_selectRow);
+        _d.CPGF_MD_TEMPLATE _method("super_modelChange", (void (D::ClassType::*) (QAccessibleTableModelChangeEvent *))&D::ClassType::super_modelChange);
+        _d.CPGF_MD_TEMPLATE _method("super_rowCount", (int (D::ClassType::*) () const)&D::ClassType::super_rowCount);
+        _d.CPGF_MD_TEMPLATE _method("super_selectedCells", (QList< QAccessibleInterface * > (D::ClassType::*) () const)&D::ClassType::super_selectedCells);
+        _d.CPGF_MD_TEMPLATE _method("super_cellAt", (QAccessibleInterface * (D::ClassType::*) (int, int) const)&D::ClassType::super_cellAt);
         _d.CPGF_MD_TEMPLATE _method("super_columnDescription", (QString (D::ClassType::*) (int) const)&D::ClassType::super_columnDescription);
         _d.CPGF_MD_TEMPLATE _method("super_selectedRows", (QList< int > (D::ClassType::*) () const)&D::ClassType::super_selectedRows);
-        _d.CPGF_MD_TEMPLATE _method("super_unselectRow", (bool (D::ClassType::*) (int))&D::ClassType::super_unselectRow);
-        _d.CPGF_MD_TEMPLATE _method("super_isRowSelected", (bool (D::ClassType::*) (int) const)&D::ClassType::super_isRowSelected);
         _d.CPGF_MD_TEMPLATE _method("super_selectedColumnCount", (int (D::ClassType::*) () const)&D::ClassType::super_selectedColumnCount);
-        _d.CPGF_MD_TEMPLATE _method("super_selectedCells", (QList< QAccessibleInterface * > (D::ClassType::*) () const)&D::ClassType::super_selectedCells);
-        _d.CPGF_MD_TEMPLATE _method("super_modelChange", (void (D::ClassType::*) (QAccessibleTableModelChangeEvent *))&D::ClassType::super_modelChange);
-        _d.CPGF_MD_TEMPLATE _method("super_rowDescription", (QString (D::ClassType::*) (int) const)&D::ClassType::super_rowDescription);
         _d.CPGF_MD_TEMPLATE _method("super_summary", (QAccessibleInterface * (D::ClassType::*) () const)&D::ClassType::super_summary);
-        _d.CPGF_MD_TEMPLATE _method("super_selectedCellCount", (int (D::ClassType::*) () const)&D::ClassType::super_selectedCellCount);
         _d.CPGF_MD_TEMPLATE _method("super_isColumnSelected", (bool (D::ClassType::*) (int) const)&D::ClassType::super_isColumnSelected);
-        _d.CPGF_MD_TEMPLATE _method("super_cellAt", (QAccessibleInterface * (D::ClassType::*) (int, int) const)&D::ClassType::super_cellAt);
+        _d.CPGF_MD_TEMPLATE _method("super_isRowSelected", (bool (D::ClassType::*) (int) const)&D::ClassType::super_isRowSelected);
         _d.CPGF_MD_TEMPLATE _method("super_selectedRowCount", (int (D::ClassType::*) () const)&D::ClassType::super_selectedRowCount);
-        _d.CPGF_MD_TEMPLATE _method("super_columnCount", (int (D::ClassType::*) () const)&D::ClassType::super_columnCount);
+        _d.CPGF_MD_TEMPLATE _method("super_selectColumn", (bool (D::ClassType::*) (int))&D::ClassType::super_selectColumn);
+        _d.CPGF_MD_TEMPLATE _method("super_unselectColumn", (bool (D::ClassType::*) (int))&D::ClassType::super_unselectColumn);
     }
 };
 
@@ -1670,78 +1702,6 @@ void buildMetaClass_QAccessibleTextInterface(D _d)
 class QAccessibleTextInterfaceWrapper : public QAccessibleTextInterface, public cpgf::GScriptWrapper {
 public:
     
-    void selection(int selectionIndex, int * startOffset, int * endOffset) const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("selection"));
-        if(func)
-        {
-            cpgf::invokeScriptFunctionOnObject(func.get(), this, selectionIndex, startOffset, endOffset);
-            return;
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    void super_selection(int selectionIndex, int * startOffset, int * endOffset) const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
-    void addSelection(int startOffset, int endOffset)
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("addSelection"));
-        if(func)
-        {
-            cpgf::invokeScriptFunctionOnObject(func.get(), this, startOffset, endOffset);
-            return;
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    void super_addSelection(int startOffset, int endOffset)
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
-    QString text(int startOffset, int endOffset) const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("text"));
-        if(func)
-        {
-            return cpgf::fromVariant<QString >(cpgf::invokeScriptFunctionOnObject(func.get(), this, startOffset, endOffset).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    QString super_text(int startOffset, int endOffset) const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
-    int offsetAtPoint(const QPoint & point) const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("offsetAtPoint"));
-        if(func)
-        {
-            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this, point).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    int super_offsetAtPoint(const QPoint & point) const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
-    QRect characterRect(int offset) const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("characterRect"));
-        if(func)
-        {
-            return cpgf::fromVariant<QRect >(cpgf::invokeScriptFunctionOnObject(func.get(), this, offset).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    QRect super_characterRect(int offset) const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
     QString textAfterOffset(int offset, QAccessible::TextBoundaryType boundaryType, int * startOffset, int * endOffset) const
     {
         cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("textAfterOffset"));
@@ -1754,48 +1714,6 @@ public:
     QString super_textAfterOffset(int offset, QAccessible::TextBoundaryType boundaryType, int * startOffset, int * endOffset) const
     {
         return QAccessibleTextInterface::textAfterOffset(offset, boundaryType, startOffset, endOffset);
-    }
-    
-    int characterCount() const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("characterCount"));
-        if(func)
-        {
-            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    int super_characterCount() const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
-    QString attributes(int offset, int * startOffset, int * endOffset) const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("attributes"));
-        if(func)
-        {
-            return cpgf::fromVariant<QString >(cpgf::invokeScriptFunctionOnObject(func.get(), this, offset, startOffset, endOffset).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    QString super_attributes(int offset, int * startOffset, int * endOffset) const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
-    QString textAtOffset(int offset, QAccessible::TextBoundaryType boundaryType, int * startOffset, int * endOffset) const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("textAtOffset"));
-        if(func)
-        {
-            return cpgf::fromVariant<QString >(cpgf::invokeScriptFunctionOnObject(func.get(), this, offset, boundaryType, startOffset, endOffset).getValue());
-        }
-        return QAccessibleTextInterface::textAtOffset(offset, boundaryType, startOffset, endOffset);
-    }
-    QString super_textAtOffset(int offset, QAccessible::TextBoundaryType boundaryType, int * startOffset, int * endOffset) const
-    {
-        return QAccessibleTextInterface::textAtOffset(offset, boundaryType, startOffset, endOffset);
     }
     
     void setSelection(int selectionIndex, int startOffset, int endOffset)
@@ -1813,17 +1731,17 @@ public:
         throw std::runtime_error("Abstract method");
     }
     
-    void setCursorPosition(int position)
+    void selection(int selectionIndex, int * startOffset, int * endOffset) const
     {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("setCursorPosition"));
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("selection"));
         if(func)
         {
-            cpgf::invokeScriptFunctionOnObject(func.get(), this, position);
+            cpgf::invokeScriptFunctionOnObject(func.get(), this, selectionIndex, startOffset, endOffset);
             return;
         }
         throw std::runtime_error("Abstract method");
     }
-    void super_setCursorPosition(int position)
+    void super_selection(int selectionIndex, int * startOffset, int * endOffset) const
     {
         throw std::runtime_error("Abstract method");
     }
@@ -1843,17 +1761,60 @@ public:
         throw std::runtime_error("Abstract method");
     }
     
-    void scrollToSubstring(int startIndex, int endIndex)
+    void setCursorPosition(int position)
     {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("scrollToSubstring"));
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("setCursorPosition"));
         if(func)
         {
-            cpgf::invokeScriptFunctionOnObject(func.get(), this, startIndex, endIndex);
+            cpgf::invokeScriptFunctionOnObject(func.get(), this, position);
             return;
         }
         throw std::runtime_error("Abstract method");
     }
-    void super_scrollToSubstring(int startIndex, int endIndex)
+    void super_setCursorPosition(int position)
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    void addSelection(int startOffset, int endOffset)
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("addSelection"));
+        if(func)
+        {
+            cpgf::invokeScriptFunctionOnObject(func.get(), this, startOffset, endOffset);
+            return;
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    void super_addSelection(int startOffset, int endOffset)
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    int characterCount() const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("characterCount"));
+        if(func)
+        {
+            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    int super_characterCount() const
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    int cursorPosition() const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("cursorPosition"));
+        if(func)
+        {
+            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    int super_cursorPosition() const
     {
         throw std::runtime_error("Abstract method");
     }
@@ -1872,6 +1833,34 @@ public:
         return QAccessibleTextInterface::textBeforeOffset(offset, boundaryType, startOffset, endOffset);
     }
     
+    int offsetAtPoint(const QPoint & point) const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("offsetAtPoint"));
+        if(func)
+        {
+            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this, point).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    int super_offsetAtPoint(const QPoint & point) const
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    QString textAtOffset(int offset, QAccessible::TextBoundaryType boundaryType, int * startOffset, int * endOffset) const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("textAtOffset"));
+        if(func)
+        {
+            return cpgf::fromVariant<QString >(cpgf::invokeScriptFunctionOnObject(func.get(), this, offset, boundaryType, startOffset, endOffset).getValue());
+        }
+        return QAccessibleTextInterface::textAtOffset(offset, boundaryType, startOffset, endOffset);
+    }
+    QString super_textAtOffset(int offset, QAccessible::TextBoundaryType boundaryType, int * startOffset, int * endOffset) const
+    {
+        return QAccessibleTextInterface::textAtOffset(offset, boundaryType, startOffset, endOffset);
+    }
+    
     int selectionCount() const
     {
         cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("selectionCount"));
@@ -1886,16 +1875,59 @@ public:
         throw std::runtime_error("Abstract method");
     }
     
-    int cursorPosition() const
+    void scrollToSubstring(int startIndex, int endIndex)
     {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("cursorPosition"));
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("scrollToSubstring"));
         if(func)
         {
-            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+            cpgf::invokeScriptFunctionOnObject(func.get(), this, startIndex, endIndex);
+            return;
         }
         throw std::runtime_error("Abstract method");
     }
-    int super_cursorPosition() const
+    void super_scrollToSubstring(int startIndex, int endIndex)
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    QString attributes(int offset, int * startOffset, int * endOffset) const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("attributes"));
+        if(func)
+        {
+            return cpgf::fromVariant<QString >(cpgf::invokeScriptFunctionOnObject(func.get(), this, offset, startOffset, endOffset).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    QString super_attributes(int offset, int * startOffset, int * endOffset) const
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    QRect characterRect(int offset) const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("characterRect"));
+        if(func)
+        {
+            return cpgf::fromVariant<QRect >(cpgf::invokeScriptFunctionOnObject(func.get(), this, offset).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    QRect super_characterRect(int offset) const
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    QString text(int startOffset, int endOffset) const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("text"));
+        if(func)
+        {
+            return cpgf::fromVariant<QString >(cpgf::invokeScriptFunctionOnObject(func.get(), this, startOffset, endOffset).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    QString super_text(int startOffset, int endOffset) const
     {
         throw std::runtime_error("Abstract method");
     }
@@ -1904,22 +1936,22 @@ public:
     {
         (void)_d;
         using namespace cpgf;
-        _d.CPGF_MD_TEMPLATE _method("super_selection", (void (D::ClassType::*) (int, int *, int *) const)&D::ClassType::super_selection);
-        _d.CPGF_MD_TEMPLATE _method("super_addSelection", (void (D::ClassType::*) (int, int))&D::ClassType::super_addSelection);
-        _d.CPGF_MD_TEMPLATE _method("super_text", (QString (D::ClassType::*) (int, int) const)&D::ClassType::super_text);
-        _d.CPGF_MD_TEMPLATE _method("super_offsetAtPoint", (int (D::ClassType::*) (const QPoint &) const)&D::ClassType::super_offsetAtPoint);
-        _d.CPGF_MD_TEMPLATE _method("super_characterRect", (QRect (D::ClassType::*) (int) const)&D::ClassType::super_characterRect);
         _d.CPGF_MD_TEMPLATE _method("super_textAfterOffset", (QString (D::ClassType::*) (int, QAccessible::TextBoundaryType, int *, int *) const)&D::ClassType::super_textAfterOffset);
-        _d.CPGF_MD_TEMPLATE _method("super_characterCount", (int (D::ClassType::*) () const)&D::ClassType::super_characterCount);
-        _d.CPGF_MD_TEMPLATE _method("super_attributes", (QString (D::ClassType::*) (int, int *, int *) const)&D::ClassType::super_attributes);
-        _d.CPGF_MD_TEMPLATE _method("super_textAtOffset", (QString (D::ClassType::*) (int, QAccessible::TextBoundaryType, int *, int *) const)&D::ClassType::super_textAtOffset);
         _d.CPGF_MD_TEMPLATE _method("super_setSelection", (void (D::ClassType::*) (int, int, int))&D::ClassType::super_setSelection);
-        _d.CPGF_MD_TEMPLATE _method("super_setCursorPosition", (void (D::ClassType::*) (int))&D::ClassType::super_setCursorPosition);
+        _d.CPGF_MD_TEMPLATE _method("super_selection", (void (D::ClassType::*) (int, int *, int *) const)&D::ClassType::super_selection);
         _d.CPGF_MD_TEMPLATE _method("super_removeSelection", (void (D::ClassType::*) (int))&D::ClassType::super_removeSelection);
-        _d.CPGF_MD_TEMPLATE _method("super_scrollToSubstring", (void (D::ClassType::*) (int, int))&D::ClassType::super_scrollToSubstring);
-        _d.CPGF_MD_TEMPLATE _method("super_textBeforeOffset", (QString (D::ClassType::*) (int, QAccessible::TextBoundaryType, int *, int *) const)&D::ClassType::super_textBeforeOffset);
-        _d.CPGF_MD_TEMPLATE _method("super_selectionCount", (int (D::ClassType::*) () const)&D::ClassType::super_selectionCount);
+        _d.CPGF_MD_TEMPLATE _method("super_setCursorPosition", (void (D::ClassType::*) (int))&D::ClassType::super_setCursorPosition);
+        _d.CPGF_MD_TEMPLATE _method("super_addSelection", (void (D::ClassType::*) (int, int))&D::ClassType::super_addSelection);
+        _d.CPGF_MD_TEMPLATE _method("super_characterCount", (int (D::ClassType::*) () const)&D::ClassType::super_characterCount);
         _d.CPGF_MD_TEMPLATE _method("super_cursorPosition", (int (D::ClassType::*) () const)&D::ClassType::super_cursorPosition);
+        _d.CPGF_MD_TEMPLATE _method("super_textBeforeOffset", (QString (D::ClassType::*) (int, QAccessible::TextBoundaryType, int *, int *) const)&D::ClassType::super_textBeforeOffset);
+        _d.CPGF_MD_TEMPLATE _method("super_offsetAtPoint", (int (D::ClassType::*) (const QPoint &) const)&D::ClassType::super_offsetAtPoint);
+        _d.CPGF_MD_TEMPLATE _method("super_textAtOffset", (QString (D::ClassType::*) (int, QAccessible::TextBoundaryType, int *, int *) const)&D::ClassType::super_textAtOffset);
+        _d.CPGF_MD_TEMPLATE _method("super_selectionCount", (int (D::ClassType::*) () const)&D::ClassType::super_selectionCount);
+        _d.CPGF_MD_TEMPLATE _method("super_scrollToSubstring", (void (D::ClassType::*) (int, int))&D::ClassType::super_scrollToSubstring);
+        _d.CPGF_MD_TEMPLATE _method("super_attributes", (QString (D::ClassType::*) (int, int *, int *) const)&D::ClassType::super_attributes);
+        _d.CPGF_MD_TEMPLATE _method("super_characterRect", (QRect (D::ClassType::*) (int) const)&D::ClassType::super_characterRect);
+        _d.CPGF_MD_TEMPLATE _method("super_text", (QString (D::ClassType::*) (int, int) const)&D::ClassType::super_text);
     }
 };
 
@@ -2188,6 +2220,34 @@ void buildMetaClass_QAccessibleValueInterface(D _d)
 class QAccessibleValueInterfaceWrapper : public QAccessibleValueInterface, public cpgf::GScriptWrapper {
 public:
     
+    QVariant currentValue() const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("currentValue"));
+        if(func)
+        {
+            return cpgf::fromVariant<QVariant >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    QVariant super_currentValue() const
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    QVariant maximumValue() const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("maximumValue"));
+        if(func)
+        {
+            return cpgf::fromVariant<QVariant >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    QVariant super_maximumValue() const
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
     QVariant minimumStepSize() const
     {
         cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("minimumStepSize"));
@@ -2230,44 +2290,16 @@ public:
     {
         throw std::runtime_error("Abstract method");
     }
-    
-    QVariant maximumValue() const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("maximumValue"));
-        if(func)
-        {
-            return cpgf::fromVariant<QVariant >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    QVariant super_maximumValue() const
-    {
-        throw std::runtime_error("Abstract method");
-    }
-    
-    QVariant currentValue() const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("currentValue"));
-        if(func)
-        {
-            return cpgf::fromVariant<QVariant >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
-        }
-        throw std::runtime_error("Abstract method");
-    }
-    QVariant super_currentValue() const
-    {
-        throw std::runtime_error("Abstract method");
-    }
     template <typename D>
     static void cpgf__register(D _d)
     {
         (void)_d;
         using namespace cpgf;
+        _d.CPGF_MD_TEMPLATE _method("super_currentValue", (QVariant (D::ClassType::*) () const)&D::ClassType::super_currentValue);
+        _d.CPGF_MD_TEMPLATE _method("super_maximumValue", (QVariant (D::ClassType::*) () const)&D::ClassType::super_maximumValue);
         _d.CPGF_MD_TEMPLATE _method("super_minimumStepSize", (QVariant (D::ClassType::*) () const)&D::ClassType::super_minimumStepSize);
         _d.CPGF_MD_TEMPLATE _method("super_setCurrentValue", (void (D::ClassType::*) (const QVariant &))&D::ClassType::super_setCurrentValue, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
         _d.CPGF_MD_TEMPLATE _method("super_minimumValue", (QVariant (D::ClassType::*) () const)&D::ClassType::super_minimumValue);
-        _d.CPGF_MD_TEMPLATE _method("super_maximumValue", (QVariant (D::ClassType::*) () const)&D::ClassType::super_maximumValue);
-        _d.CPGF_MD_TEMPLATE _method("super_currentValue", (QVariant (D::ClassType::*) () const)&D::ClassType::super_currentValue);
     }
 };
 

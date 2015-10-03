@@ -118,6 +118,20 @@ GDefineMetaInfo createMetaClass_VariantData()
 }
 
 
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
+GDefineMetaInfo createMetaClass_VectorBoolElements()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QtMetaTypePrivate::VectorBoolElements> _nd = GDefineMetaClass<QtMetaTypePrivate::VectorBoolElements>::lazyDeclare("VectorBoolElements", &buildMetaClass_VectorBoolElements);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
 } // namespace qt_metadata
 
 

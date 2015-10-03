@@ -47,13 +47,13 @@ void buildMetaClass_Global_qsize(D _d)
 }
 
 
-inline QSize & opErAToRWrapper_QSize__opAddAssign(QSize * self, const QSize & __arg0) {
+inline Q_DECL_RELAXED_CONSTEXPR QSize & opErAToRWrapper_QSize__opAddAssign(QSize * self, const QSize & __arg0) {
     return (*self) += __arg0;
 }
-inline QSize & opErAToRWrapper_QSize__opSubAssign(QSize * self, const QSize & __arg0) {
+inline Q_DECL_RELAXED_CONSTEXPR QSize & opErAToRWrapper_QSize__opSubAssign(QSize * self, const QSize & __arg0) {
     return (*self) -= __arg0;
 }
-inline QSize & opErAToRWrapper_QSize__opMulAssign(QSize * self, qreal c) {
+inline Q_DECL_RELAXED_CONSTEXPR QSize & opErAToRWrapper_QSize__opMulAssign(QSize * self, qreal c) {
     return (*self) *= c;
 }
 inline QSize & opErAToRWrapper_QSize__opDivAssign(QSize * self, qreal c) {
@@ -86,24 +86,24 @@ void buildMetaClass_QSize(D _d)
     _d.CPGF_MD_TEMPLATE _method("boundedTo", &D::ClassType::boundedTo);
     _d.CPGF_MD_TEMPLATE _method("rwidth", &D::ClassType::rwidth);
     _d.CPGF_MD_TEMPLATE _method("rheight", &D::ClassType::rheight);
-    _d.CPGF_MD_TEMPLATE _operator<QSize & (*)(cpgf::GMetaSelf, const QSize &)>(mopHolder += mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (QSize & (*) (QSize *, const QSize &))&opErAToRWrapper_QSize__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QSize & (*)(cpgf::GMetaSelf, const QSize &)>(mopHolder -= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (QSize & (*) (QSize *, const QSize &))&opErAToRWrapper_QSize__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QSize & (*)(cpgf::GMetaSelf, qreal)>(mopHolder *= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (QSize & (*) (QSize *, qreal))&opErAToRWrapper_QSize__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QSize & (*)(cpgf::GMetaSelf, const QSize &)>(mopHolder += mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (Q_DECL_RELAXED_CONSTEXPR QSize & (*) (QSize *, const QSize &))&opErAToRWrapper_QSize__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QSize & (*)(cpgf::GMetaSelf, const QSize &)>(mopHolder -= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (Q_DECL_RELAXED_CONSTEXPR QSize & (*) (QSize *, const QSize &))&opErAToRWrapper_QSize__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QSize & (*)(cpgf::GMetaSelf, qreal)>(mopHolder *= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (Q_DECL_RELAXED_CONSTEXPR QSize & (*) (QSize *, qreal))&opErAToRWrapper_QSize__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
     _d.CPGF_MD_TEMPLATE _operator<QSize & (*)(cpgf::GMetaSelf, qreal)>(mopHolder /= mopHolder);
     _d.CPGF_MD_TEMPLATE _method("_opDivAssign", (QSize & (*) (QSize *, qreal))&opErAToRWrapper_QSize__opDivAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
 }
 
 
-inline QSizeF & opErAToRWrapper_QSizeF__opAddAssign(QSizeF * self, const QSizeF & __arg0) {
+inline Q_DECL_RELAXED_CONSTEXPR QSizeF & opErAToRWrapper_QSizeF__opAddAssign(QSizeF * self, const QSizeF & __arg0) {
     return (*self) += __arg0;
 }
-inline QSizeF & opErAToRWrapper_QSizeF__opSubAssign(QSizeF * self, const QSizeF & __arg0) {
+inline Q_DECL_RELAXED_CONSTEXPR QSizeF & opErAToRWrapper_QSizeF__opSubAssign(QSizeF * self, const QSizeF & __arg0) {
     return (*self) -= __arg0;
 }
-inline QSizeF & opErAToRWrapper_QSizeF__opMulAssign(QSizeF * self, qreal c) {
+inline Q_DECL_RELAXED_CONSTEXPR QSizeF & opErAToRWrapper_QSizeF__opMulAssign(QSizeF * self, qreal c) {
     return (*self) *= c;
 }
 inline QSizeF & opErAToRWrapper_QSizeF__opDivAssign(QSizeF * self, qreal c) {
@@ -138,12 +138,12 @@ void buildMetaClass_QSizeF(D _d)
     _d.CPGF_MD_TEMPLATE _method("rwidth", &D::ClassType::rwidth);
     _d.CPGF_MD_TEMPLATE _method("rheight", &D::ClassType::rheight);
     _d.CPGF_MD_TEMPLATE _method("toSize", &D::ClassType::toSize);
-    _d.CPGF_MD_TEMPLATE _operator<QSizeF & (*)(cpgf::GMetaSelf, const QSizeF &)>(mopHolder += mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (QSizeF & (*) (QSizeF *, const QSizeF &))&opErAToRWrapper_QSizeF__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QSizeF & (*)(cpgf::GMetaSelf, const QSizeF &)>(mopHolder -= mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (QSizeF & (*) (QSizeF *, const QSizeF &))&opErAToRWrapper_QSizeF__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<QSizeF & (*)(cpgf::GMetaSelf, qreal)>(mopHolder *= mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (QSizeF & (*) (QSizeF *, qreal))&opErAToRWrapper_QSizeF__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QSizeF & (*)(cpgf::GMetaSelf, const QSizeF &)>(mopHolder += mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opAddAssign", (Q_DECL_RELAXED_CONSTEXPR QSizeF & (*) (QSizeF *, const QSizeF &))&opErAToRWrapper_QSizeF__opAddAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QSizeF & (*)(cpgf::GMetaSelf, const QSizeF &)>(mopHolder -= mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opSubAssign", (Q_DECL_RELAXED_CONSTEXPR QSizeF & (*) (QSizeF *, const QSizeF &))&opErAToRWrapper_QSizeF__opSubAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<Q_DECL_RELAXED_CONSTEXPR QSizeF & (*)(cpgf::GMetaSelf, qreal)>(mopHolder *= mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (Q_DECL_RELAXED_CONSTEXPR QSizeF & (*) (QSizeF *, qreal))&opErAToRWrapper_QSizeF__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
     _d.CPGF_MD_TEMPLATE _operator<QSizeF & (*)(cpgf::GMetaSelf, qreal)>(mopHolder /= mopHolder);
     _d.CPGF_MD_TEMPLATE _method("_opDivAssign", (QSizeF & (*) (QSizeF *, qreal))&opErAToRWrapper_QSizeF__opDivAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
 }

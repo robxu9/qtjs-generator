@@ -25,11 +25,11 @@ void buildMetaClass_Global_qalgorithms(D _d)
     (void)_d;
     using namespace cpgf;
     
-    _d.CPGF_MD_TEMPLATE _method("qPopulationCount", (uint (*) (quint32))&qPopulationCount);
-    _d.CPGF_MD_TEMPLATE _method("qPopulationCount", (uint (*) (quint8))&qPopulationCount);
-    _d.CPGF_MD_TEMPLATE _method("qPopulationCount", (uint (*) (quint16))&qPopulationCount);
-    _d.CPGF_MD_TEMPLATE _method("qPopulationCount", (uint (*) (quint64))&qPopulationCount);
-    _d.CPGF_MD_TEMPLATE _method("qPopulationCount", (uint (*) (long unsigned int))&qPopulationCount);
+    _d.CPGF_MD_TEMPLATE _method("qPopulationCount", (Q_DECL_CONST_FUNCTION uint (*) (quint32))&qPopulationCount);
+    _d.CPGF_MD_TEMPLATE _method("qPopulationCount", (Q_DECL_CONST_FUNCTION uint (*) (quint8))&qPopulationCount);
+    _d.CPGF_MD_TEMPLATE _method("qPopulationCount", (Q_DECL_CONST_FUNCTION uint (*) (quint16))&qPopulationCount);
+    _d.CPGF_MD_TEMPLATE _method("qPopulationCount", (Q_DECL_CONST_FUNCTION uint (*) (quint64))&qPopulationCount);
+    _d.CPGF_MD_TEMPLATE _method("qPopulationCount", (Q_DECL_CONST_FUNCTION uint (*) (long unsigned int))&qPopulationCount);
 }
 
 

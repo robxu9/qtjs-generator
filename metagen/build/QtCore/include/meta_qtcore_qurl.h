@@ -167,7 +167,10 @@ void buildMetaClass_QUrl(D _d)
     _d.CPGF_MD_TEMPLATE _method("fromEncoded", &D::ClassType::fromEncoded, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >())
         ._default(copyVariantFromCopyable(QUrl::TolerantMode))
     ;
-    _d.CPGF_MD_TEMPLATE _method("fromUserInput", &D::ClassType::fromUserInput, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
+    _d.CPGF_MD_TEMPLATE _method("fromUserInput", (QUrl (*) (const QString &))&D::ClassType::fromUserInput, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
+    _d.CPGF_MD_TEMPLATE _method("fromUserInput", (QUrl (*) (const QString &, const QString &, QUrl::UserInputResolutionOptions))&D::ClassType::fromUserInput, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1> >())
+        ._default(copyVariantFromCopyable(QUrl::DefaultResolution))
+    ;
     _d.CPGF_MD_TEMPLATE _method("fromLocalFile", &D::ClassType::fromLocalFile, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("fromPercentEncoding", &D::ClassType::fromPercentEncoding, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("toPercentEncoding", &D::ClassType::toPercentEncoding, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleCopyConstReference<2> >())
@@ -214,6 +217,10 @@ void buildMetaClass_QUrl(D _d)
         ._element("FullyEncoded", D::ClassType::FullyEncoded)
         ._element("FullyDecoded", D::ClassType::FullyDecoded)
     ;
+    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::UserInputResolutionOption>("UserInputResolutionOption")
+        ._element("DefaultResolution", D::ClassType::DefaultResolution)
+        ._element("AssumeLocalFile", D::ClassType::AssumeLocalFile)
+    ;
     _d.CPGF_MD_TEMPLATE _operator<QUrl & (*)(cpgf::GMetaSelf, const QUrl &)>(mopHolder = mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("_opAssign", (QUrl & (*) (QUrl *, const QUrl &))&opErAToRWrapper_QUrl__opAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
     _d.CPGF_MD_TEMPLATE _operator<QUrl & (*)(cpgf::GMetaSelf, const QString &)>(mopHolder = mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
@@ -226,6 +233,10 @@ void buildMetaClass_QUrl(D _d)
     _d.CPGF_MD_TEMPLATE _method("_opNotEqual", (bool (*) (const QUrl *, const QUrl &))&opErAToRWrapper_QUrl__opNotEqual, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
     {
         GDefineMetaClass<QFlags<typename QUrl::ComponentFormattingOption > > _t_d = GDefineMetaClass<QFlags<typename QUrl::ComponentFormattingOption > >::lazyDeclare("ComponentFormattingOptions", &buildMetaClass_QFlags<GDefineMetaClass<QFlags<typename QUrl::ComponentFormattingOption > >, typename QUrl::ComponentFormattingOption >);
+        _d._class(_t_d);
+    }
+    {
+        GDefineMetaClass<QFlags<typename QUrl::UserInputResolutionOption > > _t_d = GDefineMetaClass<QFlags<typename QUrl::UserInputResolutionOption > >::lazyDeclare("UserInputResolutionOptions", &buildMetaClass_QFlags<GDefineMetaClass<QFlags<typename QUrl::UserInputResolutionOption > >, typename QUrl::UserInputResolutionOption >);
         _d._class(_t_d);
     }
 }

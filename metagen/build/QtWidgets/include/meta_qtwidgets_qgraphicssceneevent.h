@@ -165,6 +165,10 @@ void buildMetaClass_QGraphicsSceneMouseEvent(D _d)
     _d.CPGF_MD_TEMPLATE _method("setButton", &D::ClassType::setButton);
     _d.CPGF_MD_TEMPLATE _method("modifiers", &D::ClassType::modifiers);
     _d.CPGF_MD_TEMPLATE _method("setModifiers", &D::ClassType::setModifiers);
+    _d.CPGF_MD_TEMPLATE _method("source", &D::ClassType::source);
+    _d.CPGF_MD_TEMPLATE _method("setSource", &D::ClassType::setSource);
+    _d.CPGF_MD_TEMPLATE _method("flags", &D::ClassType::flags);
+    _d.CPGF_MD_TEMPLATE _method("setFlags", &D::ClassType::setFlags);
 }
 
 

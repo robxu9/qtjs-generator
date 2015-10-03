@@ -28,6 +28,22 @@ void buildMetaClass_Global_qarraydata(D _d)
 }
 
 
+template <typename D>
+void buildMetaClass_QContainerImplHelper(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _method("mid", &D::ClassType::mid);
+    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::CutResult>("CutResult")
+        ._element("Null", D::ClassType::Null)
+        ._element("Empty", D::ClassType::Empty)
+        ._element("Full", D::ClassType::Full)
+        ._element("Subset", D::ClassType::Subset)
+    ;
+}
+
+
 template <typename D, class T, size_t N>
 void buildMetaClass_QStaticArrayData(D _d)
 {

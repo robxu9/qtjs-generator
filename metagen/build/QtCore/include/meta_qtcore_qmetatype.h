@@ -54,6 +54,18 @@ void buildMetaClass_BuiltInDebugStreamFunction(D _d)
 }
 
 
+template <typename D, typename T>
+void buildMetaClass_BuiltInEqualsComparatorFunction(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
+    _d.CPGF_MD_TEMPLATE _method("equals", &D::ClassType::equals);
+    _d.CPGF_MD_TEMPLATE _method("destroy", &D::ClassType::destroy);
+}
+
+
 template <typename D, typename T, typename Category>
 void buildMetaClass_CapabilitiesImpl(D _d)
 {
@@ -121,6 +133,18 @@ void buildMetaClass_IsAssociativeContainer(D _d)
 }
 
 
+template <typename D, typename T, typename Enable>
+void buildMetaClass_IsGadgetHelper(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalEnum_QtCore_1")
+        ._element("Value", D::ClassType::Value)
+    ;
+}
+
+
 template <typename D, typename T>
 void buildMetaClass_IsPair(D _d)
 {
@@ -137,6 +161,19 @@ void buildMetaClass_IsPointerToTypeDerivedFromQObject(D _d)
     (void)_d;
     using namespace cpgf;
     
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalEnum_QtCore_1")
+        ._element("Value", D::ClassType::Value)
+    ;
+}
+
+
+template <typename D, typename T>
+void buildMetaClass_IsQEnumHelper(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _method("declval", &D::ClassType::declval);
     _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalEnum_QtCore_1")
         ._element("Value", D::ClassType::Value)
     ;
@@ -197,12 +234,21 @@ void buildMetaClass_IteratorOwner(D _d)
     (void)_d;
     using namespace cpgf;
     
+    _d.CPGF_MD_TEMPLATE _method("getData", (const void * (*) (void *const *))&D::ClassType::getData);
+    _d.CPGF_MD_TEMPLATE _method("getData", (const void * (*) (const_iterator))&D::ClassType::getData);
+}
+
+
+template <typename D, typename const_iterator>
+void buildMetaClass_IteratorOwnerCommon(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
     _d.CPGF_MD_TEMPLATE _method("assign", (void (*) (void **, const_iterator))&D::ClassType::assign);
     _d.CPGF_MD_TEMPLATE _method("assign", (void (*) (void **, void *const *))&D::ClassType::assign);
     _d.CPGF_MD_TEMPLATE _method("advance", &D::ClassType::advance);
     _d.CPGF_MD_TEMPLATE _method("destroy", &D::ClassType::destroy);
-    _d.CPGF_MD_TEMPLATE _method("getData", (const void * (*) (void *const *))&D::ClassType::getData);
-    _d.CPGF_MD_TEMPLATE _method("getData", (const void * (*) (const_iterator))&D::ClassType::getData);
     _d.CPGF_MD_TEMPLATE _method("equal", &D::ClassType::equal);
 }
 
@@ -228,7 +274,7 @@ void buildMetaClass_MetaTypePairHelper(D _d)
 }
 
 
-template <typename D, typename , typename >
+template <typename D, typename T, typename >
 void buildMetaClass_MetaTypeSmartPointerHelper(D _d)
 {
     (void)_d;
@@ -295,8 +341,6 @@ void buildMetaClass_QMetaTypeFunctionHelper(D _d)
     (void)_d;
     using namespace cpgf;
     
-    _d.CPGF_MD_TEMPLATE _method("Delete", &D::ClassType::Delete);
-    _d.CPGF_MD_TEMPLATE _method("Create", &D::ClassType::Create);
     _d.CPGF_MD_TEMPLATE _method("Destruct", &D::ClassType::Destruct);
     _d.CPGF_MD_TEMPLATE _method("Construct", &D::ClassType::Construct);
     _d.CPGF_MD_TEMPLATE _method("Save", &D::ClassType::Save, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<0> >());
@@ -313,6 +357,18 @@ void buildMetaClass_QMetaTypeId(D _d)
 }
 
 
+template <typename D, typename T>
+void buildMetaClass_QMetaTypeId2< T & >(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalEnum_QtCore_1")
+        ._element("Defined", D::ClassType::Defined)
+    ;
+}
+
+
 template <typename D, typename T, bool Defined>
 void buildMetaClass_QMetaTypeIdHelper(D _d)
 {
@@ -320,6 +376,45 @@ void buildMetaClass_QMetaTypeIdHelper(D _d)
     using namespace cpgf;
     
     _d.CPGF_MD_TEMPLATE _method("qt_metatype_id", &D::ClassType::qt_metatype_id);
+}
+
+
+template <typename D, typename T>
+void buildMetaClass_QMetaTypeIdQObject< T *, QMetaType_PointerToQObject >(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _method("qt_metatype_id", &D::ClassType::qt_metatype_id);
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalEnum_QtCore_1")
+        ._element("Defined", D::ClassType::Defined)
+    ;
+}
+
+
+template <typename D, typename T>
+void buildMetaClass_QMetaTypeIdQObject< T, QMetaType_IsEnumeration >(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _method("qt_metatype_id", &D::ClassType::qt_metatype_id);
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalEnum_QtCore_1")
+        ._element("Defined", D::ClassType::Defined)
+    ;
+}
+
+
+template <typename D, typename T>
+void buildMetaClass_QMetaTypeIdQObject< T, QMetaType_IsGadget >(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _method("qt_metatype_id", &D::ClassType::qt_metatype_id);
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalEnum_QtCore_1")
+        ._element("Defined", D::ClassType::Defined)
+    ;
 }
 
 
@@ -432,6 +527,17 @@ void buildMetaClass_VariantData(D _d)
     _d.CPGF_MD_TEMPLATE _field("metaTypeId", &D::ClassType::metaTypeId);
     _d.CPGF_MD_TEMPLATE _field("data", &D::ClassType::data);
     _d.CPGF_MD_TEMPLATE _field("flags", &D::ClassType::flags);
+}
+
+
+template <typename D>
+void buildMetaClass_VectorBoolElements(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _field("true_element", &D::ClassType::true_element);
+    _d.CPGF_MD_TEMPLATE _field("false_element", &D::ClassType::false_element);
 }
 
 

@@ -37,7 +37,6 @@ void buildMetaClass_QQmlFile(D _d)
     _d.CPGF_MD_TEMPLATE _method("size", &D::ClassType::size);
     _d.CPGF_MD_TEMPLATE _method("data", &D::ClassType::data);
     _d.CPGF_MD_TEMPLATE _method("dataByteArray", &D::ClassType::dataByteArray);
-    _d.CPGF_MD_TEMPLATE _method("metaData", &D::ClassType::metaData, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("load", (void (D::ClassType::*) (QQmlEngine *, const QUrl &))&D::ClassType::load, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("load", (void (D::ClassType::*) (QQmlEngine *, const QString &))&D::ClassType::load, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("clear", (void (D::ClassType::*) ())&D::ClassType::clear);
@@ -48,18 +47,10 @@ void buildMetaClass_QQmlFile(D _d)
     _d.CPGF_MD_TEMPLATE _method("connectDownloadProgress", (bool (D::ClassType::*) (QObject *, int))&D::ClassType::connectDownloadProgress);
     _d.CPGF_MD_TEMPLATE _method("isSynchronous", (bool (*) (const QString &))&D::ClassType::isSynchronous, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("isSynchronous", (bool (*) (const QUrl &))&D::ClassType::isSynchronous, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
-    _d.CPGF_MD_TEMPLATE _method("isBundle", (bool (*) (const QString &))&D::ClassType::isBundle, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
-    _d.CPGF_MD_TEMPLATE _method("isBundle", (bool (*) (const QUrl &))&D::ClassType::isBundle, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("isLocalFile", (bool (*) (const QString &))&D::ClassType::isLocalFile, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("isLocalFile", (bool (*) (const QUrl &))&D::ClassType::isLocalFile, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("urlToLocalFileOrQrc", (QString (*) (const QString &))&D::ClassType::urlToLocalFileOrQrc, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("urlToLocalFileOrQrc", (QString (*) (const QUrl &))&D::ClassType::urlToLocalFileOrQrc, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
-    _d.CPGF_MD_TEMPLATE _method("bundleDirectoryExists", (bool (*) (const QString &, QQmlEngine *))&D::ClassType::bundleDirectoryExists, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
-    _d.CPGF_MD_TEMPLATE _method("bundleDirectoryExists", (bool (*) (const QUrl &, QQmlEngine *))&D::ClassType::bundleDirectoryExists, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
-    _d.CPGF_MD_TEMPLATE _method("bundleFileExists", (bool (*) (const QString &, QQmlEngine *))&D::ClassType::bundleFileExists, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
-    _d.CPGF_MD_TEMPLATE _method("bundleFileExists", (bool (*) (const QUrl &, QQmlEngine *))&D::ClassType::bundleFileExists, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
-    _d.CPGF_MD_TEMPLATE _method("bundleFileName", (QString (*) (const QString &, QQmlEngine *))&D::ClassType::bundleFileName, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
-    _d.CPGF_MD_TEMPLATE _method("bundleFileName", (QString (*) (const QUrl &, QQmlEngine *))&D::ClassType::bundleFileName, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::Status>("Status")
         ._element("Null", D::ClassType::Null)
         ._element("Ready", D::ClassType::Ready)

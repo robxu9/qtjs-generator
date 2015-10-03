@@ -24,7 +24,7 @@ void buildMetaClass_Global_qopenglfunctions(D _d)
     (void)_d;
     using namespace cpgf;
     
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtGui_14")
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtGui_20")
     ;
 }
 
@@ -198,6 +198,7 @@ void buildMetaClass_QOpenGLFunctions(D _d)
         ._element("NPOTTextures", D::ClassType::NPOTTextures)
         ._element("NPOTTextureRepeat", D::ClassType::NPOTTextureRepeat)
         ._element("FixedFunctionPipeline", D::ClassType::FixedFunctionPipeline)
+        ._element("TextureRGFormats", D::ClassType::TextureRGFormats)
     ;
     {
         GDefineMetaClass<QFlags<typename QOpenGLFunctions::OpenGLFeature > > _t_d = GDefineMetaClass<QFlags<typename QOpenGLFunctions::OpenGLFeature > >::lazyDeclare("OpenGLFeatures", &buildMetaClass_QFlags<GDefineMetaClass<QFlags<typename QOpenGLFunctions::OpenGLFeature > >, typename QOpenGLFunctions::OpenGLFeature >);

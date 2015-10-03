@@ -62,6 +62,20 @@ GDefineMetaInfo createMetaClass_Global_qarraydata()
 }
 
 
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
+GDefineMetaInfo createMetaClass_QContainerImplHelper()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QtPrivate::QContainerImplHelper> _nd = GDefineMetaClass<QtPrivate::QContainerImplHelper>::lazyDeclare("QContainerImplHelper", &buildMetaClass_QContainerImplHelper);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
 } // namespace qt_metadata
 
 

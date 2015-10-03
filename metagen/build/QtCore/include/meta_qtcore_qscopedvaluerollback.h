@@ -25,6 +25,7 @@ void buildMetaClass_QScopedValueRollback(D _d)
     using namespace cpgf;
     
     _d.CPGF_MD_TEMPLATE _constructor<void * (T &)>();
+    _d.CPGF_MD_TEMPLATE _constructor<void * (T &, T)>();
     _d.CPGF_MD_TEMPLATE _method("commit", &D::ClassType::commit);
 }
 

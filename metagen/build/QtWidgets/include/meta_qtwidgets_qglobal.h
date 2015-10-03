@@ -14,6 +14,7 @@
 
 
 using namespace QtPrivate;
+using namespace QtPrivate::SwapExceptionTester;
 
 
 namespace qt_metadata { 

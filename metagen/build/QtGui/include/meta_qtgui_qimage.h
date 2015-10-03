@@ -116,7 +116,7 @@ void buildMetaClass_QImage(D _d)
     _d.CPGF_MD_TEMPLATE _method("setPixel", (void (D::ClassType::*) (int, int, uint))&D::ClassType::setPixel);
     _d.CPGF_MD_TEMPLATE _method("setPixel", (void (D::ClassType::*) (const QPoint &, uint))&D::ClassType::setPixel);
     _d.CPGF_MD_TEMPLATE _method("colorTable", &D::ClassType::colorTable);
-    _d.CPGF_MD_TEMPLATE _method("setColorTable", &D::ClassType::setColorTable);
+    _d.CPGF_MD_TEMPLATE _method("setColorTable", &D::ClassType::setColorTable, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("devicePixelRatio", &D::ClassType::devicePixelRatio);
     _d.CPGF_MD_TEMPLATE _method("setDevicePixelRatio", &D::ClassType::setDevicePixelRatio);
     _d.CPGF_MD_TEMPLATE _method("fill", (void (D::ClassType::*) (uint))&D::ClassType::fill);
@@ -193,6 +193,7 @@ void buildMetaClass_QImage(D _d)
         ._default(copyVariantFromCopyable(QString()))
     ;
     _d.CPGF_MD_TEMPLATE _method("setText", &D::ClassType::setText, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("pixelFormat", &D::ClassType::pixelFormat);
     _d.CPGF_MD_TEMPLATE _method("trueMatrix", (QMatrix (*) (const QMatrix &, int, int))&D::ClassType::trueMatrix, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("trueMatrix", (QTransform (*) (const QTransform &, int, int))&D::ClassType::trueMatrix, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("fromData", (QImage (*) (const uchar *, int, const char *))&D::ClassType::fromData, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1> >())
@@ -201,6 +202,8 @@ void buildMetaClass_QImage(D _d)
     _d.CPGF_MD_TEMPLATE _method("fromData", (QImage (*) (const QByteArray &, const char *))&D::ClassType::fromData, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1>, cpgf::GMetaRuleCopyConstReference<0> >())
         ._default(copyVariantFromCopyable(0))
     ;
+    _d.CPGF_MD_TEMPLATE _method("toPixelFormat", &D::ClassType::toPixelFormat);
+    _d.CPGF_MD_TEMPLATE _method("toImageFormat", &D::ClassType::toImageFormat);
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::InvertMode>("InvertMode")
         ._element("InvertRgb", D::ClassType::InvertRgb)
         ._element("InvertRgba", D::ClassType::InvertRgba)
@@ -225,6 +228,12 @@ void buildMetaClass_QImage(D _d)
         ._element("Format_RGBX8888", D::ClassType::Format_RGBX8888)
         ._element("Format_RGBA8888", D::ClassType::Format_RGBA8888)
         ._element("Format_RGBA8888_Premultiplied", D::ClassType::Format_RGBA8888_Premultiplied)
+        ._element("Format_BGR30", D::ClassType::Format_BGR30)
+        ._element("Format_A2BGR30_Premultiplied", D::ClassType::Format_A2BGR30_Premultiplied)
+        ._element("Format_RGB30", D::ClassType::Format_RGB30)
+        ._element("Format_A2RGB30_Premultiplied", D::ClassType::Format_A2RGB30_Premultiplied)
+        ._element("Format_Alpha8", D::ClassType::Format_Alpha8)
+        ._element("Format_Grayscale8", D::ClassType::Format_Grayscale8)
         ._element("NImageFormats", D::ClassType::NImageFormats)
     ;
     _d.CPGF_MD_TEMPLATE _operator<QImage & (*)(cpgf::GMetaSelf, const QImage &)>(mopHolder = mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1> >());

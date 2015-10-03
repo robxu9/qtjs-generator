@@ -34,6 +34,7 @@ void buildMetaClass_Global_qvector2d(D _d)
     _d.CPGF_MD_TEMPLATE _operator<const QVector2D (*)(const QVector2D &, const QVector2D &)>(mopHolder * mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _operator<const QVector2D (*)(const QVector2D &)>(-mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _operator<const QVector2D (*)(const QVector2D &, float)>(mopHolder / mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
+    _d.CPGF_MD_TEMPLATE _operator<const QVector2D (*)(const QVector2D &, const QVector2D &)>(mopHolder / mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _operator<QDebug (*)(QDebug, const QVector2D &)>(mopHolder << mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _operator<QDataStream & (*)(QDataStream &, const QVector2D &)>(mopHolder << mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1>, cpgf::GMetaRuleParamNoncopyable<0>, cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _operator<QDataStream & (*)(QDataStream &, QVector2D &)>(mopHolder >> mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1>, cpgf::GMetaRuleParamNoncopyable<0> >());
@@ -64,6 +65,9 @@ inline QVector2D & opErAToRWrapper_QVector2D__opMulAssign(QVector2D * self, cons
 inline QVector2D & opErAToRWrapper_QVector2D__opDivAssign(QVector2D * self, float divisor) {
     return (*self) /= divisor;
 }
+inline QVector2D & opErAToRWrapper_QVector2D__opDivAssign(QVector2D * self, const QVector2D & vector) {
+    return (*self) /= vector;
+}
 
 
 template <typename D>
@@ -73,6 +77,7 @@ void buildMetaClass_QVector2D(D _d)
     using namespace cpgf;
     
     _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
+    _d.CPGF_MD_TEMPLATE _constructor<void * (Qt::Initialization)>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (float, float)>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QPoint &)>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QPointF &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
@@ -109,6 +114,8 @@ void buildMetaClass_QVector2D(D _d)
     _d.CPGF_MD_TEMPLATE _method("_opMulAssign", (QVector2D & (*) (QVector2D *, const QVector2D &))&opErAToRWrapper_QVector2D__opMulAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
     _d.CPGF_MD_TEMPLATE _operator<QVector2D & (*)(cpgf::GMetaSelf, float)>(mopHolder /= mopHolder);
     _d.CPGF_MD_TEMPLATE _method("_opDivAssign", (QVector2D & (*) (QVector2D *, float))&opErAToRWrapper_QVector2D__opDivAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<QVector2D & (*)(cpgf::GMetaSelf, const QVector2D &)>(mopHolder /= mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opDivAssign", (QVector2D & (*) (QVector2D *, const QVector2D &))&opErAToRWrapper_QVector2D__opDivAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
     _d.CPGF_MD_TEMPLATE _operator< QVariant (cpgf::GMetaSelf)>(mopHolder());
 }
 

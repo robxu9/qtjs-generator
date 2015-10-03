@@ -34,7 +34,7 @@ void buildMetaClass_Global_qrgb(D _d)
     _d.CPGF_MD_TEMPLATE _method("qGray", (int (*) (int, int, int))&qGray);
     _d.CPGF_MD_TEMPLATE _method("qGray", (int (*) (QRgb))&qGray);
     _d.CPGF_MD_TEMPLATE _method("qIsGray", (bool (*) (QRgb))&qIsGray);
-    _d.CPGF_MD_TEMPLATE _method("qPremultiply", (QRgb (*) (QRgb))&qPremultiply);
+    _d.CPGF_MD_TEMPLATE _method("qPremultiply", (Q_DECL_RELAXED_CONSTEXPR QRgb (*) (QRgb))&qPremultiply);
     _d.CPGF_MD_TEMPLATE _method("qUnpremultiply", (QRgb (*) (QRgb))&qUnpremultiply);
 }
 

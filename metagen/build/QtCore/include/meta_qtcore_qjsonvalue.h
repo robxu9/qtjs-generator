@@ -103,6 +103,24 @@ void buildMetaClass_QJsonValue(D _d)
 }
 
 
+inline QJsonValue & opErAToRWrapper_QJsonValuePtr__opDerefer(QJsonValuePtr * self) {
+    return *(*self);
+}
+
+
+template <typename D>
+void buildMetaClass_QJsonValuePtr(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _constructor<void * (const QJsonValue &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
+    _d.CPGF_MD_TEMPLATE _operator<QJsonValue & (*)(cpgf::GMetaSelf)>(*mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opDerefer", (QJsonValue & (*) (QJsonValuePtr *))&opErAToRWrapper_QJsonValuePtr__opDerefer, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<QJsonValue * (*)(cpgf::GMetaSelf)>(mopHolder -> mopHolder);
+}
+
+
 inline QJsonValueRef & opErAToRWrapper_QJsonValueRef__opAssign(QJsonValueRef * self, const QJsonValue & val) {
     return (*self) = val;
 }
@@ -125,6 +143,7 @@ void buildMetaClass_QJsonValueRef(D _d)
     
     _d.CPGF_MD_TEMPLATE _constructor<void * (QJsonArray *, int)>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (QJsonObject *, int)>();
+    _d.CPGF_MD_TEMPLATE _method("toVariant", &D::ClassType::toVariant);
     _d.CPGF_MD_TEMPLATE _method("type", &D::ClassType::type);
     _d.CPGF_MD_TEMPLATE _method("isNull", &D::ClassType::isNull);
     _d.CPGF_MD_TEMPLATE _method("isBool", &D::ClassType::isBool);
@@ -133,12 +152,16 @@ void buildMetaClass_QJsonValueRef(D _d)
     _d.CPGF_MD_TEMPLATE _method("isArray", &D::ClassType::isArray);
     _d.CPGF_MD_TEMPLATE _method("isObject", &D::ClassType::isObject);
     _d.CPGF_MD_TEMPLATE _method("isUndefined", &D::ClassType::isUndefined);
-    _d.CPGF_MD_TEMPLATE _method("toBool", &D::ClassType::toBool);
-    _d.CPGF_MD_TEMPLATE _method("toInt", &D::ClassType::toInt);
-    _d.CPGF_MD_TEMPLATE _method("toDouble", &D::ClassType::toDouble);
-    _d.CPGF_MD_TEMPLATE _method("toString", &D::ClassType::toString);
+    _d.CPGF_MD_TEMPLATE _method("toBool", (bool (D::ClassType::*) () const)&D::ClassType::toBool);
+    _d.CPGF_MD_TEMPLATE _method("toInt", (int (D::ClassType::*) () const)&D::ClassType::toInt);
+    _d.CPGF_MD_TEMPLATE _method("toDouble", (double (D::ClassType::*) () const)&D::ClassType::toDouble);
+    _d.CPGF_MD_TEMPLATE _method("toString", (QString (D::ClassType::*) () const)&D::ClassType::toString);
     _d.CPGF_MD_TEMPLATE _method("toArray", &D::ClassType::toArray);
     _d.CPGF_MD_TEMPLATE _method("toObject", &D::ClassType::toObject);
+    _d.CPGF_MD_TEMPLATE _method("toBool", (bool (D::ClassType::*) (bool) const)&D::ClassType::toBool);
+    _d.CPGF_MD_TEMPLATE _method("toInt", (int (D::ClassType::*) (int) const)&D::ClassType::toInt);
+    _d.CPGF_MD_TEMPLATE _method("toDouble", (double (D::ClassType::*) (double) const)&D::ClassType::toDouble);
+    _d.CPGF_MD_TEMPLATE _method("toString", (QString (D::ClassType::*) (const QString &) const)&D::ClassType::toString, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _operator< QJsonValue (cpgf::GMetaSelf)>(mopHolder());
     _d.CPGF_MD_TEMPLATE _operator<QJsonValueRef & (*)(cpgf::GMetaSelf, const QJsonValue &)>(mopHolder = mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("_opAssign", (QJsonValueRef & (*) (QJsonValueRef *, const QJsonValue &))&opErAToRWrapper_QJsonValueRef__opAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
@@ -148,6 +171,25 @@ void buildMetaClass_QJsonValueRef(D _d)
     _d.CPGF_MD_TEMPLATE _method("_opEqual", (bool (*) (const QJsonValueRef *, const QJsonValue &))&opErAToRWrapper_QJsonValueRef__opEqual, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
     _d.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QJsonValue &)>(mopHolder != mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("_opNotEqual", (bool (*) (const QJsonValueRef *, const QJsonValue &))&opErAToRWrapper_QJsonValueRef__opNotEqual, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+}
+
+
+inline QJsonValueRef & opErAToRWrapper_QJsonValueRefPtr__opDerefer(QJsonValueRefPtr * self) {
+    return *(*self);
+}
+
+
+template <typename D>
+void buildMetaClass_QJsonValueRefPtr(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _constructor<void * (QJsonArray *, int)>();
+    _d.CPGF_MD_TEMPLATE _constructor<void * (QJsonObject *, int)>();
+    _d.CPGF_MD_TEMPLATE _operator<QJsonValueRef & (*)(cpgf::GMetaSelf)>(*mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opDerefer", (QJsonValueRef & (*) (QJsonValueRefPtr *))&opErAToRWrapper_QJsonValueRefPtr__opDerefer, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<QJsonValueRef * (*)(cpgf::GMetaSelf)>(mopHolder -> mopHolder);
 }
 
 

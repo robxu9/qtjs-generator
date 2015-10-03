@@ -195,10 +195,10 @@ void buildMetaClass_QPainterPath(D _d)
         _nd.CPGF_MD_TEMPLATE _method("isLineTo", &QPainterPath::Element::isLineTo);
         _nd.CPGF_MD_TEMPLATE _method("isCurveTo", &QPainterPath::Element::isCurveTo);
         _nd.CPGF_MD_TEMPLATE _operator< QPointF (cpgf::GMetaSelf)>(mopHolder());
-        _nd.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QPainterPath::Element&)>(mopHolder == mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-        _nd.CPGF_MD_TEMPLATE _method("_opEqual", (bool (*) (const QPainterPath::Element *, const QPainterPath::Element&))&opErAToRWrapper_QPainterPath_Element__opEqual, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
-        _nd.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QPainterPath::Element&)>(mopHolder != mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-        _nd.CPGF_MD_TEMPLATE _method("_opNotEqual", (bool (*) (const QPainterPath::Element *, const QPainterPath::Element&))&opErAToRWrapper_QPainterPath_Element__opNotEqual, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QPainterPath::Element&)>(mopHolder == mopHolder);
+        _nd.CPGF_MD_TEMPLATE _method("_opEqual", (bool (*) (const QPainterPath::Element *, const QPainterPath::Element&))&opErAToRWrapper_QPainterPath_Element__opEqual, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QPainterPath::Element&)>(mopHolder != mopHolder);
+        _nd.CPGF_MD_TEMPLATE _method("_opNotEqual", (bool (*) (const QPainterPath::Element *, const QPainterPath::Element&))&opErAToRWrapper_QPainterPath_Element__opNotEqual, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
         _d.CPGF_MD_TEMPLATE _class(_nd);
     }
 }

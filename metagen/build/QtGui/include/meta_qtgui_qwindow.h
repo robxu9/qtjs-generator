@@ -19,6 +19,15 @@ namespace qt_metadata {
 
 
 template <typename D>
+void buildMetaClass_Global_qwindow(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+}
+
+
+template <typename D>
 void buildMetaClass_QWindow(D _d)
 {
     (void)_d;
@@ -134,6 +143,7 @@ void buildMetaClass_QWindow(D _d)
     _d.CPGF_MD_TEMPLATE _method("setMaximumWidth", &D::ClassType::setMaximumWidth);
     _d.CPGF_MD_TEMPLATE _method("setMaximumHeight", &D::ClassType::setMaximumHeight);
     _d.CPGF_MD_TEMPLATE _method("alert", &D::ClassType::alert);
+    _d.CPGF_MD_TEMPLATE _method("requestUpdate", &D::ClassType::requestUpdate);
     _d.CPGF_MD_TEMPLATE _method("screenChanged", &D::ClassType::screenChanged);
     _d.CPGF_MD_TEMPLATE _method("modalityChanged", &D::ClassType::modalityChanged);
     _d.CPGF_MD_TEMPLATE _method("windowStateChanged", &D::ClassType::windowStateChanged);

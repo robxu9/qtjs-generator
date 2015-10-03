@@ -24,7 +24,7 @@ void buildMetaClass_Global_qguiapplication(D _d)
     (void)_d;
     using namespace cpgf;
     
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtGui_18")
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtGui_16")
         ._element("qApp", qApp)
         ._element("qGuiApp", qGuiApp)
     ;
@@ -52,12 +52,15 @@ void buildMetaClass_QGuiApplication(D _d)
     _d.CPGF_MD_TEMPLATE _method("isSavingSession", &D::ClassType::isSavingSession);
     _d.CPGF_MD_TEMPLATE _method("fontDatabaseChanged", &D::ClassType::fontDatabaseChanged);
     _d.CPGF_MD_TEMPLATE _method("screenAdded", &D::ClassType::screenAdded);
+    _d.CPGF_MD_TEMPLATE _method("screenRemoved", &D::ClassType::screenRemoved);
     _d.CPGF_MD_TEMPLATE _method("lastWindowClosed", &D::ClassType::lastWindowClosed);
     _d.CPGF_MD_TEMPLATE _method("focusObjectChanged", &D::ClassType::focusObjectChanged);
     _d.CPGF_MD_TEMPLATE _method("focusWindowChanged", &D::ClassType::focusWindowChanged);
     _d.CPGF_MD_TEMPLATE _method("applicationStateChanged", &D::ClassType::applicationStateChanged);
+    _d.CPGF_MD_TEMPLATE _method("layoutDirectionChanged", &D::ClassType::layoutDirectionChanged);
     _d.CPGF_MD_TEMPLATE _method("commitDataRequest", &D::ClassType::commitDataRequest, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<0> >());
     _d.CPGF_MD_TEMPLATE _method("saveStateRequest", &D::ClassType::saveStateRequest, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<0> >());
+    _d.CPGF_MD_TEMPLATE _method("paletteChanged", &D::ClassType::paletteChanged, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("tr", &D::ClassType::tr)
         ._default(copyVariantFromCopyable(-1))
         ._default(copyVariantFromCopyable(0))
@@ -95,6 +98,7 @@ void buildMetaClass_QGuiApplication(D _d)
     _d.CPGF_MD_TEMPLATE _method("setDesktopSettingsAware", &D::ClassType::setDesktopSettingsAware);
     _d.CPGF_MD_TEMPLATE _method("desktopSettingsAware", &D::ClassType::desktopSettingsAware);
     _d.CPGF_MD_TEMPLATE _method("inputMethod", &D::ClassType::inputMethod);
+    _d.CPGF_MD_TEMPLATE _method("platformFunction", &D::ClassType::platformFunction, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("setQuitOnLastWindowClosed", &D::ClassType::setQuitOnLastWindowClosed);
     _d.CPGF_MD_TEMPLATE _method("quitOnLastWindowClosed", &D::ClassType::quitOnLastWindowClosed);
     _d.CPGF_MD_TEMPLATE _method("applicationState", &D::ClassType::applicationState);

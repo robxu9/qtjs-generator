@@ -79,11 +79,39 @@ GDefineMetaInfo createMetaClass_QJsonValue()
 #ifdef CPGF_METAGEN_LINKAGE_SPEC
 CPGF_METAGEN_LINKAGE_SPEC
 #endif
+GDefineMetaInfo createMetaClass_QJsonValuePtr()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QJsonValuePtr> _nd = GDefineMetaClass<QJsonValuePtr>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent> >::lazyDeclare("QJsonValuePtr", &buildMetaClass_QJsonValuePtr);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
 GDefineMetaInfo createMetaClass_QJsonValueRef()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
     {
         GDefineMetaClass<QJsonValueRef> _nd = GDefineMetaClass<QJsonValueRef>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent> >::lazyDeclare("QJsonValueRef", &buildMetaClass_QJsonValueRef);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
+GDefineMetaInfo createMetaClass_QJsonValueRefPtr()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QJsonValueRefPtr> _nd = GDefineMetaClass<QJsonValueRefPtr>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent> >::lazyDeclare("QJsonValueRefPtr", &buildMetaClass_QJsonValueRefPtr);
         _d._class(_nd);
     }
     return _d.getMetaInfo();

@@ -13,7 +13,6 @@
 #include "cpgf/gmetapolicy.h"
 
 
-using namespace QT_BEGIN_NAMESPACE;
 using namespace QVariantPrivate;
 
 

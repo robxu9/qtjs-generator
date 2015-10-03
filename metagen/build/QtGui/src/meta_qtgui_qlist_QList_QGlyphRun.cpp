@@ -23,7 +23,7 @@ GDefineMetaInfo createMetaClass_QList_TemplateInstance_QList_QGlyphRun()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
     {
-        GDefineMetaClass<QList<QGlyphRun> > _nd = GDefineMetaClass<QList<QGlyphRun> >::lazyDeclare("QList_QGlyphRun", &buildMetaClass_QList<GDefineMetaClass<QList<QGlyphRun> >, QGlyphRun >);
+        GDefineMetaClass<QList<QGlyphRun>, QListSpecialMethods< T > > _nd = GDefineMetaClass<QList<QGlyphRun>, QListSpecialMethods< T > >::lazyDeclare("QList_QGlyphRun", &buildMetaClass_QList<GDefineMetaClass<QList<QGlyphRun>, QListSpecialMethods< T > >, QGlyphRun >);
         _d._class(_nd);
     }
     return _d.getMetaInfo();

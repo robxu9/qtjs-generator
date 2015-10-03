@@ -68,7 +68,7 @@ void buildMetaClass_QGenericMatrix(D _d)
     using namespace cpgf;
     
     _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
-    _d.CPGF_MD_TEMPLATE _constructor<void * (const QGenericMatrix< N, M, T > &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
+    _d.CPGF_MD_TEMPLATE _constructor<void * (Qt::Initialization)>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (const T *)>();
     _d.CPGF_MD_TEMPLATE _method("isIdentity", &D::ClassType::isIdentity);
     _d.CPGF_MD_TEMPLATE _method("setToIdentity", &D::ClassType::setToIdentity);

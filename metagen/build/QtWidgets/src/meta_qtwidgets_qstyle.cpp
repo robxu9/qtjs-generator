@@ -74,17 +74,6 @@ namespace qt_metadata {
 #ifdef CPGF_METAGEN_LINKAGE_SPEC
 CPGF_METAGEN_LINKAGE_SPEC
 #endif
-GDefineMetaInfo createMetaClass_Global_qstyle()
-{
-    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
-    buildMetaClass_Global_qstyle(_d);
-    return _d.getMetaInfo();
-}
-
-
-#ifdef CPGF_METAGEN_LINKAGE_SPEC
-CPGF_METAGEN_LINKAGE_SPEC
-#endif
 GDefineMetaInfo createMetaClass_QStyle()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();

@@ -19,7 +19,7 @@ using namespace QtPrivate;
 namespace qt_metadata { 
 
 
-template <typename D, class T>
+template <typename D, typename T>
 void buildMetaClass_Add_reference(D _d)
 {
     (void)_d;
@@ -111,6 +111,25 @@ void buildMetaClass_Integral_constant(D _d)
 }
 
 
+template <typename D, typename T>
+void buildMetaClass_Is_const(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+}
+
+
+template <typename D, class T>
+void buildMetaClass_Is_default_constructible(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _field("value", &D::ClassType::value);
+}
+
+
 template <typename D, class T>
 void buildMetaClass_Is_floating_point(D _d)
 {
@@ -147,7 +166,7 @@ void buildMetaClass_Is_pointer(D _d)
 }
 
 
-template <typename D, class T>
+template <typename D, typename T>
 void buildMetaClass_Is_reference(D _d)
 {
     (void)_d;
@@ -156,7 +175,7 @@ void buildMetaClass_Is_reference(D _d)
 }
 
 
-template <typename D, class T, class U>
+template <typename D, typename T, typename U>
 void buildMetaClass_Is_same(D _d)
 {
     (void)_d;
@@ -176,6 +195,15 @@ void buildMetaClass_Is_signed(D _d)
 
 template <typename D, typename T>
 void buildMetaClass_Is_unsigned(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+}
+
+
+template <typename D, typename T>
+void buildMetaClass_Is_volatile(D _d)
 {
     (void)_d;
     using namespace cpgf;
@@ -210,7 +238,7 @@ void buildMetaClass_Or_(D _d)
 }
 
 
-template <typename D, class T>
+template <typename D, typename T>
 void buildMetaClass_Remove_const(D _d)
 {
     (void)_d;
@@ -219,7 +247,7 @@ void buildMetaClass_Remove_const(D _d)
 }
 
 
-template <typename D, class T>
+template <typename D, typename T>
 void buildMetaClass_Remove_cv(D _d)
 {
     (void)_d;
@@ -228,7 +256,7 @@ void buildMetaClass_Remove_cv(D _d)
 }
 
 
-template <typename D, class T>
+template <typename D, typename T>
 void buildMetaClass_Remove_pointer(D _d)
 {
     (void)_d;
@@ -237,7 +265,7 @@ void buildMetaClass_Remove_pointer(D _d)
 }
 
 
-template <typename D, class T>
+template <typename D, typename T>
 void buildMetaClass_Remove_reference(D _d)
 {
     (void)_d;
@@ -246,7 +274,7 @@ void buildMetaClass_Remove_reference(D _d)
 }
 
 
-template <typename D, class T>
+template <typename D, typename T>
 void buildMetaClass_Remove_volatile(D _d)
 {
     (void)_d;

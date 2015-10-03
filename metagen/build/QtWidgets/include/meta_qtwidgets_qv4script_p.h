@@ -13,7 +13,9 @@
 #include "cpgf/gmetapolicy.h"
 
 
+using namespace QQmlJS;
 using namespace QV4;
+using namespace QV4::Heap;
 
 
 namespace qt_metadata { 

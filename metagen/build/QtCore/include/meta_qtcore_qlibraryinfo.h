@@ -26,7 +26,6 @@ void buildMetaClass_QLibraryInfo(D _d)
     
     _d.CPGF_MD_TEMPLATE _method("licensee", &D::ClassType::licensee);
     _d.CPGF_MD_TEMPLATE _method("licensedProducts", &D::ClassType::licensedProducts);
-    _d.CPGF_MD_TEMPLATE _method("buildDate", &D::ClassType::buildDate);
     _d.CPGF_MD_TEMPLATE _method("build", &D::ClassType::build);
     _d.CPGF_MD_TEMPLATE _method("isDebugBuild", &D::ClassType::isDebugBuild);
     _d.CPGF_MD_TEMPLATE _method("location", &D::ClassType::location);

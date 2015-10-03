@@ -50,7 +50,8 @@ void buildMetaClass_QOpenGLFramebufferObject(D _d)
     _d.CPGF_MD_TEMPLATE _method("texture", &D::ClassType::texture);
     _d.CPGF_MD_TEMPLATE _method("takeTexture", &D::ClassType::takeTexture);
     _d.CPGF_MD_TEMPLATE _method("size", &D::ClassType::size);
-    _d.CPGF_MD_TEMPLATE _method("toImage", &D::ClassType::toImage, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1> >());
+    _d.CPGF_MD_TEMPLATE _method("toImage", (QImage (D::ClassType::*) () const)&D::ClassType::toImage, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1> >());
+    _d.CPGF_MD_TEMPLATE _method("toImage", (QImage (D::ClassType::*) (bool) const)&D::ClassType::toImage, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1> >());
     _d.CPGF_MD_TEMPLATE _method("attachment", &D::ClassType::attachment);
     _d.CPGF_MD_TEMPLATE _method("setAttachment", &D::ClassType::setAttachment);
     _d.CPGF_MD_TEMPLATE _method("handle", &D::ClassType::handle);

@@ -28,6 +28,7 @@ void buildMetaClass_QOpenGLTexture(D _d)
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QImage &, QOpenGLTexture::MipMapGeneration)>()
         ._default(copyVariantFromCopyable(QOpenGLTexture::GenerateMipMaps))
     ;
+    _d.CPGF_MD_TEMPLATE _method("target", &D::ClassType::target);
     _d.CPGF_MD_TEMPLATE _method("create", &D::ClassType::create);
     _d.CPGF_MD_TEMPLATE _method("destroy", &D::ClassType::destroy);
     _d.CPGF_MD_TEMPLATE _method("isCreated", &D::ClassType::isCreated);
@@ -57,22 +58,15 @@ void buildMetaClass_QOpenGLTexture(D _d)
     _d.CPGF_MD_TEMPLATE _method("setLayers", &D::ClassType::setLayers);
     _d.CPGF_MD_TEMPLATE _method("layers", &D::ClassType::layers);
     _d.CPGF_MD_TEMPLATE _method("faces", &D::ClassType::faces);
-    _d.CPGF_MD_TEMPLATE _method("allocateStorage", &D::ClassType::allocateStorage);
+    _d.CPGF_MD_TEMPLATE _method("setSamples", &D::ClassType::setSamples);
+    _d.CPGF_MD_TEMPLATE _method("samples", &D::ClassType::samples);
+    _d.CPGF_MD_TEMPLATE _method("setFixedSamplePositions", &D::ClassType::setFixedSamplePositions);
+    _d.CPGF_MD_TEMPLATE _method("isFixedSamplePositions", &D::ClassType::isFixedSamplePositions);
+    _d.CPGF_MD_TEMPLATE _method("allocateStorage", (void (D::ClassType::*) ())&D::ClassType::allocateStorage);
+    _d.CPGF_MD_TEMPLATE _method("allocateStorage", (void (D::ClassType::*) (QOpenGLTexture::PixelFormat, QOpenGLTexture::PixelType))&D::ClassType::allocateStorage);
     _d.CPGF_MD_TEMPLATE _method("isStorageAllocated", &D::ClassType::isStorageAllocated);
     _d.CPGF_MD_TEMPLATE _method("createTextureView", &D::ClassType::createTextureView);
     _d.CPGF_MD_TEMPLATE _method("isTextureView", &D::ClassType::isTextureView);
-    _d.CPGF_MD_TEMPLATE _method("setData", (QT_DEPRECATED void (D::ClassType::*) (int, int, QOpenGLTexture::CubeMapFace, QOpenGLTexture::PixelFormat, QOpenGLTexture::PixelType, void *, const QOpenGLPixelTransferOptions *const))&D::ClassType::setData)
-        ._default(copyVariantFromCopyable(0))
-    ;
-    _d.CPGF_MD_TEMPLATE _method("setData", (QT_DEPRECATED void (D::ClassType::*) (int, int, QOpenGLTexture::PixelFormat, QOpenGLTexture::PixelType, void *, const QOpenGLPixelTransferOptions *const))&D::ClassType::setData)
-        ._default(copyVariantFromCopyable(0))
-    ;
-    _d.CPGF_MD_TEMPLATE _method("setData", (QT_DEPRECATED void (D::ClassType::*) (int, QOpenGLTexture::PixelFormat, QOpenGLTexture::PixelType, void *, const QOpenGLPixelTransferOptions *const))&D::ClassType::setData)
-        ._default(copyVariantFromCopyable(0))
-    ;
-    _d.CPGF_MD_TEMPLATE _method("setData", (QT_DEPRECATED void (D::ClassType::*) (QOpenGLTexture::PixelFormat, QOpenGLTexture::PixelType, void *, const QOpenGLPixelTransferOptions *const))&D::ClassType::setData)
-        ._default(copyVariantFromCopyable(0))
-    ;
     _d.CPGF_MD_TEMPLATE _method("setData", (void (D::ClassType::*) (int, int, QOpenGLTexture::CubeMapFace, QOpenGLTexture::PixelFormat, QOpenGLTexture::PixelType, const void *, const QOpenGLPixelTransferOptions *const))&D::ClassType::setData)
         ._default(copyVariantFromCopyable(0))
     ;
@@ -83,18 +77,6 @@ void buildMetaClass_QOpenGLTexture(D _d)
         ._default(copyVariantFromCopyable(0))
     ;
     _d.CPGF_MD_TEMPLATE _method("setData", (void (D::ClassType::*) (QOpenGLTexture::PixelFormat, QOpenGLTexture::PixelType, const void *, const QOpenGLPixelTransferOptions *const))&D::ClassType::setData)
-        ._default(copyVariantFromCopyable(0))
-    ;
-    _d.CPGF_MD_TEMPLATE _method("setCompressedData", (QT_DEPRECATED void (D::ClassType::*) (int, int, QOpenGLTexture::CubeMapFace, int, void *, const QOpenGLPixelTransferOptions *const))&D::ClassType::setCompressedData)
-        ._default(copyVariantFromCopyable(0))
-    ;
-    _d.CPGF_MD_TEMPLATE _method("setCompressedData", (QT_DEPRECATED void (D::ClassType::*) (int, int, int, void *, const QOpenGLPixelTransferOptions *const))&D::ClassType::setCompressedData)
-        ._default(copyVariantFromCopyable(0))
-    ;
-    _d.CPGF_MD_TEMPLATE _method("setCompressedData", (QT_DEPRECATED void (D::ClassType::*) (int, int, void *, const QOpenGLPixelTransferOptions *const))&D::ClassType::setCompressedData)
-        ._default(copyVariantFromCopyable(0))
-    ;
-    _d.CPGF_MD_TEMPLATE _method("setCompressedData", (QT_DEPRECATED void (D::ClassType::*) (int, void *, const QOpenGLPixelTransferOptions *const))&D::ClassType::setCompressedData)
         ._default(copyVariantFromCopyable(0))
     ;
     _d.CPGF_MD_TEMPLATE _method("setCompressedData", (void (D::ClassType::*) (int, int, QOpenGLTexture::CubeMapFace, int, const void *, const QOpenGLPixelTransferOptions *const))&D::ClassType::setCompressedData)
@@ -129,6 +111,10 @@ void buildMetaClass_QOpenGLTexture(D _d)
     _d.CPGF_MD_TEMPLATE _method("swizzleMask", &D::ClassType::swizzleMask);
     _d.CPGF_MD_TEMPLATE _method("setDepthStencilMode", &D::ClassType::setDepthStencilMode);
     _d.CPGF_MD_TEMPLATE _method("depthStencilMode", &D::ClassType::depthStencilMode);
+    _d.CPGF_MD_TEMPLATE _method("setComparisonFunction", &D::ClassType::setComparisonFunction);
+    _d.CPGF_MD_TEMPLATE _method("comparisonFunction", &D::ClassType::comparisonFunction);
+    _d.CPGF_MD_TEMPLATE _method("setComparisonMode", &D::ClassType::setComparisonMode);
+    _d.CPGF_MD_TEMPLATE _method("comparisonMode", &D::ClassType::comparisonMode);
     _d.CPGF_MD_TEMPLATE _method("setMinificationFilter", &D::ClassType::setMinificationFilter);
     _d.CPGF_MD_TEMPLATE _method("minificationFilter", &D::ClassType::minificationFilter);
     _d.CPGF_MD_TEMPLATE _method("setMagnificationFilter", &D::ClassType::setMagnificationFilter);
@@ -256,6 +242,7 @@ void buildMetaClass_QOpenGLTexture(D _d)
         ._element("D32", D::ClassType::D32)
         ._element("D32F", D::ClassType::D32F)
         ._element("D32FS8X24", D::ClassType::D32FS8X24)
+        ._element("S8", D::ClassType::S8)
         ._element("RGB_DXT1", D::ClassType::RGB_DXT1)
         ._element("RGBA_DXT1", D::ClassType::RGBA_DXT1)
         ._element("RGBA_DXT3", D::ClassType::RGBA_DXT3)
@@ -267,6 +254,16 @@ void buildMetaClass_QOpenGLTexture(D _d)
         ._element("RGB_BP_UNSIGNED_FLOAT", D::ClassType::RGB_BP_UNSIGNED_FLOAT)
         ._element("RGB_BP_SIGNED_FLOAT", D::ClassType::RGB_BP_SIGNED_FLOAT)
         ._element("RGB_BP_UNorm", D::ClassType::RGB_BP_UNorm)
+        ._element("R11_EAC_UNorm", D::ClassType::R11_EAC_UNorm)
+        ._element("R11_EAC_SNorm", D::ClassType::R11_EAC_SNorm)
+        ._element("RG11_EAC_UNorm", D::ClassType::RG11_EAC_UNorm)
+        ._element("RG11_EAC_SNorm", D::ClassType::RG11_EAC_SNorm)
+        ._element("RGB8_ETC2", D::ClassType::RGB8_ETC2)
+        ._element("SRGB8_ETC2", D::ClassType::SRGB8_ETC2)
+        ._element("RGB8_PunchThrough_Alpha1_ETC2", D::ClassType::RGB8_PunchThrough_Alpha1_ETC2)
+        ._element("SRGB8_PunchThrough_Alpha1_ETC2", D::ClassType::SRGB8_PunchThrough_Alpha1_ETC2)
+        ._element("RGBA8_ETC2_EAC", D::ClassType::RGBA8_ETC2_EAC)
+        ._element("SRGB8_Alpha8_ETC2_EAC", D::ClassType::SRGB8_Alpha8_ETC2_EAC)
         ._element("SRGB8", D::ClassType::SRGB8)
         ._element("SRGB8_Alpha8", D::ClassType::SRGB8_Alpha8)
         ._element("SRGB_DXT1", D::ClassType::SRGB_DXT1)
@@ -323,6 +320,7 @@ void buildMetaClass_QOpenGLTexture(D _d)
         ._element("BGR_Integer", D::ClassType::BGR_Integer)
         ._element("RGBA_Integer", D::ClassType::RGBA_Integer)
         ._element("BGRA_Integer", D::ClassType::BGRA_Integer)
+        ._element("Stencil", D::ClassType::Stencil)
         ._element("Depth", D::ClassType::Depth)
         ._element("DepthStencil", D::ClassType::DepthStencil)
         ._element("Alpha", D::ClassType::Alpha)
@@ -350,8 +348,37 @@ void buildMetaClass_QOpenGLTexture(D _d)
         ._element("UInt16_R5G6B5_Rev", D::ClassType::UInt16_R5G6B5_Rev)
         ._element("UInt16_RGBA4", D::ClassType::UInt16_RGBA4)
         ._element("UInt16_RGBA4_Rev", D::ClassType::UInt16_RGBA4_Rev)
+        ._element("UInt32_RGBA8", D::ClassType::UInt32_RGBA8)
+        ._element("UInt32_RGBA8_Rev", D::ClassType::UInt32_RGBA8_Rev)
         ._element("UInt32_RGB10A2", D::ClassType::UInt32_RGB10A2)
         ._element("UInt32_RGB10A2_Rev", D::ClassType::UInt32_RGB10A2_Rev)
+        ._element("UInt32_D24S8", D::ClassType::UInt32_D24S8)
+        ._element("Float32_D32_UInt32_S8_X24", D::ClassType::Float32_D32_UInt32_S8_X24)
+    ;
+    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::SwizzleComponent>("SwizzleComponent")
+        ._element("SwizzleRed", D::ClassType::SwizzleRed)
+        ._element("SwizzleGreen", D::ClassType::SwizzleGreen)
+        ._element("SwizzleBlue", D::ClassType::SwizzleBlue)
+        ._element("SwizzleAlpha", D::ClassType::SwizzleAlpha)
+    ;
+    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::SwizzleValue>("SwizzleValue")
+        ._element("RedValue", D::ClassType::RedValue)
+        ._element("GreenValue", D::ClassType::GreenValue)
+        ._element("BlueValue", D::ClassType::BlueValue)
+        ._element("AlphaValue", D::ClassType::AlphaValue)
+        ._element("ZeroValue", D::ClassType::ZeroValue)
+        ._element("OneValue", D::ClassType::OneValue)
+    ;
+    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::WrapMode>("WrapMode")
+        ._element("Repeat", D::ClassType::Repeat)
+        ._element("MirroredRepeat", D::ClassType::MirroredRepeat)
+        ._element("ClampToEdge", D::ClassType::ClampToEdge)
+        ._element("ClampToBorder", D::ClassType::ClampToBorder)
+    ;
+    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::CoordinateDirection>("CoordinateDirection")
+        ._element("DirectionS", D::ClassType::DirectionS)
+        ._element("DirectionT", D::ClassType::DirectionT)
+        ._element("DirectionR", D::ClassType::DirectionR)
     ;
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::Feature>("Feature")
         ._element("ImmutableStorage", D::ClassType::ImmutableStorage)
@@ -368,25 +395,27 @@ void buildMetaClass_QOpenGLTexture(D _d)
         ._element("NPOTTextures", D::ClassType::NPOTTextures)
         ._element("NPOTTextureRepeat", D::ClassType::NPOTTextureRepeat)
         ._element("Texture1D", D::ClassType::Texture1D)
+        ._element("TextureComparisonOperators", D::ClassType::TextureComparisonOperators)
+        ._element("TextureMipMapLevel", D::ClassType::TextureMipMapLevel)
         ._element("MaxFeatureFlag", D::ClassType::MaxFeatureFlag)
-    ;
-    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::SwizzleComponent>("SwizzleComponent")
-        ._element("SwizzleRed", D::ClassType::SwizzleRed)
-        ._element("SwizzleGreen", D::ClassType::SwizzleGreen)
-        ._element("SwizzleBlue", D::ClassType::SwizzleBlue)
-        ._element("SwizzleAlpha", D::ClassType::SwizzleAlpha)
-    ;
-    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::SwizzleValue>("SwizzleValue")
-        ._element("RedValue", D::ClassType::RedValue)
-        ._element("GreenValue", D::ClassType::GreenValue)
-        ._element("BlueValue", D::ClassType::BlueValue)
-        ._element("AlphaValue", D::ClassType::AlphaValue)
-        ._element("ZeroValue", D::ClassType::ZeroValue)
-        ._element("OneValue", D::ClassType::OneValue)
     ;
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::DepthStencilMode>("DepthStencilMode")
         ._element("DepthMode", D::ClassType::DepthMode)
         ._element("StencilMode", D::ClassType::StencilMode)
+    ;
+    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::ComparisonFunction>("ComparisonFunction")
+        ._element("CompareLessEqual", D::ClassType::CompareLessEqual)
+        ._element("CompareGreaterEqual", D::ClassType::CompareGreaterEqual)
+        ._element("CompareLess", D::ClassType::CompareLess)
+        ._element("CompareGreater", D::ClassType::CompareGreater)
+        ._element("CompareEqual", D::ClassType::CompareEqual)
+        ._element("CommpareNotEqual", D::ClassType::CommpareNotEqual)
+        ._element("CompareAlways", D::ClassType::CompareAlways)
+        ._element("CompareNever", D::ClassType::CompareNever)
+    ;
+    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::ComparisonMode>("ComparisonMode")
+        ._element("CompareRefToTexture", D::ClassType::CompareRefToTexture)
+        ._element("CompareNone", D::ClassType::CompareNone)
     ;
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::Filter>("Filter")
         ._element("Nearest", D::ClassType::Nearest)
@@ -395,17 +424,6 @@ void buildMetaClass_QOpenGLTexture(D _d)
         ._element("NearestMipMapLinear", D::ClassType::NearestMipMapLinear)
         ._element("LinearMipMapNearest", D::ClassType::LinearMipMapNearest)
         ._element("LinearMipMapLinear", D::ClassType::LinearMipMapLinear)
-    ;
-    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::WrapMode>("WrapMode")
-        ._element("Repeat", D::ClassType::Repeat)
-        ._element("MirroredRepeat", D::ClassType::MirroredRepeat)
-        ._element("ClampToEdge", D::ClassType::ClampToEdge)
-        ._element("ClampToBorder", D::ClassType::ClampToBorder)
-    ;
-    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::CoordinateDirection>("CoordinateDirection")
-        ._element("DirectionS", D::ClassType::DirectionS)
-        ._element("DirectionT", D::ClassType::DirectionT)
-        ._element("DirectionR", D::ClassType::DirectionR)
     ;
     {
         GDefineMetaClass<QFlags<typename QOpenGLTexture::Feature > > _t_d = GDefineMetaClass<QFlags<typename QOpenGLTexture::Feature > >::lazyDeclare("Features", &buildMetaClass_QFlags<GDefineMetaClass<QFlags<typename QOpenGLTexture::Feature > >, typename QOpenGLTexture::Feature >);

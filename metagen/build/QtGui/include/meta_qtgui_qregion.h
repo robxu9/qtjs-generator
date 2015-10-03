@@ -33,25 +33,25 @@ void buildMetaClass_Global_qregion(D _d)
 inline QRegion & opErAToRWrapper_QRegion__opAssign(QRegion * self, const QRegion & __arg0) {
     return (*self) = __arg0;
 }
-inline const QRegion opErAToRWrapper_QRegion__opBitOr(const QRegion * self, const QRegion & r) {
+inline QRegion opErAToRWrapper_QRegion__opBitOr(const QRegion * self, const QRegion & r) {
     return (*self) | r;
 }
-inline const QRegion opErAToRWrapper_QRegion__opAdd(const QRegion * self, const QRegion & r) {
+inline QRegion opErAToRWrapper_QRegion__opAdd(const QRegion * self, const QRegion & r) {
     return (*self) + r;
 }
-inline const QRegion opErAToRWrapper_QRegion__opAdd(const QRegion * self, const QRect & r) {
+inline QRegion opErAToRWrapper_QRegion__opAdd(const QRegion * self, const QRect & r) {
     return (*self) + r;
 }
-inline const QRegion opErAToRWrapper_QRegion__opBitAnd(const QRegion * self, const QRegion & r) {
+inline QRegion opErAToRWrapper_QRegion__opBitAnd(const QRegion * self, const QRegion & r) {
     return (*self) & r;
 }
-inline const QRegion opErAToRWrapper_QRegion__opBitAnd(const QRegion * self, const QRect & r) {
+inline QRegion opErAToRWrapper_QRegion__opBitAnd(const QRegion * self, const QRect & r) {
     return (*self) & r;
 }
-inline const QRegion opErAToRWrapper_QRegion__opSub(const QRegion * self, const QRegion & r) {
+inline QRegion opErAToRWrapper_QRegion__opSub(const QRegion * self, const QRegion & r) {
     return (*self) - r;
 }
-inline const QRegion opErAToRWrapper_QRegion__opBitXor(const QRegion * self, const QRegion & r) {
+inline QRegion opErAToRWrapper_QRegion__opBitXor(const QRegion * self, const QRegion & r) {
     return (*self) ^ r;
 }
 inline QRegion & opErAToRWrapper_QRegion__opBitOrAssign(QRegion * self, const QRegion & r) {
@@ -128,20 +128,20 @@ void buildMetaClass_QRegion(D _d)
     ;
     _d.CPGF_MD_TEMPLATE _operator<QRegion & (*)(cpgf::GMetaSelf, const QRegion &)>(mopHolder = mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("_opAssign", (QRegion & (*) (QRegion *, const QRegion &))&opErAToRWrapper_QRegion__opAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<const QRegion (*)(const cpgf::GMetaSelf &, const QRegion &)>(mopHolder | mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _method("_opBitOr", (const QRegion (*) (const QRegion *, const QRegion &))&opErAToRWrapper_QRegion__opBitOr, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<const QRegion (*)(const cpgf::GMetaSelf &, const QRegion &)>(mopHolder + mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _method("_opAdd", (const QRegion (*) (const QRegion *, const QRegion &))&opErAToRWrapper_QRegion__opAdd, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<const QRegion (*)(const cpgf::GMetaSelf &, const QRect &)>(mopHolder + mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opAdd", (const QRegion (*) (const QRegion *, const QRect &))&opErAToRWrapper_QRegion__opAdd, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<const QRegion (*)(const cpgf::GMetaSelf &, const QRegion &)>(mopHolder & mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _method("_opBitAnd", (const QRegion (*) (const QRegion *, const QRegion &))&opErAToRWrapper_QRegion__opBitAnd, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<const QRegion (*)(const cpgf::GMetaSelf &, const QRect &)>(mopHolder & mopHolder);
-    _d.CPGF_MD_TEMPLATE _method("_opBitAnd", (const QRegion (*) (const QRegion *, const QRect &))&opErAToRWrapper_QRegion__opBitAnd, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<const QRegion (*)(const cpgf::GMetaSelf &, const QRegion &)>(mopHolder - mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _method("_opSub", (const QRegion (*) (const QRegion *, const QRegion &))&opErAToRWrapper_QRegion__opSub, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
-    _d.CPGF_MD_TEMPLATE _operator<const QRegion (*)(const cpgf::GMetaSelf &, const QRegion &)>(mopHolder ^ mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _method("_opBitXor", (const QRegion (*) (const QRegion *, const QRegion &))&opErAToRWrapper_QRegion__opBitXor, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<QRegion (*)(const cpgf::GMetaSelf &, const QRegion &)>(mopHolder | mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opBitOr", (QRegion (*) (const QRegion *, const QRegion &))&opErAToRWrapper_QRegion__opBitOr, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<QRegion (*)(const cpgf::GMetaSelf &, const QRegion &)>(mopHolder + mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opAdd", (QRegion (*) (const QRegion *, const QRegion &))&opErAToRWrapper_QRegion__opAdd, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<QRegion (*)(const cpgf::GMetaSelf &, const QRect &)>(mopHolder + mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opAdd", (QRegion (*) (const QRegion *, const QRect &))&opErAToRWrapper_QRegion__opAdd, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<QRegion (*)(const cpgf::GMetaSelf &, const QRegion &)>(mopHolder & mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opBitAnd", (QRegion (*) (const QRegion *, const QRegion &))&opErAToRWrapper_QRegion__opBitAnd, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<QRegion (*)(const cpgf::GMetaSelf &, const QRect &)>(mopHolder & mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opBitAnd", (QRegion (*) (const QRegion *, const QRect &))&opErAToRWrapper_QRegion__opBitAnd, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<QRegion (*)(const cpgf::GMetaSelf &, const QRegion &)>(mopHolder - mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opSub", (QRegion (*) (const QRegion *, const QRegion &))&opErAToRWrapper_QRegion__opSub, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+    _d.CPGF_MD_TEMPLATE _operator<QRegion (*)(const cpgf::GMetaSelf &, const QRegion &)>(mopHolder ^ mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("_opBitXor", (QRegion (*) (const QRegion *, const QRegion &))&opErAToRWrapper_QRegion__opBitXor, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
     _d.CPGF_MD_TEMPLATE _operator<QRegion & (*)(cpgf::GMetaSelf, const QRegion &)>(mopHolder |= mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("_opBitOrAssign", (QRegion & (*) (QRegion *, const QRegion &))&opErAToRWrapper_QRegion__opBitOrAssign, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
     _d.CPGF_MD_TEMPLATE _operator<QRegion & (*)(cpgf::GMetaSelf, const QRegion &)>(mopHolder += mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());

@@ -65,6 +65,34 @@ GDefineMetaInfo createMetaClass_Global_qhash()
 #ifdef CPGF_METAGEN_LINKAGE_SPEC
 CPGF_METAGEN_LINKAGE_SPEC
 #endif
+GDefineMetaInfo createMetaClass_QHashCombine()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QtPrivate::QHashCombine> _nd = GDefineMetaClass<QtPrivate::QHashCombine>::lazyDeclare("QHashCombine", &buildMetaClass_QHashCombine);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
+GDefineMetaInfo createMetaClass_QHashCombineCommutative()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QtPrivate::QHashCombineCommutative> _nd = GDefineMetaClass<QtPrivate::QHashCombineCommutative>::lazyDeclare("QHashCombineCommutative", &buildMetaClass_QHashCombineCommutative);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
 GDefineMetaInfo createMetaClass_QHashDummyValue()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();

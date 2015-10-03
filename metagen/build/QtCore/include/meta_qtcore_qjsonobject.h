@@ -136,6 +136,7 @@ void buildMetaClass_QJsonObject(D _d)
     _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (const QJsonObject &)>();
     _d.CPGF_MD_TEMPLATE _method("toVariantMap", &D::ClassType::toVariantMap);
+    _d.CPGF_MD_TEMPLATE _method("toVariantHash", &D::ClassType::toVariantHash);
     _d.CPGF_MD_TEMPLATE _method("keys", &D::ClassType::keys);
     _d.CPGF_MD_TEMPLATE _method("size", &D::ClassType::size);
     _d.CPGF_MD_TEMPLATE _method("count", &D::ClassType::count);
@@ -158,6 +159,7 @@ void buildMetaClass_QJsonObject(D _d)
     _d.CPGF_MD_TEMPLATE _method("insert", &D::ClassType::insert, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0>, cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("empty", &D::ClassType::empty);
     _d.CPGF_MD_TEMPLATE _method("fromVariantMap", &D::ClassType::fromVariantMap);
+    _d.CPGF_MD_TEMPLATE _method("fromVariantHash", &D::ClassType::fromVariantHash);
     _d.CPGF_MD_TEMPLATE _operator<QJsonObject & (*)(cpgf::GMetaSelf, const QJsonObject &)>(mopHolder = mopHolder);
     _d.CPGF_MD_TEMPLATE _method("_opAssign", (QJsonObject & (*) (QJsonObject *, const QJsonObject &))&opErAToRWrapper_QJsonObject__opAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
     _d.CPGF_MD_TEMPLATE _operator<QJsonValue (*)(const cpgf::GMetaSelf &, const QString &)>(mopHolder[0], cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
@@ -177,6 +179,7 @@ void buildMetaClass_QJsonObject(D _d)
         _nd.CPGF_MD_TEMPLATE _method("value", &QJsonObject::const_iterator::value);
         _nd.CPGF_MD_TEMPLATE _operator<QJsonValue (*)(const cpgf::GMetaSelf &)>(*mopHolder);
         _nd.CPGF_MD_TEMPLATE _method("_opDerefer", (QJsonValue (*) (const QJsonObject::const_iterator *))&opErAToRWrapper_QJsonObject_const_iterator__opDerefer, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<QJsonValuePtr (*)(const cpgf::GMetaSelf &)>(mopHolder -> mopHolder);
         _nd.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QJsonObject::const_iterator&)>(mopHolder == mopHolder);
         _nd.CPGF_MD_TEMPLATE _method("_opEqual", (bool (*) (const QJsonObject::const_iterator *, const QJsonObject::const_iterator&))&opErAToRWrapper_QJsonObject_const_iterator__opEqual, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
         _nd.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QJsonObject::const_iterator&)>(mopHolder != mopHolder);
@@ -211,6 +214,7 @@ void buildMetaClass_QJsonObject(D _d)
         _nd.CPGF_MD_TEMPLATE _method("value", &QJsonObject::iterator::value);
         _nd.CPGF_MD_TEMPLATE _operator<QJsonValueRef (*)(const cpgf::GMetaSelf &)>(*mopHolder);
         _nd.CPGF_MD_TEMPLATE _method("_opDerefer", (QJsonValueRef (*) (const QJsonObject::iterator *))&opErAToRWrapper_QJsonObject_iterator__opDerefer, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<QJsonValueRefPtr (*)(const cpgf::GMetaSelf &)>(mopHolder -> mopHolder);
         _nd.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QJsonObject::iterator&)>(mopHolder == mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
         _nd.CPGF_MD_TEMPLATE _method("_opEqual", (bool (*) (const QJsonObject::iterator *, const QJsonObject::iterator&))&opErAToRWrapper_QJsonObject_iterator__opEqual, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
         _nd.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QJsonObject::iterator&)>(mopHolder != mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());

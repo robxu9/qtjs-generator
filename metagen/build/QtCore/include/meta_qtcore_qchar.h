@@ -25,11 +25,11 @@ void buildMetaClass_Global_qchar(D _d)
     using namespace cpgf;
     
     _d.CPGF_MD_TEMPLATE _operator<bool (*)(QChar, QChar)>(mopHolder == mopHolder);
-    _d.CPGF_MD_TEMPLATE _operator<bool (*)(QChar, QChar)>(mopHolder != mopHolder);
-    _d.CPGF_MD_TEMPLATE _operator<bool (*)(QChar, QChar)>(mopHolder <= mopHolder);
-    _d.CPGF_MD_TEMPLATE _operator<bool (*)(QChar, QChar)>(mopHolder >= mopHolder);
     _d.CPGF_MD_TEMPLATE _operator<bool (*)(QChar, QChar)>(mopHolder < mopHolder);
+    _d.CPGF_MD_TEMPLATE _operator<bool (*)(QChar, QChar)>(mopHolder != mopHolder);
+    _d.CPGF_MD_TEMPLATE _operator<bool (*)(QChar, QChar)>(mopHolder >= mopHolder);
     _d.CPGF_MD_TEMPLATE _operator<bool (*)(QChar, QChar)>(mopHolder > mopHolder);
+    _d.CPGF_MD_TEMPLATE _operator<bool (*)(QChar, QChar)>(mopHolder <= mopHolder);
     _d.CPGF_MD_TEMPLATE _operator<QDataStream & (*)(QDataStream &, QChar)>(mopHolder << mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1>, cpgf::GMetaRuleParamNoncopyable<0> >());
     _d.CPGF_MD_TEMPLATE _operator<QDataStream & (*)(QDataStream &, QChar &)>(mopHolder >> mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1>, cpgf::GMetaRuleParamNoncopyable<0> >());
 }
@@ -280,6 +280,29 @@ void buildMetaClass_QChar(D _d)
         ._element("Script_Sharada", D::ClassType::Script_Sharada)
         ._element("Script_SoraSompeng", D::ClassType::Script_SoraSompeng)
         ._element("Script_Takri", D::ClassType::Script_Takri)
+        ._element("Script_CaucasianAlbanian", D::ClassType::Script_CaucasianAlbanian)
+        ._element("Script_BassaVah", D::ClassType::Script_BassaVah)
+        ._element("Script_Duployan", D::ClassType::Script_Duployan)
+        ._element("Script_Elbasan", D::ClassType::Script_Elbasan)
+        ._element("Script_Grantha", D::ClassType::Script_Grantha)
+        ._element("Script_PahawhHmong", D::ClassType::Script_PahawhHmong)
+        ._element("Script_Khojki", D::ClassType::Script_Khojki)
+        ._element("Script_LinearA", D::ClassType::Script_LinearA)
+        ._element("Script_Mahajani", D::ClassType::Script_Mahajani)
+        ._element("Script_Manichaean", D::ClassType::Script_Manichaean)
+        ._element("Script_MendeKikakui", D::ClassType::Script_MendeKikakui)
+        ._element("Script_Modi", D::ClassType::Script_Modi)
+        ._element("Script_Mro", D::ClassType::Script_Mro)
+        ._element("Script_OldNorthArabian", D::ClassType::Script_OldNorthArabian)
+        ._element("Script_Nabataean", D::ClassType::Script_Nabataean)
+        ._element("Script_Palmyrene", D::ClassType::Script_Palmyrene)
+        ._element("Script_PauCinHau", D::ClassType::Script_PauCinHau)
+        ._element("Script_OldPermic", D::ClassType::Script_OldPermic)
+        ._element("Script_PsalterPahlavi", D::ClassType::Script_PsalterPahlavi)
+        ._element("Script_Siddham", D::ClassType::Script_Siddham)
+        ._element("Script_Khudawadi", D::ClassType::Script_Khudawadi)
+        ._element("Script_Tirhuta", D::ClassType::Script_Tirhuta)
+        ._element("Script_WarangCiti", D::ClassType::Script_WarangCiti)
         ._element("ScriptCount", D::ClassType::ScriptCount)
     ;
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::Direction>("Direction")
@@ -373,6 +396,7 @@ void buildMetaClass_QChar(D _d)
         ._element("Unicode_6_1", D::ClassType::Unicode_6_1)
         ._element("Unicode_6_2", D::ClassType::Unicode_6_2)
         ._element("Unicode_6_3", D::ClassType::Unicode_6_3)
+        ._element("Unicode_7_0", D::ClassType::Unicode_7_0)
     ;
 }
 
