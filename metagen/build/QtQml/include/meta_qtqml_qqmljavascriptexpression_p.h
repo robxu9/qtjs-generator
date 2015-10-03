@@ -13,7 +13,6 @@
 #include "cpgf/gmetapolicy.h"
 
 
-using namespace QV4;
 
 
 namespace qt_metadata { 

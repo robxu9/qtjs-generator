@@ -27,7 +27,7 @@ void buildMetaClass_Global_qimageiohandler(D _d)
     (void)_d;
     using namespace cpgf;
     
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtGui_12")
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtGui_11")
         ._element("QImageIOHandlerFactoryInterface_iid", QImageIOHandlerFactoryInterface_iid)
     ;
 }

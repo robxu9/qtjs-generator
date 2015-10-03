@@ -27,7 +27,7 @@
 #include <private/qsgrenderer_p.h>
 #include <private/qsgrenderloop_p.h>
 
-#include "QtQml/5.3.2/QtQml/private/qjsvalue_p.h"
+#include "QtQml/5.5.0/QtQml/private/qjsvalue_p.h"
 
 #include "meta_qtqml_qjsvalue_p.h"
 
@@ -43,7 +43,7 @@ GDefineMetaInfo createMetaClass_QJSValuePrivate()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
     {
-        GDefineMetaClass<QJSValuePrivate, QV4::PersistentValuePrivate> _nd = GDefineMetaClass<QJSValuePrivate, QV4::PersistentValuePrivate>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QJSValuePrivate", &buildMetaClass_QJSValuePrivate);
+        GDefineMetaClass<QJSValuePrivate> _nd = GDefineMetaClass<QJSValuePrivate>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QJSValuePrivate", &buildMetaClass_QJSValuePrivate);
         _d._class(_nd);
     }
     return _d.getMetaInfo();

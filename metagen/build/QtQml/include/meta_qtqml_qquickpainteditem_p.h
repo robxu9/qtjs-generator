@@ -56,6 +56,8 @@ void buildMetaClass_QQuickPaintedItemPrivate(D _d)
     _d.CPGF_MD_TEMPLATE _property("opaquePainting", &bItFiEldWrapper_QQuickPaintedItemPrivate_opaquePainting_getter, &bItFiEldWrapper_QQuickPaintedItemPrivate_opaquePainting_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
     _d.CPGF_MD_TEMPLATE _property("antialiasing", &bItFiEldWrapper_QQuickPaintedItemPrivate_antialiasing_getter, &bItFiEldWrapper_QQuickPaintedItemPrivate_antialiasing_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
     _d.CPGF_MD_TEMPLATE _property("mipmap", &bItFiEldWrapper_QQuickPaintedItemPrivate_mipmap_getter, &bItFiEldWrapper_QQuickPaintedItemPrivate_mipmap_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
+    _d.CPGF_MD_TEMPLATE _field("textureProvider", &D::ClassType::textureProvider);
+    _d.CPGF_MD_TEMPLATE _field("node", &D::ClassType::node, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
 }
 
 

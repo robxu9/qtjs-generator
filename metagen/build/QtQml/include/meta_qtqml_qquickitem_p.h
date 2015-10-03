@@ -214,6 +214,13 @@ inline bool bItFiEldWrapper_QQuickItemPrivate_hasCursor_getter(QQuickItemPrivate
 inline void bItFiEldWrapper_QQuickItemPrivate_hasCursor_setter(QQuickItemPrivate * self, bool value) {
     self->hasCursor = value;
 }
+inline bool bItFiEldWrapper_QQuickItemPrivate_hasCursorInChild_getter(QQuickItemPrivate * self) {
+    return self->hasCursorInChild;
+}
+
+inline void bItFiEldWrapper_QQuickItemPrivate_hasCursorInChild_setter(QQuickItemPrivate * self, bool value) {
+    self->hasCursorInChild = value;
+}
 inline bool bItFiEldWrapper_QQuickItemPrivate_activeFocusOnTab_getter(QQuickItemPrivate * self) {
     return self->activeFocusOnTab;
 }
@@ -244,6 +251,13 @@ inline QQuickItem::TransformOrigin bItFiEldWrapper_QQuickItemPrivate_ExtraData_o
 inline void bItFiEldWrapper_QQuickItemPrivate_ExtraData_origin_setter(QQuickItemPrivate::ExtraData * self, QQuickItem::TransformOrigin value) {
     self->origin = value;
 }
+inline uint bItFiEldWrapper_QQuickItemPrivate_ExtraData_transparentForPositioner_getter(QQuickItemPrivate::ExtraData * self) {
+    return self->transparentForPositioner;
+}
+
+inline void bItFiEldWrapper_QQuickItemPrivate_ExtraData_transparentForPositioner_setter(QQuickItemPrivate::ExtraData * self, uint value) {
+    self->transparentForPositioner = value;
+}
 
 
 inline bool opErAToRWrapper_QQuickItemPrivate_ChangeListener__opEqual(const QQuickItemPrivate::ChangeListener * self, const QQuickItemPrivate::ChangeListener& other) {
@@ -259,7 +273,7 @@ void buildMetaClass_QQuickItemPrivate(D _d)
     
     _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
     _d.CPGF_MD_TEMPLATE _field("extra", &D::ClassType::extra);
-    _d.CPGF_MD_TEMPLATE _field("_anchors", &D::ClassType::_anchors);
+    _d.CPGF_MD_TEMPLATE _field("_anchors", &D::ClassType::_anchors, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
     _d.CPGF_MD_TEMPLATE _property("flags", &bItFiEldWrapper_QQuickItemPrivate_flags_getter, &bItFiEldWrapper_QQuickItemPrivate_flags_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
     _d.CPGF_MD_TEMPLATE _property("widthValid", &bItFiEldWrapper_QQuickItemPrivate_widthValid_getter, &bItFiEldWrapper_QQuickItemPrivate_widthValid_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
     _d.CPGF_MD_TEMPLATE _property("heightValid", &bItFiEldWrapper_QQuickItemPrivate_heightValid_getter, &bItFiEldWrapper_QQuickItemPrivate_heightValid_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
@@ -288,19 +302,20 @@ void buildMetaClass_QQuickItemPrivate(D _d)
     _d.CPGF_MD_TEMPLATE _property("isAccessible", &bItFiEldWrapper_QQuickItemPrivate_isAccessible_getter, &bItFiEldWrapper_QQuickItemPrivate_isAccessible_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
     _d.CPGF_MD_TEMPLATE _property("culled", &bItFiEldWrapper_QQuickItemPrivate_culled_getter, &bItFiEldWrapper_QQuickItemPrivate_culled_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
     _d.CPGF_MD_TEMPLATE _property("hasCursor", &bItFiEldWrapper_QQuickItemPrivate_hasCursor_getter, &bItFiEldWrapper_QQuickItemPrivate_hasCursor_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
+    _d.CPGF_MD_TEMPLATE _property("hasCursorInChild", &bItFiEldWrapper_QQuickItemPrivate_hasCursorInChild_getter, &bItFiEldWrapper_QQuickItemPrivate_hasCursorInChild_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
     _d.CPGF_MD_TEMPLATE _property("activeFocusOnTab", &bItFiEldWrapper_QQuickItemPrivate_activeFocusOnTab_getter, &bItFiEldWrapper_QQuickItemPrivate_activeFocusOnTab_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
     _d.CPGF_MD_TEMPLATE _property("implicitAntialiasing", &bItFiEldWrapper_QQuickItemPrivate_implicitAntialiasing_getter, &bItFiEldWrapper_QQuickItemPrivate_implicitAntialiasing_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
     _d.CPGF_MD_TEMPLATE _property("antialiasingValid", &bItFiEldWrapper_QQuickItemPrivate_antialiasingValid_getter, &bItFiEldWrapper_QQuickItemPrivate_antialiasingValid_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
     _d.CPGF_MD_TEMPLATE _field("dirtyAttributes", &D::ClassType::dirtyAttributes);
-    _d.CPGF_MD_TEMPLATE _field("nextDirtyItem", &D::ClassType::nextDirtyItem);
-    _d.CPGF_MD_TEMPLATE _field("prevDirtyItem", &D::ClassType::prevDirtyItem);
-    _d.CPGF_MD_TEMPLATE _field("window", &D::ClassType::window);
+    _d.CPGF_MD_TEMPLATE _field("nextDirtyItem", &D::ClassType::nextDirtyItem, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
+    _d.CPGF_MD_TEMPLATE _field("prevDirtyItem", &D::ClassType::prevDirtyItem, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
+    _d.CPGF_MD_TEMPLATE _field("window", &D::ClassType::window, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
     _d.CPGF_MD_TEMPLATE _field("windowRefCount", &D::ClassType::windowRefCount);
-    _d.CPGF_MD_TEMPLATE _field("parentItem", &D::ClassType::parentItem);
+    _d.CPGF_MD_TEMPLATE _field("parentItem", &D::ClassType::parentItem, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
     _d.CPGF_MD_TEMPLATE _field("parentNotifier", &D::ClassType::parentNotifier);
     _d.CPGF_MD_TEMPLATE _field("childItems", &D::ClassType::childItems);
     _d.CPGF_MD_TEMPLATE _field("sortedChildItems", &D::ClassType::sortedChildItems);
-    _d.CPGF_MD_TEMPLATE _field("subFocusItem", &D::ClassType::subFocusItem);
+    _d.CPGF_MD_TEMPLATE _field("subFocusItem", &D::ClassType::subFocusItem, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
     _d.CPGF_MD_TEMPLATE _field("x", &D::ClassType::x);
     _d.CPGF_MD_TEMPLATE _field("y", &D::ClassType::y);
     _d.CPGF_MD_TEMPLATE _field("width", &D::ClassType::width);
@@ -308,9 +323,8 @@ void buildMetaClass_QQuickItemPrivate(D _d)
     _d.CPGF_MD_TEMPLATE _field("implicitWidth", &D::ClassType::implicitWidth);
     _d.CPGF_MD_TEMPLATE _field("implicitHeight", &D::ClassType::implicitHeight);
     _d.CPGF_MD_TEMPLATE _field("baselineOffset", &D::ClassType::baselineOffset);
-    _d.CPGF_MD_TEMPLATE _field("itemNodeInstance", &D::ClassType::itemNodeInstance);
-    _d.CPGF_MD_TEMPLATE _field("groupNode", &D::ClassType::groupNode);
-    _d.CPGF_MD_TEMPLATE _field("paintNode", &D::ClassType::paintNode);
+    _d.CPGF_MD_TEMPLATE _field("itemNodeInstance", &D::ClassType::itemNodeInstance, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
+    _d.CPGF_MD_TEMPLATE _field("paintNode", &D::ClassType::paintNode, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
     _d.CPGF_MD_TEMPLATE _method("get", (QQuickItemPrivate * (*) (QQuickItem *))&D::ClassType::get);
     _d.CPGF_MD_TEMPLATE _method("get", (const QQuickItemPrivate * (*) (const QQuickItem *))&D::ClassType::get);
     _d.CPGF_MD_TEMPLATE _method("registerAccessorProperties", &D::ClassType::registerAccessorProperties);
@@ -330,7 +344,6 @@ void buildMetaClass_QQuickItemPrivate(D _d)
     _d.CPGF_MD_TEMPLATE _method("visibleChildren_at", &D::ClassType::visibleChildren_at);
     _d.CPGF_MD_TEMPLATE _method("focusNextPrev", &D::ClassType::focusNextPrev);
     _d.CPGF_MD_TEMPLATE _method("nextPrevItemInTabFocusChain", &D::ClassType::nextPrevItemInTabFocusChain);
-    _d.CPGF_MD_TEMPLATE _method("qt_tab_all_widgets", &D::ClassType::qt_tab_all_widgets);
     _d.CPGF_MD_TEMPLATE _method("canAcceptTabFocus", &D::ClassType::canAcceptTabFocus);
     _d.CPGF_MD_TEMPLATE _method("init", &D::ClassType::init);
     _d.CPGF_MD_TEMPLATE _method("data", &D::ClassType::data);
@@ -349,6 +362,7 @@ void buildMetaClass_QQuickItemPrivate(D _d)
     _d.CPGF_MD_TEMPLATE _method("verticalCenter", &D::ClassType::verticalCenter);
     _d.CPGF_MD_TEMPLATE _method("baseline", &D::ClassType::baseline);
     _d.CPGF_MD_TEMPLATE _method("_q_resourceObjectDeleted", &D::ClassType::_q_resourceObjectDeleted);
+    _d.CPGF_MD_TEMPLATE _method("_q_windowChanged", &D::ClassType::_q_windowChanged);
     _d.CPGF_MD_TEMPLATE _method("anchors", &D::ClassType::anchors);
     _d.CPGF_MD_TEMPLATE _method("acceptedMouseButtons", &D::ClassType::acceptedMouseButtons);
     _d.CPGF_MD_TEMPLATE _method("addItemChangeListener", &D::ClassType::addItemChangeListener);
@@ -378,7 +392,7 @@ void buildMetaClass_QQuickItemPrivate(D _d)
     _d.CPGF_MD_TEMPLATE _method("scale", &D::ClassType::scale);
     _d.CPGF_MD_TEMPLATE _method("rotation", &D::ClassType::rotation);
     _d.CPGF_MD_TEMPLATE _method("opacity", &D::ClassType::opacity);
-    _d.CPGF_MD_TEMPLATE _method("setAccessibleFlagAndListener", &D::ClassType::setAccessibleFlagAndListener);
+    _d.CPGF_MD_TEMPLATE _method("setAccessible", &D::ClassType::setAccessible);
     _d.CPGF_MD_TEMPLATE _method("getImplicitWidth", &D::ClassType::getImplicitWidth);
     _d.CPGF_MD_TEMPLATE _method("getImplicitHeight", &D::ClassType::getImplicitHeight);
     _d.CPGF_MD_TEMPLATE _method("implicitWidthChanged", &D::ClassType::implicitWidthChanged);
@@ -393,6 +407,8 @@ void buildMetaClass_QQuickItemPrivate(D _d)
     _d.CPGF_MD_TEMPLATE _method("transformChanged", &D::ClassType::transformChanged);
     _d.CPGF_MD_TEMPLATE _method("deliverKeyEvent", &D::ClassType::deliverKeyEvent);
     _d.CPGF_MD_TEMPLATE _method("deliverInputMethodEvent", &D::ClassType::deliverInputMethodEvent);
+    _d.CPGF_MD_TEMPLATE _method("isTransparentForPositioner", &D::ClassType::isTransparentForPositioner);
+    _d.CPGF_MD_TEMPLATE _method("setTransparentForPositioner", &D::ClassType::setTransparentForPositioner);
     _d.CPGF_MD_TEMPLATE _method("calcEffectiveVisible", &D::ClassType::calcEffectiveVisible);
     _d.CPGF_MD_TEMPLATE _method("setEffectiveVisibleRecur", &D::ClassType::setEffectiveVisibleRecur);
     _d.CPGF_MD_TEMPLATE _method("calcEffectiveEnable", &D::ClassType::calcEffectiveEnable);
@@ -407,7 +423,7 @@ void buildMetaClass_QQuickItemPrivate(D _d)
     _d.CPGF_MD_TEMPLATE _method("derefFromEffectItem", &D::ClassType::derefFromEffectItem);
     _d.CPGF_MD_TEMPLATE _method("itemChange", &D::ClassType::itemChange, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("mirrorChange", &D::ClassType::mirrorChange);
-    _d.CPGF_MD_TEMPLATE _method("incrementCursorCount", &D::ClassType::incrementCursorCount);
+    _d.CPGF_MD_TEMPLATE _method("setHasCursorInChild", &D::ClassType::setHasCursorInChild);
     _d.CPGF_MD_TEMPLATE _method("markObjects", &D::ClassType::markObjects);
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::ChangeType>("ChangeType")
         ._element("Geometry", D::ClassType::Geometry)
@@ -481,17 +497,16 @@ void buildMetaClass_QQuickItemPrivate(D _d)
         _nd.CPGF_MD_TEMPLATE _field("rotation", &QQuickItemPrivate::ExtraData::rotation);
         _nd.CPGF_MD_TEMPLATE _field("opacity", &QQuickItemPrivate::ExtraData::opacity);
         _nd.CPGF_MD_TEMPLATE _field("cursor", &QQuickItemPrivate::ExtraData::cursor);
-        _nd.CPGF_MD_TEMPLATE _field("numItemsWithCursor", &QQuickItemPrivate::ExtraData::numItemsWithCursor);
         _nd.CPGF_MD_TEMPLATE _field("userTransformOriginPoint", &QQuickItemPrivate::ExtraData::userTransformOriginPoint);
         _nd.CPGF_MD_TEMPLATE _field("effectRefCount", &QQuickItemPrivate::ExtraData::effectRefCount);
         _nd.CPGF_MD_TEMPLATE _field("hideRefCount", &QQuickItemPrivate::ExtraData::hideRefCount);
-        _nd.CPGF_MD_TEMPLATE _field("opacityNode", &QQuickItemPrivate::ExtraData::opacityNode);
-        _nd.CPGF_MD_TEMPLATE _field("clipNode", &QQuickItemPrivate::ExtraData::clipNode);
-        _nd.CPGF_MD_TEMPLATE _field("rootNode", &QQuickItemPrivate::ExtraData::rootNode);
-        _nd.CPGF_MD_TEMPLATE _field("beforePaintNode", &QQuickItemPrivate::ExtraData::beforePaintNode);
+        _nd.CPGF_MD_TEMPLATE _field("opacityNode", &QQuickItemPrivate::ExtraData::opacityNode, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
+        _nd.CPGF_MD_TEMPLATE _field("clipNode", &QQuickItemPrivate::ExtraData::clipNode, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
+        _nd.CPGF_MD_TEMPLATE _field("rootNode", &QQuickItemPrivate::ExtraData::rootNode, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
+        _nd.CPGF_MD_TEMPLATE _field("resourcesList", &QQuickItemPrivate::ExtraData::resourcesList);
         _nd.CPGF_MD_TEMPLATE _field("acceptedMouseButtons", &QQuickItemPrivate::ExtraData::acceptedMouseButtons);
         _nd.CPGF_MD_TEMPLATE _property("origin", &bItFiEldWrapper_QQuickItemPrivate_ExtraData_origin_getter, &bItFiEldWrapper_QQuickItemPrivate_ExtraData_origin_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
-        _nd.CPGF_MD_TEMPLATE _field("resourcesList", &QQuickItemPrivate::ExtraData::resourcesList);
+        _nd.CPGF_MD_TEMPLATE _property("transparentForPositioner", &bItFiEldWrapper_QQuickItemPrivate_ExtraData_transparentForPositioner_getter, &bItFiEldWrapper_QQuickItemPrivate_ExtraData_transparentForPositioner_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
         _d.CPGF_MD_TEMPLATE _class(_nd);
     }
 }

@@ -27,7 +27,7 @@
 #include <private/qsgrenderer_p.h>
 #include <private/qsgrenderloop_p.h>
 
-#include "QtQuick/5.3.2/QtQuick/private/qsgadaptationlayer_p.h"
+#include "QtQuick/5.5.0/QtQuick/private/qsgadaptationlayer_p.h"
 
 #include "meta_qtqml_qsgadaptationlayer_p.h"
 
@@ -61,7 +61,7 @@ GDefineMetaInfo createMetaClass_QSGGlyphNode()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
     {
-        GDefineMetaClass<QSGGlyphNode, QSGGeometryNode> _nd = GDefineMetaClass<QSGGlyphNode, QSGGeometryNode>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent, GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGGlyphNode", &buildMetaClass_QSGGlyphNode);
+        GDefineMetaClass<QSGGlyphNode, QSGVisitableNode> _nd = GDefineMetaClass<QSGGlyphNode, QSGVisitableNode>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent, GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGGlyphNode", &buildMetaClass_QSGGlyphNode);
         _d._class(_nd);
     }
     {
@@ -79,7 +79,7 @@ GDefineMetaInfo createMetaClass_QSGImageNode()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
     {
-        GDefineMetaClass<QSGImageNode, QSGGeometryNode> _nd = GDefineMetaClass<QSGImageNode, QSGGeometryNode>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent, GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGImageNode", &buildMetaClass_QSGImageNode);
+        GDefineMetaClass<QSGImageNode, QSGVisitableNode> _nd = GDefineMetaClass<QSGImageNode, QSGVisitableNode>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent, GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGImageNode", &buildMetaClass_QSGImageNode);
         _d._class(_nd);
     }
     {
@@ -93,15 +93,105 @@ GDefineMetaInfo createMetaClass_QSGImageNode()
 #ifdef CPGF_METAGEN_LINKAGE_SPEC
 CPGF_METAGEN_LINKAGE_SPEC
 #endif
+GDefineMetaInfo createMetaClass_QSGLayer()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QSGLayer, QSGDynamicTexture> _nd = GDefineMetaClass<QSGLayer, QSGDynamicTexture>::Policy<MakePolicy<GMetaRuleCopyConstructorAbsent, GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGLayer", &buildMetaClass_QSGLayer);
+        _d._class(_nd);
+    }
+    {
+        GDefineMetaClass<QSGLayerWrapper, QSGLayer> _nd = GDefineMetaClass<QSGLayerWrapper, QSGLayer>::Policy<MakePolicy<GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGLayerWrapper", &buildMetaClass_QSGLayerWrapper);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
+GDefineMetaInfo createMetaClass_QSGNinePatchNode()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QSGNinePatchNode, QSGVisitableNode> _nd = GDefineMetaClass<QSGNinePatchNode, QSGVisitableNode>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGNinePatchNode", &buildMetaClass_QSGNinePatchNode);
+        _d._class(_nd);
+    }
+    {
+        GDefineMetaClass<QSGNinePatchNodeWrapper, QSGNinePatchNode> _nd = GDefineMetaClass<QSGNinePatchNodeWrapper, QSGNinePatchNode>::lazyDeclare("QSGNinePatchNodeWrapper", &buildMetaClass_QSGNinePatchNodeWrapper);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
+GDefineMetaInfo createMetaClass_QSGNodeVisitorEx()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QSGNodeVisitorEx> _nd = GDefineMetaClass<QSGNodeVisitorEx>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGNodeVisitorEx", &buildMetaClass_QSGNodeVisitorEx);
+        _d._class(_nd);
+    }
+    {
+        GDefineMetaClass<QSGNodeVisitorExWrapper, QSGNodeVisitorEx> _nd = GDefineMetaClass<QSGNodeVisitorExWrapper, QSGNodeVisitorEx>::lazyDeclare("QSGNodeVisitorExWrapper", &buildMetaClass_QSGNodeVisitorExWrapper);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
+GDefineMetaInfo createMetaClass_QSGPainterNode()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QSGPainterNode, QSGVisitableNode> _nd = GDefineMetaClass<QSGPainterNode, QSGVisitableNode>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent, GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGPainterNode", &buildMetaClass_QSGPainterNode);
+        _d._class(_nd);
+    }
+    {
+        GDefineMetaClass<QSGPainterNodeWrapper, QSGPainterNode> _nd = GDefineMetaClass<QSGPainterNodeWrapper, QSGPainterNode>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGPainterNodeWrapper", &buildMetaClass_QSGPainterNodeWrapper);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
 GDefineMetaInfo createMetaClass_QSGRectangleNode()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
     {
-        GDefineMetaClass<QSGRectangleNode, QSGGeometryNode> _nd = GDefineMetaClass<QSGRectangleNode, QSGGeometryNode>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent, GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGRectangleNode", &buildMetaClass_QSGRectangleNode);
+        GDefineMetaClass<QSGRectangleNode, QSGVisitableNode> _nd = GDefineMetaClass<QSGRectangleNode, QSGVisitableNode>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent, GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGRectangleNode", &buildMetaClass_QSGRectangleNode);
         _d._class(_nd);
     }
     {
         GDefineMetaClass<QSGRectangleNodeWrapper, QSGRectangleNode> _nd = GDefineMetaClass<QSGRectangleNodeWrapper, QSGRectangleNode>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGRectangleNodeWrapper", &buildMetaClass_QSGRectangleNodeWrapper);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
+GDefineMetaInfo createMetaClass_QSGVisitableNode()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QSGVisitableNode, QSGGeometryNode> _nd = GDefineMetaClass<QSGVisitableNode, QSGGeometryNode>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGVisitableNode", &buildMetaClass_QSGVisitableNode);
+        _d._class(_nd);
+    }
+    {
+        GDefineMetaClass<QSGVisitableNodeWrapper, QSGVisitableNode> _nd = GDefineMetaClass<QSGVisitableNodeWrapper, QSGVisitableNode>::lazyDeclare("QSGVisitableNodeWrapper", &buildMetaClass_QSGVisitableNodeWrapper);
         _d._class(_nd);
     }
     return _d.getMetaInfo();

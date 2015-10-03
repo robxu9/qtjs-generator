@@ -47,93 +47,6 @@ public:
     QQuickCloseEventWrapper()
         : QQuickCloseEvent() {}
     
-    void connectNotify(const QMetaMethod & signal)
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("connectNotify"));
-        if(func)
-        {
-            cpgf::invokeScriptFunctionOnObject(func.get(), this, signal);
-            return;
-        }
-        QObject::connectNotify(signal);
-    }
-    void super_connectNotify(const QMetaMethod & signal)
-    {
-        QObject::connectNotify(signal);
-    }
-    
-    bool isSignalConnected(const QMetaMethod & signal) const
-    {
-        return QObject::isSignalConnected(signal);
-    }
-    
-    void childEvent(QChildEvent * __arg0)
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("childEvent"));
-        if(func)
-        {
-            cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0);
-            return;
-        }
-        QObject::childEvent(__arg0);
-    }
-    void super_childEvent(QChildEvent * __arg0)
-    {
-        QObject::childEvent(__arg0);
-    }
-    
-    int receivers(const char * signal) const
-    {
-        return QObject::receivers(signal);
-    }
-    
-    int senderSignalIndex() const
-    {
-        return QObject::senderSignalIndex();
-    }
-    
-    void * qt_metacast(const char * __arg0)
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("qt_metacast"));
-        if(func)
-        {
-            return cpgf::fromVariant<void * >(cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0).getValue());
-        }
-        return QQuickCloseEvent::qt_metacast(__arg0);
-    }
-    void * super_qt_metacast(const char * __arg0)
-    {
-        return QQuickCloseEvent::qt_metacast(__arg0);
-    }
-    
-    bool eventFilter(QObject * __arg0, QEvent * __arg1)
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("eventFilter"));
-        if(func)
-        {
-            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0, __arg1).getValue());
-        }
-        return QObject::eventFilter(__arg0, __arg1);
-    }
-    bool super_eventFilter(QObject * __arg0, QEvent * __arg1)
-    {
-        return QObject::eventFilter(__arg0, __arg1);
-    }
-    
-    const QMetaObject * metaObject() const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("metaObject"));
-        if(func)
-        {
-            return cpgf::fromVariant<const QMetaObject * >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
-        }
-        return QQuickCloseEvent::metaObject();
-    }
-    const QMetaObject * super_metaObject() const
-    {
-        return QQuickCloseEvent::metaObject();
-    }
-    
     void customEvent(QEvent * __arg0)
     {
         cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("customEvent"));
@@ -149,47 +62,29 @@ public:
         QObject::customEvent(__arg0);
     }
     
-    bool event(QEvent * __arg0)
+    int senderSignalIndex() const
     {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("event"));
-        if(func)
-        {
-            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0).getValue());
-        }
-        return QObject::event(__arg0);
-    }
-    bool super_event(QEvent * __arg0)
-    {
-        return QObject::event(__arg0);
+        return QObject::senderSignalIndex();
     }
     
-    int qt_metacall(QMetaObject::Call __arg0, int __arg1, void ** __arg2)
+    QObject * sender() const
     {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("qt_metacall"));
-        if(func)
-        {
-            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0, __arg1, __arg2).getValue());
-        }
-        return QQuickCloseEvent::qt_metacall(__arg0, __arg1, __arg2);
-    }
-    int super_qt_metacall(QMetaObject::Call __arg0, int __arg1, void ** __arg2)
-    {
-        return QQuickCloseEvent::qt_metacall(__arg0, __arg1, __arg2);
+        return QObject::sender();
     }
     
-    void timerEvent(QTimerEvent * __arg0)
+    void connectNotify(const QMetaMethod & signal)
     {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("timerEvent"));
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("connectNotify"));
         if(func)
         {
-            cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0);
+            cpgf::invokeScriptFunctionOnObject(func.get(), this, signal);
             return;
         }
-        QObject::timerEvent(__arg0);
+        QObject::connectNotify(signal);
     }
-    void super_timerEvent(QTimerEvent * __arg0)
+    void super_connectNotify(const QMetaMethod & signal)
     {
-        QObject::timerEvent(__arg0);
+        QObject::connectNotify(signal);
     }
     
     void disconnectNotify(const QMetaMethod & signal)
@@ -207,34 +102,139 @@ public:
         QObject::disconnectNotify(signal);
     }
     
-    QObject * sender() const
+    void * qt_metacast(const char * __arg0)
     {
-        return QObject::sender();
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("qt_metacast"));
+        if(func)
+        {
+            return cpgf::fromVariant<void * >(cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0).getValue());
+        }
+        return QQuickCloseEvent::qt_metacast(__arg0);
+    }
+    void * super_qt_metacast(const char * __arg0)
+    {
+        return QQuickCloseEvent::qt_metacast(__arg0);
+    }
+    
+    bool event(QEvent * __arg0)
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("event"));
+        if(func)
+        {
+            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0).getValue());
+        }
+        return QObject::event(__arg0);
+    }
+    bool super_event(QEvent * __arg0)
+    {
+        return QObject::event(__arg0);
+    }
+    
+    int receivers(const char * signal) const
+    {
+        return QObject::receivers(signal);
+    }
+    
+    bool isSignalConnected(const QMetaMethod & signal) const
+    {
+        return QObject::isSignalConnected(signal);
+    }
+    
+    bool eventFilter(QObject * __arg0, QEvent * __arg1)
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("eventFilter"));
+        if(func)
+        {
+            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0, __arg1).getValue());
+        }
+        return QObject::eventFilter(__arg0, __arg1);
+    }
+    bool super_eventFilter(QObject * __arg0, QEvent * __arg1)
+    {
+        return QObject::eventFilter(__arg0, __arg1);
+    }
+    
+    void timerEvent(QTimerEvent * __arg0)
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("timerEvent"));
+        if(func)
+        {
+            cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0);
+            return;
+        }
+        QObject::timerEvent(__arg0);
+    }
+    void super_timerEvent(QTimerEvent * __arg0)
+    {
+        QObject::timerEvent(__arg0);
+    }
+    
+    const QMetaObject * metaObject() const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("metaObject"));
+        if(func)
+        {
+            return cpgf::fromVariant<const QMetaObject * >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        return QQuickCloseEvent::metaObject();
+    }
+    const QMetaObject * super_metaObject() const
+    {
+        return QQuickCloseEvent::metaObject();
+    }
+    
+    int qt_metacall(QMetaObject::Call __arg0, int __arg1, void ** __arg2)
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("qt_metacall"));
+        if(func)
+        {
+            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0, __arg1, __arg2).getValue());
+        }
+        return QQuickCloseEvent::qt_metacall(__arg0, __arg1, __arg2);
+    }
+    int super_qt_metacall(QMetaObject::Call __arg0, int __arg1, void ** __arg2)
+    {
+        return QQuickCloseEvent::qt_metacall(__arg0, __arg1, __arg2);
+    }
+    
+    void childEvent(QChildEvent * __arg0)
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("childEvent"));
+        if(func)
+        {
+            cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0);
+            return;
+        }
+        QObject::childEvent(__arg0);
+    }
+    void super_childEvent(QChildEvent * __arg0)
+    {
+        QObject::childEvent(__arg0);
     }
     template <typename D>
     static void cpgf__register(D _d)
     {
         (void)_d;
         using namespace cpgf;
-        _d.CPGF_MD_TEMPLATE _method("connectNotify", (void (D::ClassType::*) (const QMetaMethod &))&D::ClassType::connectNotify);
-        _d.CPGF_MD_TEMPLATE _method("isSignalConnected", (bool (D::ClassType::*) (const QMetaMethod &) const)&D::ClassType::isSignalConnected);
-        _d.CPGF_MD_TEMPLATE _method("childEvent", (void (D::ClassType::*) (QChildEvent *))&D::ClassType::childEvent);
-        _d.CPGF_MD_TEMPLATE _method("receivers", (int (D::ClassType::*) (const char *) const)&D::ClassType::receivers);
-        _d.CPGF_MD_TEMPLATE _method("senderSignalIndex", (int (D::ClassType::*) () const)&D::ClassType::senderSignalIndex);
         _d.CPGF_MD_TEMPLATE _method("customEvent", (void (D::ClassType::*) (QEvent *))&D::ClassType::customEvent);
-        _d.CPGF_MD_TEMPLATE _method("timerEvent", (void (D::ClassType::*) (QTimerEvent *))&D::ClassType::timerEvent);
-        _d.CPGF_MD_TEMPLATE _method("disconnectNotify", (void (D::ClassType::*) (const QMetaMethod &))&D::ClassType::disconnectNotify);
+        _d.CPGF_MD_TEMPLATE _method("senderSignalIndex", (int (D::ClassType::*) () const)&D::ClassType::senderSignalIndex);
         _d.CPGF_MD_TEMPLATE _method("sender", (QObject * (D::ClassType::*) () const)&D::ClassType::sender);
-        _d.CPGF_MD_TEMPLATE _method("super_connectNotify", (void (D::ClassType::*) (const QMetaMethod &))&D::ClassType::super_connectNotify);
-        _d.CPGF_MD_TEMPLATE _method("super_childEvent", (void (D::ClassType::*) (QChildEvent *))&D::ClassType::super_childEvent);
-        _d.CPGF_MD_TEMPLATE _method("super_qt_metacast", (void * (D::ClassType::*) (const char *))&D::ClassType::super_qt_metacast);
-        _d.CPGF_MD_TEMPLATE _method("super_eventFilter", (bool (D::ClassType::*) (QObject *, QEvent *))&D::ClassType::super_eventFilter);
-        _d.CPGF_MD_TEMPLATE _method("super_metaObject", (const QMetaObject * (D::ClassType::*) () const)&D::ClassType::super_metaObject);
+        _d.CPGF_MD_TEMPLATE _method("connectNotify", (void (D::ClassType::*) (const QMetaMethod &))&D::ClassType::connectNotify);
+        _d.CPGF_MD_TEMPLATE _method("disconnectNotify", (void (D::ClassType::*) (const QMetaMethod &))&D::ClassType::disconnectNotify);
+        _d.CPGF_MD_TEMPLATE _method("receivers", (int (D::ClassType::*) (const char *) const)&D::ClassType::receivers);
+        _d.CPGF_MD_TEMPLATE _method("isSignalConnected", (bool (D::ClassType::*) (const QMetaMethod &) const)&D::ClassType::isSignalConnected);
+        _d.CPGF_MD_TEMPLATE _method("timerEvent", (void (D::ClassType::*) (QTimerEvent *))&D::ClassType::timerEvent);
+        _d.CPGF_MD_TEMPLATE _method("childEvent", (void (D::ClassType::*) (QChildEvent *))&D::ClassType::childEvent);
         _d.CPGF_MD_TEMPLATE _method("super_customEvent", (void (D::ClassType::*) (QEvent *))&D::ClassType::super_customEvent);
-        _d.CPGF_MD_TEMPLATE _method("super_event", (bool (D::ClassType::*) (QEvent *))&D::ClassType::super_event);
-        _d.CPGF_MD_TEMPLATE _method("super_qt_metacall", (int (D::ClassType::*) (QMetaObject::Call, int, void **))&D::ClassType::super_qt_metacall);
-        _d.CPGF_MD_TEMPLATE _method("super_timerEvent", (void (D::ClassType::*) (QTimerEvent *))&D::ClassType::super_timerEvent);
+        _d.CPGF_MD_TEMPLATE _method("super_connectNotify", (void (D::ClassType::*) (const QMetaMethod &))&D::ClassType::super_connectNotify);
         _d.CPGF_MD_TEMPLATE _method("super_disconnectNotify", (void (D::ClassType::*) (const QMetaMethod &))&D::ClassType::super_disconnectNotify);
+        _d.CPGF_MD_TEMPLATE _method("super_qt_metacast", (void * (D::ClassType::*) (const char *))&D::ClassType::super_qt_metacast);
+        _d.CPGF_MD_TEMPLATE _method("super_event", (bool (D::ClassType::*) (QEvent *))&D::ClassType::super_event);
+        _d.CPGF_MD_TEMPLATE _method("super_eventFilter", (bool (D::ClassType::*) (QObject *, QEvent *))&D::ClassType::super_eventFilter);
+        _d.CPGF_MD_TEMPLATE _method("super_timerEvent", (void (D::ClassType::*) (QTimerEvent *))&D::ClassType::super_timerEvent);
+        _d.CPGF_MD_TEMPLATE _method("super_metaObject", (const QMetaObject * (D::ClassType::*) () const)&D::ClassType::super_metaObject);
+        _d.CPGF_MD_TEMPLATE _method("super_qt_metacall", (int (D::ClassType::*) (QMetaObject::Call, int, void **))&D::ClassType::super_qt_metacall);
+        _d.CPGF_MD_TEMPLATE _method("super_childEvent", (void (D::ClassType::*) (QChildEvent *))&D::ClassType::super_childEvent);
     }
 };
 
@@ -249,6 +249,71 @@ void buildMetaClass_QQuickCloseEventWrapper(D _d)
     QQuickCloseEventWrapper::cpgf__register(_d);
     
     buildMetaClass_QQuickCloseEvent<D>(_d);
+}
+
+
+template <typename D>
+void buildMetaClass_QQuickCustomRenderStage(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _method("render", &D::ClassType::render);
+    _d.CPGF_MD_TEMPLATE _method("swap", &D::ClassType::swap);
+}
+
+
+class QQuickCustomRenderStageWrapper : public QQuickCustomRenderStage, public cpgf::GScriptWrapper {
+public:
+    
+    bool render()
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("render"));
+        if(func)
+        {
+            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    bool super_render()
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    
+    bool swap()
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("swap"));
+        if(func)
+        {
+            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        throw std::runtime_error("Abstract method");
+    }
+    bool super_swap()
+    {
+        throw std::runtime_error("Abstract method");
+    }
+    template <typename D>
+    static void cpgf__register(D _d)
+    {
+        (void)_d;
+        using namespace cpgf;
+        _d.CPGF_MD_TEMPLATE _method("super_render", (bool (D::ClassType::*) ())&D::ClassType::super_render);
+        _d.CPGF_MD_TEMPLATE _method("super_swap", (bool (D::ClassType::*) ())&D::ClassType::super_swap);
+    }
+};
+
+
+template <typename D>
+void buildMetaClass_QQuickCustomRenderStageWrapper(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    
+    QQuickCustomRenderStageWrapper::cpgf__register(_d);
+    
+    buildMetaClass_QQuickCustomRenderStage<D>(_d);
 }
 
 
@@ -297,31 +362,43 @@ void buildMetaClass_QQuickWindowPrivate(D _d)
     
     _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
     _d.CPGF_MD_TEMPLATE _field("parentlessItems", &D::ClassType::parentlessItems);
-    _d.CPGF_MD_TEMPLATE _field("activeFocusItem", &D::ClassType::activeFocusItem);
-    _d.CPGF_MD_TEMPLATE _field("mouseGrabberItem", &D::ClassType::mouseGrabberItem);
-    _d.CPGF_MD_TEMPLATE _field("cursorItem", &D::ClassType::cursorItem);
+    _d.CPGF_MD_TEMPLATE _field("activeFocusItem", &D::ClassType::activeFocusItem, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
+    _d.CPGF_MD_TEMPLATE _field("mouseGrabberItem", &D::ClassType::mouseGrabberItem, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
+    _d.CPGF_MD_TEMPLATE _field("cursorItem", &D::ClassType::cursorItem, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
     _d.CPGF_MD_TEMPLATE _field("touchMouseId", &D::ClassType::touchMouseId);
     _d.CPGF_MD_TEMPLATE _field("touchMousePressTimestamp", &D::ClassType::touchMousePressTimestamp);
     _d.CPGF_MD_TEMPLATE _field("lastMousePosition", &D::ClassType::lastMousePosition);
     _d.CPGF_MD_TEMPLATE _field("hoverItems", &D::ClassType::hoverItems);
     _d.CPGF_MD_TEMPLATE _field("updatePaintNodeData", &D::ClassType::updatePaintNodeData);
-    _d.CPGF_MD_TEMPLATE _field("dirtyItemList", &D::ClassType::dirtyItemList);
+    _d.CPGF_MD_TEMPLATE _field("dirtyItemList", &D::ClassType::dirtyItemList, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
     _d.CPGF_MD_TEMPLATE _field("cleanupNodeList", &D::ClassType::cleanupNodeList);
     _d.CPGF_MD_TEMPLATE _field("itemsToPolish", &D::ClassType::itemsToPolish);
-    _d.CPGF_MD_TEMPLATE _field("context", &D::ClassType::context);
-    _d.CPGF_MD_TEMPLATE _field("renderer", &D::ClassType::renderer);
+    _d.CPGF_MD_TEMPLATE _field("context", &D::ClassType::context, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
+    _d.CPGF_MD_TEMPLATE _field("renderer", &D::ClassType::renderer, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
     _d.CPGF_MD_TEMPLATE _field("customRenderMode", &D::ClassType::customRenderMode);
-    _d.CPGF_MD_TEMPLATE _field("windowManager", &D::ClassType::windowManager);
+    _d.CPGF_MD_TEMPLATE _field("windowManager", &D::ClassType::windowManager, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
+    _d.CPGF_MD_TEMPLATE _field("delayedTouch", &D::ClassType::delayedTouch, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
+    _d.CPGF_MD_TEMPLATE _field("touchRecursionGuard", &D::ClassType::touchRecursionGuard);
+    _d.CPGF_MD_TEMPLATE _field("customRenderStage", &D::ClassType::customRenderStage);
     _d.CPGF_MD_TEMPLATE _field("clearColor", &D::ClassType::clearColor);
     _d.CPGF_MD_TEMPLATE _property("clearBeforeRendering", &bItFiEldWrapper_QQuickWindowPrivate_clearBeforeRendering_getter, &bItFiEldWrapper_QQuickWindowPrivate_clearBeforeRendering_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
     _d.CPGF_MD_TEMPLATE _property("persistentGLContext", &bItFiEldWrapper_QQuickWindowPrivate_persistentGLContext_getter, &bItFiEldWrapper_QQuickWindowPrivate_persistentGLContext_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
     _d.CPGF_MD_TEMPLATE _property("persistentSceneGraph", &bItFiEldWrapper_QQuickWindowPrivate_persistentSceneGraph_getter, &bItFiEldWrapper_QQuickWindowPrivate_persistentSceneGraph_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
     _d.CPGF_MD_TEMPLATE _property("lastWheelEventAccepted", &bItFiEldWrapper_QQuickWindowPrivate_lastWheelEventAccepted_getter, &bItFiEldWrapper_QQuickWindowPrivate_lastWheelEventAccepted_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
     _d.CPGF_MD_TEMPLATE _property("componentCompleted", &bItFiEldWrapper_QQuickWindowPrivate_componentCompleted_getter, &bItFiEldWrapper_QQuickWindowPrivate_componentCompleted_setter, cpgf::MakePolicy<cpgf::GMetaRuleGetterExplicitThis, cpgf::GMetaRuleSetterExplicitThis>());
-    _d.CPGF_MD_TEMPLATE _field("renderTarget", &D::ClassType::renderTarget);
+    _d.CPGF_MD_TEMPLATE _field("lastFocusReason", &D::ClassType::lastFocusReason);
+    _d.CPGF_MD_TEMPLATE _field("renderTarget", &D::ClassType::renderTarget, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
     _d.CPGF_MD_TEMPLATE _field("renderTargetId", &D::ClassType::renderTargetId);
     _d.CPGF_MD_TEMPLATE _field("renderTargetSize", &D::ClassType::renderTargetSize);
+    _d.CPGF_MD_TEMPLATE _field("vaoHelper", &D::ClassType::vaoHelper, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
     _d.CPGF_MD_TEMPLATE _field("itemForTouchPointId", &D::ClassType::itemForTouchPointId);
+    _d.CPGF_MD_TEMPLATE _field("touchMouseIdCandidates", &D::ClassType::touchMouseIdCandidates);
+    _d.CPGF_MD_TEMPLATE _field("renderJobMutex", &D::ClassType::renderJobMutex, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
+    _d.CPGF_MD_TEMPLATE _field("beforeSynchronizingJobs", &D::ClassType::beforeSynchronizingJobs);
+    _d.CPGF_MD_TEMPLATE _field("afterSynchronizingJobs", &D::ClassType::afterSynchronizingJobs);
+    _d.CPGF_MD_TEMPLATE _field("beforeRenderingJobs", &D::ClassType::beforeRenderingJobs);
+    _d.CPGF_MD_TEMPLATE _field("afterRenderingJobs", &D::ClassType::afterRenderingJobs);
+    _d.CPGF_MD_TEMPLATE _field("afterSwapJobs", &D::ClassType::afterSwapJobs);
     _d.CPGF_MD_TEMPLATE _field("defaultAlphaBuffer", &D::ClassType::defaultAlphaBuffer);
     _d.CPGF_MD_TEMPLATE _method("get", &D::ClassType::get);
     _d.CPGF_MD_TEMPLATE _method("transformTouchPoints", &D::ClassType::transformTouchPoints, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
@@ -347,9 +424,13 @@ void buildMetaClass_QQuickWindowPrivate(D _d)
     _d.CPGF_MD_TEMPLATE _method("deliverMouseEvent", &D::ClassType::deliverMouseEvent);
     _d.CPGF_MD_TEMPLATE _method("sendFilteredMouseEvent", &D::ClassType::sendFilteredMouseEvent);
     _d.CPGF_MD_TEMPLATE _method("deliverWheelEvent", &D::ClassType::deliverWheelEvent);
+    _d.CPGF_MD_TEMPLATE _method("deliverNativeGestureEvent", &D::ClassType::deliverNativeGestureEvent);
     _d.CPGF_MD_TEMPLATE _method("deliverTouchPoints", &D::ClassType::deliverTouchPoints);
     _d.CPGF_MD_TEMPLATE _method("deliverTouchEvent", &D::ClassType::deliverTouchEvent);
+    _d.CPGF_MD_TEMPLATE _method("reallyDeliverTouchEvent", &D::ClassType::reallyDeliverTouchEvent);
     _d.CPGF_MD_TEMPLATE _method("deliverTouchCancelEvent", &D::ClassType::deliverTouchCancelEvent);
+    _d.CPGF_MD_TEMPLATE _method("deliverDelayedTouchEvent", &D::ClassType::deliverDelayedTouchEvent);
+    _d.CPGF_MD_TEMPLATE _method("flushDelayedTouchEvent", &D::ClassType::flushDelayedTouchEvent);
     _d.CPGF_MD_TEMPLATE _method("deliverHoverEvent", &D::ClassType::deliverHoverEvent, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleCopyConstReference<2> >());
     _d.CPGF_MD_TEMPLATE _method("deliverMatchingPointsToItem", &D::ClassType::deliverMatchingPointsToItem);
     _d.CPGF_MD_TEMPLATE _method("touchEventForItemBounds", &D::ClassType::touchEventForItemBounds, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
@@ -381,6 +462,10 @@ void buildMetaClass_QQuickWindowPrivate(D _d)
     _d.CPGF_MD_TEMPLATE _method("fireFrameSwapped", &D::ClassType::fireFrameSwapped);
     _d.CPGF_MD_TEMPLATE _method("fireOpenGLContextCreated", &D::ClassType::fireOpenGLContextCreated);
     _d.CPGF_MD_TEMPLATE _method("fireAboutToStop", &D::ClassType::fireAboutToStop);
+    _d.CPGF_MD_TEMPLATE _method("runAndClearJobs", &D::ClassType::runAndClearJobs);
+    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::CustomEvents>("CustomEvents")
+        ._element("FullUpdateRequest", D::ClassType::FullUpdateRequest)
+    ;
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::FocusOption>("FocusOption")
         ._element("DontChangeFocusProperty", D::ClassType::DontChangeFocusProperty)
         ._element("DontChangeSubFocusItem", D::ClassType::DontChangeSubFocusItem)
@@ -389,6 +474,62 @@ void buildMetaClass_QQuickWindowPrivate(D _d)
         GDefineMetaClass<QFlags<typename QQuickWindowPrivate::FocusOption > > _t_d = GDefineMetaClass<QFlags<typename QQuickWindowPrivate::FocusOption > >::lazyDeclare("FocusOptions", &buildMetaClass_QFlags<GDefineMetaClass<QFlags<typename QQuickWindowPrivate::FocusOption > >, typename QQuickWindowPrivate::FocusOption >);
         _d._class(_t_d);
     }
+}
+
+
+template <typename D>
+void buildMetaClass_QQuickWindowQObjectCleanupJob(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _constructor<void * (QObject *)>();
+    _d.CPGF_MD_TEMPLATE _field("object", &D::ClassType::object, cpgf::MakePolicy<cpgf::GMetaRuleForbidWrite, cpgf::GMetaRuleForbidRead >());
+    _d.CPGF_MD_TEMPLATE _method("run", &D::ClassType::run);
+    _d.CPGF_MD_TEMPLATE _method("schedule", &D::ClassType::schedule);
+}
+
+
+class QQuickWindowQObjectCleanupJobWrapper : public QQuickWindowQObjectCleanupJob, public cpgf::GScriptWrapper {
+public:
+    
+    QQuickWindowQObjectCleanupJobWrapper(QObject * o)
+        : QQuickWindowQObjectCleanupJob(o) {}
+    
+    void run()
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("run"));
+        if(func)
+        {
+            cpgf::invokeScriptFunctionOnObject(func.get(), this);
+            return;
+        }
+        QQuickWindowQObjectCleanupJob::run();
+    }
+    void super_run()
+    {
+        QQuickWindowQObjectCleanupJob::run();
+    }
+    template <typename D>
+    static void cpgf__register(D _d)
+    {
+        (void)_d;
+        using namespace cpgf;
+        _d.CPGF_MD_TEMPLATE _method("super_run", (void (D::ClassType::*) ())&D::ClassType::super_run);
+    }
+};
+
+
+template <typename D>
+void buildMetaClass_QQuickWindowQObjectCleanupJobWrapper(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    
+    QQuickWindowQObjectCleanupJobWrapper::cpgf__register(_d);
+    
+    buildMetaClass_QQuickWindowQObjectCleanupJob<D>(_d);
 }
 
 

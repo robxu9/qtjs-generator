@@ -127,9 +127,10 @@ void buildMetaClass_QQuickFlickable(D _d)
         ._default(copyVariantFromCopyable(-1))
         ._default(copyVariantFromCopyable(0))
     ;
-    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::BoundsBehavior>("BoundsBehavior")
+    _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::BoundsBehaviorFlag>("BoundsBehaviorFlag")
         ._element("StopAtBounds", D::ClassType::StopAtBounds)
         ._element("DragOverBounds", D::ClassType::DragOverBounds)
+        ._element("OvershootBounds", D::ClassType::OvershootBounds)
         ._element("DragAndOvershootBounds", D::ClassType::DragAndOvershootBounds)
     ;
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::FlickableDirection>("FlickableDirection")
@@ -138,6 +139,10 @@ void buildMetaClass_QQuickFlickable(D _d)
         ._element("VerticalFlick", D::ClassType::VerticalFlick)
         ._element("HorizontalAndVerticalFlick", D::ClassType::HorizontalAndVerticalFlick)
     ;
+    {
+        GDefineMetaClass<QFlags<typename QQuickFlickable::BoundsBehaviorFlag > > _t_d = GDefineMetaClass<QFlags<typename QQuickFlickable::BoundsBehaviorFlag > >::lazyDeclare("BoundsBehavior", &buildMetaClass_QFlags<GDefineMetaClass<QFlags<typename QQuickFlickable::BoundsBehaviorFlag > >, typename QQuickFlickable::BoundsBehaviorFlag >);
+        _d._class(_t_d);
+    }
 }
 
 

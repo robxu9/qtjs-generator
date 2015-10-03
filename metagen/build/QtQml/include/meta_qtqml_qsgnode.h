@@ -29,7 +29,7 @@ void buildMetaClass_Global_qsgnode(D _d)
     using namespace cpgf;
     
     _d.CPGF_MD_TEMPLATE _method("qsgnode_set_description", (void (*) (QSGNode *, const QString &))&qsgnode_set_description, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtQml_12")
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtQml_31")
     ;
     _d.CPGF_MD_TEMPLATE _operator<QDebug (*)(QDebug, const QSGNode *)>(mopHolder << mopHolder);
     _d.CPGF_MD_TEMPLATE _operator<QDebug (*)(QDebug, const QSGGeometryNode *)>(mopHolder << mopHolder);

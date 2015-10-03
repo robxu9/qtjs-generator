@@ -26,7 +26,7 @@ void buildMetaClass_Global_qstring(D _d)
     using namespace cpgf;
     
     _d.CPGF_MD_TEMPLATE _method("QT_WARNING_DISABLE_MSVC", (QT_WARNING_PUSH (*) (4127))&QT_WARNING_DISABLE_MSVC);
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtCore_23")
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtCore_21")
     ;
     _d.CPGF_MD_TEMPLATE _operator<bool (*)(QString::Null, QString::Null)>(mopHolder == mopHolder);
     _d.CPGF_MD_TEMPLATE _operator<bool (*)(QString::Null, const QString &)>(mopHolder == mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());

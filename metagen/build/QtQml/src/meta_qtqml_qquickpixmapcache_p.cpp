@@ -27,13 +27,24 @@
 #include <private/qsgrenderer_p.h>
 #include <private/qsgrenderloop_p.h>
 
-#include "QtQuick/5.3.2/QtQuick/private/qquickpixmapcache_p.h"
+#include "QtQuick/5.5.0/QtQuick/private/qquickpixmapcache_p.h"
 
 #include "meta_qtqml_qquickpixmapcache_p.h"
 
 using namespace cpgf;
 
 namespace qt_metadata { 
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
+GDefineMetaInfo createMetaClass_Global_qquickpixmapcache_p()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    buildMetaClass_Global_qquickpixmapcache_p(_d);
+    return _d.getMetaInfo();
+}
 
 
 #ifdef CPGF_METAGEN_LINKAGE_SPEC

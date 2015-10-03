@@ -27,7 +27,7 @@
 #include <private/qsgrenderer_p.h>
 #include <private/qsgrenderloop_p.h>
 
-#include "QtQuick/5.3.2/QtQuick/private/qquickrendercontrol_p.h"
+#include "QtQuick/5.5.0/QtQuick/private/qquickrendercontrol_p.h"
 
 #include "meta_qtqml_qquickrendercontrol_p.h"
 
@@ -39,15 +39,11 @@ namespace qt_metadata {
 #ifdef CPGF_METAGEN_LINKAGE_SPEC
 CPGF_METAGEN_LINKAGE_SPEC
 #endif
-GDefineMetaInfo createMetaClass_QQuickRenderControl()
+GDefineMetaInfo createMetaClass_QQuickRenderControlPrivate()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
     {
-        GDefineMetaClass<QQuickRenderControl, QObject> _nd = GDefineMetaClass<QQuickRenderControl, QObject>::Policy<MakePolicy<GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QQuickRenderControl", &buildMetaClass_QQuickRenderControl);
-        _d._class(_nd);
-    }
-    {
-        GDefineMetaClass<QQuickRenderControlWrapper, QQuickRenderControl> _nd = GDefineMetaClass<QQuickRenderControlWrapper, QQuickRenderControl>::Policy<MakePolicy<GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QQuickRenderControlWrapper", &buildMetaClass_QQuickRenderControlWrapper);
+        GDefineMetaClass<QQuickRenderControlPrivate, QObjectPrivate> _nd = GDefineMetaClass<QQuickRenderControlPrivate, QObjectPrivate>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QQuickRenderControlPrivate", &buildMetaClass_QQuickRenderControlPrivate);
         _d._class(_nd);
     }
     return _d.getMetaInfo();

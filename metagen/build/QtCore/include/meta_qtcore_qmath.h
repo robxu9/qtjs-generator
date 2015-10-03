@@ -48,7 +48,7 @@ void buildMetaClass_Global_qmath(D _d)
     _d.CPGF_MD_TEMPLATE _method("qNextPowerOfTwo", (quint64 (*) (quint64))&qNextPowerOfTwo);
     _d.CPGF_MD_TEMPLATE _method("qNextPowerOfTwo", (quint32 (*) (qint32))&qNextPowerOfTwo);
     _d.CPGF_MD_TEMPLATE _method("qNextPowerOfTwo", (quint64 (*) (qint64))&qNextPowerOfTwo);
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtCore_35")
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtCore_26")
         ._element("QT_SINE_TABLE_SIZE", QT_SINE_TABLE_SIZE)
         ._element("M_E", M_E)
         ._element("M_LOG2E", M_LOG2E)

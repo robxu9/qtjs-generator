@@ -27,7 +27,7 @@
 #include <private/qsgrenderer_p.h>
 #include <private/qsgrenderloop_p.h>
 
-#include "QtQuick/5.3.2/QtQuick/private/qquickshadereffectsource_p.h"
+#include "QtQuick/5.5.0/QtQuick/private/qquickshadereffectsource_p.h"
 
 #include "meta_qtqml_qquickshadereffectsource_p.h"
 
@@ -39,40 +39,11 @@ namespace qt_metadata {
 #ifdef CPGF_METAGEN_LINKAGE_SPEC
 CPGF_METAGEN_LINKAGE_SPEC
 #endif
-GDefineMetaInfo createMetaClass_Global_qquickshadereffectsource_p()
-{
-    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
-    buildMetaClass_Global_qquickshadereffectsource_p(_d);
-    return _d.getMetaInfo();
-}
-
-
-#ifdef CPGF_METAGEN_LINKAGE_SPEC
-CPGF_METAGEN_LINKAGE_SPEC
-#endif
 GDefineMetaInfo createMetaClass_QQuickShaderEffectSource()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
     {
         GDefineMetaClass<QQuickShaderEffectSource, QQuickItem, QQuickItemChangeListener> _nd = GDefineMetaClass<QQuickShaderEffectSource, QQuickItem, QQuickItemChangeListener>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QQuickShaderEffectSource", &buildMetaClass_QQuickShaderEffectSource);
-        _d._class(_nd);
-    }
-    return _d.getMetaInfo();
-}
-
-
-#ifdef CPGF_METAGEN_LINKAGE_SPEC
-CPGF_METAGEN_LINKAGE_SPEC
-#endif
-GDefineMetaInfo createMetaClass_QQuickShaderEffectTexture()
-{
-    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
-    {
-        GDefineMetaClass<QQuickShaderEffectTexture, QSGDynamicTexture> _nd = GDefineMetaClass<QQuickShaderEffectTexture, QSGDynamicTexture>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QQuickShaderEffectTexture", &buildMetaClass_QQuickShaderEffectTexture);
-        _d._class(_nd);
-    }
-    {
-        GDefineMetaClass<QQuickShaderEffectTextureWrapper, QQuickShaderEffectTexture> _nd = GDefineMetaClass<QQuickShaderEffectTextureWrapper, QQuickShaderEffectTexture>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QQuickShaderEffectTextureWrapper", &buildMetaClass_QQuickShaderEffectTextureWrapper);
         _d._class(_nd);
     }
     return _d.getMetaInfo();

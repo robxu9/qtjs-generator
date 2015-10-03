@@ -24,7 +24,8 @@ void buildMetaClass_Global_qtquickglobal_p(D _d)
     (void)_d;
     using namespace cpgf;
     
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtQml_38")
+    _d.CPGF_MD_TEMPLATE _method("QQuick_deinitializeProviders", (void (*) ())&QQuick_deinitializeProviders);
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtQml_39")
     ;
 }
 

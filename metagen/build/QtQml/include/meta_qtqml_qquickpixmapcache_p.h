@@ -19,6 +19,20 @@ namespace qt_metadata {
 
 
 template <typename D>
+void buildMetaClass_Global_qquickpixmapcache_p(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _enum<AutoTransform>("AutoTransform")
+        ._element("UsePluginDefault", UsePluginDefault)
+        ._element("ApplyTransform", ApplyTransform)
+        ._element("DoNotApplyTransform", DoNotApplyTransform)
+    ;
+}
+
+
+template <typename D>
 void buildMetaClass_QQuickPixmap(D _d)
 {
     (void)_d;
@@ -27,6 +41,7 @@ void buildMetaClass_QQuickPixmap(D _d)
     _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (QQmlEngine *, const QUrl &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _constructor<void * (QQmlEngine *, const QUrl &, const QSize &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _constructor<void * (const QUrl &, const QImage &)>(cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("isNull", &D::ClassType::isNull);
     _d.CPGF_MD_TEMPLATE _method("isReady", &D::ClassType::isReady);
     _d.CPGF_MD_TEMPLATE _method("isError", &D::ClassType::isError);
@@ -36,8 +51,10 @@ void buildMetaClass_QQuickPixmap(D _d)
     _d.CPGF_MD_TEMPLATE _method("url", &D::ClassType::url, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<-1> >());
     _d.CPGF_MD_TEMPLATE _method("implicitSize", &D::ClassType::implicitSize);
     _d.CPGF_MD_TEMPLATE _method("requestSize", &D::ClassType::requestSize);
+    _d.CPGF_MD_TEMPLATE _method("autoTransform", &D::ClassType::autoTransform);
     _d.CPGF_MD_TEMPLATE _method("image", &D::ClassType::image, cpgf::MakePolicy<cpgf::GMetaRuleParamNoncopyable<-1> >());
     _d.CPGF_MD_TEMPLATE _method("setImage", &D::ClassType::setImage);
+    _d.CPGF_MD_TEMPLATE _method("setPixmap", &D::ClassType::setPixmap);
     _d.CPGF_MD_TEMPLATE _method("textureFactory", &D::ClassType::textureFactory);
     _d.CPGF_MD_TEMPLATE _method("rect", &D::ClassType::rect);
     _d.CPGF_MD_TEMPLATE _method("width", &D::ClassType::width);
@@ -46,6 +63,7 @@ void buildMetaClass_QQuickPixmap(D _d)
     _d.CPGF_MD_TEMPLATE _method("load", (void (D::ClassType::*) (QQmlEngine *, const QUrl &, QQuickPixmap::Options))&D::ClassType::load, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("load", (void (D::ClassType::*) (QQmlEngine *, const QUrl &, const QSize &))&D::ClassType::load, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("load", (void (D::ClassType::*) (QQmlEngine *, const QUrl &, const QSize &, QQuickPixmap::Options))&D::ClassType::load, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+    _d.CPGF_MD_TEMPLATE _method("load", (void (D::ClassType::*) (QQmlEngine *, const QUrl &, const QSize &, QQuickPixmap::Options, AutoTransform))&D::ClassType::load, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
     _d.CPGF_MD_TEMPLATE _method("clear", (void (D::ClassType::*) ())&D::ClassType::clear);
     _d.CPGF_MD_TEMPLATE _method("clear", (void (D::ClassType::*) (QObject *))&D::ClassType::clear);
     _d.CPGF_MD_TEMPLATE _method("connectFinished", (bool (D::ClassType::*) (QObject *, const char *))&D::ClassType::connectFinished);
@@ -53,6 +71,7 @@ void buildMetaClass_QQuickPixmap(D _d)
     _d.CPGF_MD_TEMPLATE _method("connectDownloadProgress", (bool (D::ClassType::*) (QObject *, const char *))&D::ClassType::connectDownloadProgress);
     _d.CPGF_MD_TEMPLATE _method("connectDownloadProgress", (bool (D::ClassType::*) (QObject *, int))&D::ClassType::connectDownloadProgress);
     _d.CPGF_MD_TEMPLATE _method("purgeCache", &D::ClassType::purgeCache);
+    _d.CPGF_MD_TEMPLATE _method("isCached", &D::ClassType::isCached, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::Status>("Status")
         ._element("Null", D::ClassType::Null)
         ._element("Ready", D::ClassType::Ready)

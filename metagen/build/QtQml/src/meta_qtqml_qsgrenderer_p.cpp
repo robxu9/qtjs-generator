@@ -27,13 +27,24 @@
 #include <private/qsgrenderer_p.h>
 #include <private/qsgrenderloop_p.h>
 
-#include "QtQuick/5.3.2/QtQuick/private/qsgrenderer_p.h"
+#include "QtQuick/5.5.0/QtQuick/private/qsgrenderer_p.h"
 
 #include "meta_qtqml_qsgrenderer_p.h"
 
 using namespace cpgf;
 
 namespace qt_metadata { 
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
+GDefineMetaInfo createMetaClass_Global_qsgrenderer_p()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    buildMetaClass_Global_qsgrenderer_p(_d);
+    return _d.getMetaInfo();
+}
 
 
 #ifdef CPGF_METAGEN_LINKAGE_SPEC
@@ -79,7 +90,7 @@ GDefineMetaInfo createMetaClass_QSGRenderer()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
     {
-        GDefineMetaClass<QSGRenderer, QObject, QOpenGLFunctions> _nd = GDefineMetaClass<QSGRenderer, QObject, QOpenGLFunctions>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent, GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGRenderer", &buildMetaClass_QSGRenderer);
+        GDefineMetaClass<QSGRenderer, QSGAbstractRenderer> _nd = GDefineMetaClass<QSGRenderer, QSGAbstractRenderer>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent, GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QSGRenderer", &buildMetaClass_QSGRenderer);
         _d._class(_nd);
     }
     {

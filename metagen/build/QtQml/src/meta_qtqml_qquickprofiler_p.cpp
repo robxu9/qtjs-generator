@@ -27,7 +27,7 @@
 #include <private/qsgrenderer_p.h>
 #include <private/qsgrenderloop_p.h>
 
-#include "QtQuick/5.3.2/QtQuick/private/qquickprofiler_p.h"
+#include "QtQuick/5.5.0/QtQuick/private/qquickprofiler_p.h"
 
 #include "meta_qtqml_qquickprofiler_p.h"
 
@@ -69,6 +69,20 @@ GDefineMetaInfo createMetaClass_QQuickProfilerData()
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
     {
         GDefineMetaClass<QQuickProfilerData> _nd = GDefineMetaClass<QQuickProfilerData>::lazyDeclare("QQuickProfilerData", &buildMetaClass_QQuickProfilerData);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
+GDefineMetaInfo createMetaClass_QQuickProfilerSceneGraphData()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QQuickProfilerSceneGraphData, QQmlProfilerDefinitions> _nd = GDefineMetaClass<QQuickProfilerSceneGraphData, QQmlProfilerDefinitions>::lazyDeclare("QQuickProfilerSceneGraphData", &buildMetaClass_QQuickProfilerSceneGraphData);
         _d._class(_nd);
     }
     return _d.getMetaInfo();

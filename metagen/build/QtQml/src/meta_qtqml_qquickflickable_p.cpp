@@ -27,7 +27,7 @@
 #include <private/qsgrenderer_p.h>
 #include <private/qsgrenderloop_p.h>
 
-#include "QtQuick/5.3.2/QtQuick/private/qquickflickable_p.h"
+#include "QtQuick/5.5.0/QtQuick/private/qquickflickable_p.h"
 
 #include "meta_qtqml_qquickflickable_p.h"
 

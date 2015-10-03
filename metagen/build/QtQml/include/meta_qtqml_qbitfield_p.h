@@ -18,6 +18,37 @@
 namespace qt_metadata { 
 
 
+template <typename D>
+void buildMetaClass_Global_qbitfield_p(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+}
+
+
+inline QBitField & opErAToRWrapper_QBitField__opAssign(QBitField * self, const QBitField & __arg0) {
+    return (*self) = __arg0;
+}
+
+
+template <typename D>
+void buildMetaClass_QBitField(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
+    _d.CPGF_MD_TEMPLATE _constructor<void * (const quint32 *, int)>();
+    _d.CPGF_MD_TEMPLATE _constructor<void * (const QBitField &)>();
+    _d.CPGF_MD_TEMPLATE _method("size", (quint32 (D::ClassType::*) () const)&D::ClassType::size);
+    _d.CPGF_MD_TEMPLATE _method("united", (QBitField (D::ClassType::*) (const QBitField &))&D::ClassType::united);
+    _d.CPGF_MD_TEMPLATE _method("testBit", (bool (D::ClassType::*) (int) const)&D::ClassType::testBit);
+    _d.CPGF_MD_TEMPLATE _operator<QBitField & (*)(cpgf::GMetaSelf, const QBitField &)>(mopHolder = mopHolder);
+    _d.CPGF_MD_TEMPLATE _method("_opAssign", (QBitField & (*) (QBitField *, const QBitField &))&opErAToRWrapper_QBitField__opAssign, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+}
+
+
 } // namespace qt_metadata
 
 

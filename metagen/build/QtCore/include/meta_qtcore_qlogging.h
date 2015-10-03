@@ -36,7 +36,7 @@ void buildMetaClass_Global_qlogging(D _d)
         ._element("QtInfoMsg", QtInfoMsg)
         ._element("QtSystemMsg", QtSystemMsg)
     ;
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtCore_31")
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtCore_35")
         ._element("QT_MESSAGELOG_FILE", QT_MESSAGELOG_FILE)
         ._element("QT_MESSAGELOG_LINE", QT_MESSAGELOG_LINE)
         ._element("QT_MESSAGELOG_FUNC", QT_MESSAGELOG_FUNC)

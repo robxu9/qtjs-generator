@@ -34,7 +34,7 @@ void buildMetaClass_QQuickProfiler(D _d)
     using namespace cpgf;
     
     _d.CPGF_MD_TEMPLATE _field("staticMetaObject", &D::ClassType::staticMetaObject);
-    _d.CPGF_MD_TEMPLATE _field("enabled", &D::ClassType::enabled);
+    _d.CPGF_MD_TEMPLATE _field("featuresEnabled", &D::ClassType::featuresEnabled);
     _d.CPGF_MD_TEMPLATE _method("metaObject", &D::ClassType::metaObject);
     _d.CPGF_MD_TEMPLATE _method("qt_metacast", &D::ClassType::qt_metacast);
     _d.CPGF_MD_TEMPLATE _method("qt_metacall", &D::ClassType::qt_metacall);
@@ -47,6 +47,7 @@ void buildMetaClass_QQuickProfiler(D _d)
     _d.CPGF_MD_TEMPLATE _method("animationFrame", &D::ClassType::animationFrame);
     _d.CPGF_MD_TEMPLATE _method("pixmapLoadingFinished", &D::ClassType::pixmapLoadingFinished, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
     _d.CPGF_MD_TEMPLATE _method("registerAnimationCallback", &D::ClassType::registerAnimationCallback);
+    _d.CPGF_MD_TEMPLATE _method("profilingSceneGraph", &D::ClassType::profilingSceneGraph);
     _d.CPGF_MD_TEMPLATE _method("initialize", &D::ClassType::initialize);
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::AnimationThread>("AnimationThread")
         ._element("GuiThread", D::ClassType::GuiThread)
@@ -88,6 +89,15 @@ void buildMetaClass_QQuickProfilerData(D _d)
     _d.CPGF_MD_TEMPLATE _field("count", &D::ClassType::count);
     _d.CPGF_MD_TEMPLATE _field("subtime_5", &D::ClassType::subtime_5);
     _d.CPGF_MD_TEMPLATE _field("threadId", &D::ClassType::threadId);
+}
+
+
+template <typename D>
+void buildMetaClass_QQuickProfilerSceneGraphData(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
 }
 
 

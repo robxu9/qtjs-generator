@@ -13,6 +13,8 @@
 #include "cpgf/gmetapolicy.h"
 
 
+using namespace org;
+using namespace org::neard;
 
 
 namespace qt_metadata { 

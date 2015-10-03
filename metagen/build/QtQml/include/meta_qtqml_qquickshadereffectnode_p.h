@@ -30,6 +30,11 @@ void buildMetaClass_Global_qquickshadereffectnode_p(D _d)
 }
 
 
+inline bool opErAToRWrapper_QQuickShaderEffectMaterial_UniformData__opEqual(const QQuickShaderEffectMaterial::UniformData * self, const QQuickShaderEffectMaterial::UniformData& other) {
+    return (*self) == other;
+}
+
+
 template <typename D>
 void buildMetaClass_QQuickShaderEffectMaterial(D _d)
 {
@@ -43,12 +48,14 @@ void buildMetaClass_QQuickShaderEffectMaterial(D _d)
     _d.CPGF_MD_TEMPLATE _field("uniforms", &D::ClassType::uniforms);
     _d.CPGF_MD_TEMPLATE _field("textureProviders", &D::ClassType::textureProviders);
     _d.CPGF_MD_TEMPLATE _field("cullMode", &D::ClassType::cullMode);
+    _d.CPGF_MD_TEMPLATE _field("geometryUsesTextureSubRect", &D::ClassType::geometryUsesTextureSubRect);
     _d.CPGF_MD_TEMPLATE _method("type", &D::ClassType::type);
     _d.CPGF_MD_TEMPLATE _method("createShader", &D::ClassType::createShader);
     _d.CPGF_MD_TEMPLATE _method("compare", &D::ClassType::compare);
     _d.CPGF_MD_TEMPLATE _method("setProgramSource", &D::ClassType::setProgramSource);
     _d.CPGF_MD_TEMPLATE _method("updateTextures", &D::ClassType::updateTextures);
     _d.CPGF_MD_TEMPLATE _method("invalidateTextureProvider", &D::ClassType::invalidateTextureProvider);
+    _d.CPGF_MD_TEMPLATE _method("cleanupMaterialCache", &D::ClassType::cleanupMaterialCache);
     _d.CPGF_MD_TEMPLATE _enum<typename D::ClassType::CullMode>("CullMode")
         ._element("NoCulling", D::ClassType::NoCulling)
         ._element("BackFaceCulling", D::ClassType::BackFaceCulling)
@@ -66,6 +73,8 @@ void buildMetaClass_QQuickShaderEffectMaterial(D _d)
             ._element("Opacity", QQuickShaderEffectMaterial::UniformData::Opacity)
             ._element("Matrix", QQuickShaderEffectMaterial::UniformData::Matrix)
         ;
+        _nd.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const QQuickShaderEffectMaterial::UniformData&)>(mopHolder == mopHolder);
+        _nd.CPGF_MD_TEMPLATE _method("_opEqual", (bool (*) (const QQuickShaderEffectMaterial::UniformData *, const QQuickShaderEffectMaterial::UniformData&))&opErAToRWrapper_QQuickShaderEffectMaterial_UniformData__opEqual, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
         _d.CPGF_MD_TEMPLATE _class(_nd);
     }
 }
@@ -77,18 +86,18 @@ public:
     QQuickShaderEffectMaterialWrapper(QQuickShaderEffectNode * node = 0)
         : QQuickShaderEffectMaterial(node) {}
     
-    int compare(const QSGMaterial * other) const
+    QSGMaterialShader * createShader() const
     {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("compare"));
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("createShader"));
         if(func)
         {
-            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this, other).getValue());
+            return cpgf::fromVariant<QSGMaterialShader * >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
         }
-        return QQuickShaderEffectMaterial::compare(other);
+        return QQuickShaderEffectMaterial::createShader();
     }
-    int super_compare(const QSGMaterial * other) const
+    QSGMaterialShader * super_createShader() const
     {
-        return QQuickShaderEffectMaterial::compare(other);
+        return QQuickShaderEffectMaterial::createShader();
     }
     
     QSGMaterialType * type() const
@@ -105,27 +114,27 @@ public:
         return QQuickShaderEffectMaterial::type();
     }
     
-    QSGMaterialShader * createShader() const
+    int compare(const QSGMaterial * other) const
     {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("createShader"));
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("compare"));
         if(func)
         {
-            return cpgf::fromVariant<QSGMaterialShader * >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this, other).getValue());
         }
-        return QQuickShaderEffectMaterial::createShader();
+        return QQuickShaderEffectMaterial::compare(other);
     }
-    QSGMaterialShader * super_createShader() const
+    int super_compare(const QSGMaterial * other) const
     {
-        return QQuickShaderEffectMaterial::createShader();
+        return QQuickShaderEffectMaterial::compare(other);
     }
     template <typename D>
     static void cpgf__register(D _d)
     {
         (void)_d;
         using namespace cpgf;
-        _d.CPGF_MD_TEMPLATE _method("super_compare", (int (D::ClassType::*) (const QSGMaterial *) const)&D::ClassType::super_compare);
-        _d.CPGF_MD_TEMPLATE _method("super_type", (QSGMaterialType * (D::ClassType::*) () const)&D::ClassType::super_type);
         _d.CPGF_MD_TEMPLATE _method("super_createShader", (QSGMaterialShader * (D::ClassType::*) () const)&D::ClassType::super_createShader);
+        _d.CPGF_MD_TEMPLATE _method("super_type", (QSGMaterialType * (D::ClassType::*) () const)&D::ClassType::super_type);
+        _d.CPGF_MD_TEMPLATE _method("super_compare", (int (D::ClassType::*) (const QSGMaterial *) const)&D::ClassType::super_compare);
     }
 };
 
@@ -169,6 +178,31 @@ public:
     QQuickShaderEffectNodeWrapper()
         : QQuickShaderEffectNode() {}
     
+    void customEvent(QEvent * __arg0)
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("customEvent"));
+        if(func)
+        {
+            cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0);
+            return;
+        }
+        QObject::customEvent(__arg0);
+    }
+    void super_customEvent(QEvent * __arg0)
+    {
+        QObject::customEvent(__arg0);
+    }
+    
+    int senderSignalIndex() const
+    {
+        return QObject::senderSignalIndex();
+    }
+    
+    QObject * sender() const
+    {
+        return QObject::sender();
+    }
+    
     void connectNotify(const QMetaMethod & signal)
     {
         cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("connectNotify"));
@@ -184,34 +218,19 @@ public:
         QObject::connectNotify(signal);
     }
     
-    bool isSignalConnected(const QMetaMethod & signal) const
+    void disconnectNotify(const QMetaMethod & signal)
     {
-        return QObject::isSignalConnected(signal);
-    }
-    
-    void childEvent(QChildEvent * __arg0)
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("childEvent"));
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("disconnectNotify"));
         if(func)
         {
-            cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0);
+            cpgf::invokeScriptFunctionOnObject(func.get(), this, signal);
             return;
         }
-        QObject::childEvent(__arg0);
+        QObject::disconnectNotify(signal);
     }
-    void super_childEvent(QChildEvent * __arg0)
+    void super_disconnectNotify(const QMetaMethod & signal)
     {
-        QObject::childEvent(__arg0);
-    }
-    
-    int receivers(const char * signal) const
-    {
-        return QObject::receivers(signal);
-    }
-    
-    int senderSignalIndex() const
-    {
-        return QObject::senderSignalIndex();
+        QObject::disconnectNotify(signal);
     }
     
     void preprocess()
@@ -243,49 +262,6 @@ public:
         return QQuickShaderEffectNode::qt_metacast(__arg0);
     }
     
-    bool eventFilter(QObject * __arg0, QEvent * __arg1)
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("eventFilter"));
-        if(func)
-        {
-            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0, __arg1).getValue());
-        }
-        return QObject::eventFilter(__arg0, __arg1);
-    }
-    bool super_eventFilter(QObject * __arg0, QEvent * __arg1)
-    {
-        return QObject::eventFilter(__arg0, __arg1);
-    }
-    
-    const QMetaObject * metaObject() const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("metaObject"));
-        if(func)
-        {
-            return cpgf::fromVariant<const QMetaObject * >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
-        }
-        return QQuickShaderEffectNode::metaObject();
-    }
-    const QMetaObject * super_metaObject() const
-    {
-        return QQuickShaderEffectNode::metaObject();
-    }
-    
-    void customEvent(QEvent * __arg0)
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("customEvent"));
-        if(func)
-        {
-            cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0);
-            return;
-        }
-        QObject::customEvent(__arg0);
-    }
-    void super_customEvent(QEvent * __arg0)
-    {
-        QObject::customEvent(__arg0);
-    }
-    
     bool event(QEvent * __arg0)
     {
         cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("event"));
@@ -300,18 +276,42 @@ public:
         return QObject::event(__arg0);
     }
     
-    int qt_metacall(QMetaObject::Call __arg0, int __arg1, void ** __arg2)
+    int receivers(const char * signal) const
     {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("qt_metacall"));
+        return QObject::receivers(signal);
+    }
+    
+    bool isSignalConnected(const QMetaMethod & signal) const
+    {
+        return QObject::isSignalConnected(signal);
+    }
+    
+    bool isSubtreeBlocked() const
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("isSubtreeBlocked"));
         if(func)
         {
-            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0, __arg1, __arg2).getValue());
+            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
         }
-        return QQuickShaderEffectNode::qt_metacall(__arg0, __arg1, __arg2);
+        return QSGNode::isSubtreeBlocked();
     }
-    int super_qt_metacall(QMetaObject::Call __arg0, int __arg1, void ** __arg2)
+    bool super_isSubtreeBlocked() const
     {
-        return QQuickShaderEffectNode::qt_metacall(__arg0, __arg1, __arg2);
+        return QSGNode::isSubtreeBlocked();
+    }
+    
+    bool eventFilter(QObject * __arg0, QEvent * __arg1)
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("eventFilter"));
+        if(func)
+        {
+            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0, __arg1).getValue());
+        }
+        return QObject::eventFilter(__arg0, __arg1);
+    }
+    bool super_eventFilter(QObject * __arg0, QEvent * __arg1)
+    {
+        return QObject::eventFilter(__arg0, __arg1);
     }
     
     void timerEvent(QTimerEvent * __arg0)
@@ -329,65 +329,74 @@ public:
         QObject::timerEvent(__arg0);
     }
     
-    void disconnectNotify(const QMetaMethod & signal)
+    const QMetaObject * metaObject() const
     {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("disconnectNotify"));
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("metaObject"));
         if(func)
         {
-            cpgf::invokeScriptFunctionOnObject(func.get(), this, signal);
+            return cpgf::fromVariant<const QMetaObject * >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
+        }
+        return QQuickShaderEffectNode::metaObject();
+    }
+    const QMetaObject * super_metaObject() const
+    {
+        return QQuickShaderEffectNode::metaObject();
+    }
+    
+    int qt_metacall(QMetaObject::Call __arg0, int __arg1, void ** __arg2)
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("qt_metacall"));
+        if(func)
+        {
+            return cpgf::fromVariant<int >(cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0, __arg1, __arg2).getValue());
+        }
+        return QQuickShaderEffectNode::qt_metacall(__arg0, __arg1, __arg2);
+    }
+    int super_qt_metacall(QMetaObject::Call __arg0, int __arg1, void ** __arg2)
+    {
+        return QQuickShaderEffectNode::qt_metacall(__arg0, __arg1, __arg2);
+    }
+    
+    void childEvent(QChildEvent * __arg0)
+    {
+        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("childEvent"));
+        if(func)
+        {
+            cpgf::invokeScriptFunctionOnObject(func.get(), this, __arg0);
             return;
         }
-        QObject::disconnectNotify(signal);
+        QObject::childEvent(__arg0);
     }
-    void super_disconnectNotify(const QMetaMethod & signal)
+    void super_childEvent(QChildEvent * __arg0)
     {
-        QObject::disconnectNotify(signal);
-    }
-    
-    bool isSubtreeBlocked() const
-    {
-        cpgf::GScopedInterface<cpgf::IScriptFunction> func(this->getScriptFunction("isSubtreeBlocked"));
-        if(func)
-        {
-            return cpgf::fromVariant<bool >(cpgf::invokeScriptFunctionOnObject(func.get(), this).getValue());
-        }
-        return QSGNode::isSubtreeBlocked();
-    }
-    bool super_isSubtreeBlocked() const
-    {
-        return QSGNode::isSubtreeBlocked();
-    }
-    
-    QObject * sender() const
-    {
-        return QObject::sender();
+        QObject::childEvent(__arg0);
     }
     template <typename D>
     static void cpgf__register(D _d)
     {
         (void)_d;
         using namespace cpgf;
-        _d.CPGF_MD_TEMPLATE _method("connectNotify", (void (D::ClassType::*) (const QMetaMethod &))&D::ClassType::connectNotify);
-        _d.CPGF_MD_TEMPLATE _method("isSignalConnected", (bool (D::ClassType::*) (const QMetaMethod &) const)&D::ClassType::isSignalConnected);
-        _d.CPGF_MD_TEMPLATE _method("childEvent", (void (D::ClassType::*) (QChildEvent *))&D::ClassType::childEvent);
-        _d.CPGF_MD_TEMPLATE _method("receivers", (int (D::ClassType::*) (const char *) const)&D::ClassType::receivers);
-        _d.CPGF_MD_TEMPLATE _method("senderSignalIndex", (int (D::ClassType::*) () const)&D::ClassType::senderSignalIndex);
         _d.CPGF_MD_TEMPLATE _method("customEvent", (void (D::ClassType::*) (QEvent *))&D::ClassType::customEvent);
-        _d.CPGF_MD_TEMPLATE _method("timerEvent", (void (D::ClassType::*) (QTimerEvent *))&D::ClassType::timerEvent);
-        _d.CPGF_MD_TEMPLATE _method("disconnectNotify", (void (D::ClassType::*) (const QMetaMethod &))&D::ClassType::disconnectNotify);
+        _d.CPGF_MD_TEMPLATE _method("senderSignalIndex", (int (D::ClassType::*) () const)&D::ClassType::senderSignalIndex);
         _d.CPGF_MD_TEMPLATE _method("sender", (QObject * (D::ClassType::*) () const)&D::ClassType::sender);
+        _d.CPGF_MD_TEMPLATE _method("connectNotify", (void (D::ClassType::*) (const QMetaMethod &))&D::ClassType::connectNotify);
+        _d.CPGF_MD_TEMPLATE _method("disconnectNotify", (void (D::ClassType::*) (const QMetaMethod &))&D::ClassType::disconnectNotify);
+        _d.CPGF_MD_TEMPLATE _method("receivers", (int (D::ClassType::*) (const char *) const)&D::ClassType::receivers);
+        _d.CPGF_MD_TEMPLATE _method("isSignalConnected", (bool (D::ClassType::*) (const QMetaMethod &) const)&D::ClassType::isSignalConnected);
+        _d.CPGF_MD_TEMPLATE _method("timerEvent", (void (D::ClassType::*) (QTimerEvent *))&D::ClassType::timerEvent);
+        _d.CPGF_MD_TEMPLATE _method("childEvent", (void (D::ClassType::*) (QChildEvent *))&D::ClassType::childEvent);
+        _d.CPGF_MD_TEMPLATE _method("super_customEvent", (void (D::ClassType::*) (QEvent *))&D::ClassType::super_customEvent);
         _d.CPGF_MD_TEMPLATE _method("super_connectNotify", (void (D::ClassType::*) (const QMetaMethod &))&D::ClassType::super_connectNotify);
-        _d.CPGF_MD_TEMPLATE _method("super_childEvent", (void (D::ClassType::*) (QChildEvent *))&D::ClassType::super_childEvent);
+        _d.CPGF_MD_TEMPLATE _method("super_disconnectNotify", (void (D::ClassType::*) (const QMetaMethod &))&D::ClassType::super_disconnectNotify);
         _d.CPGF_MD_TEMPLATE _method("super_preprocess", (void (D::ClassType::*) ())&D::ClassType::super_preprocess);
         _d.CPGF_MD_TEMPLATE _method("super_qt_metacast", (void * (D::ClassType::*) (const char *))&D::ClassType::super_qt_metacast);
-        _d.CPGF_MD_TEMPLATE _method("super_eventFilter", (bool (D::ClassType::*) (QObject *, QEvent *))&D::ClassType::super_eventFilter);
-        _d.CPGF_MD_TEMPLATE _method("super_metaObject", (const QMetaObject * (D::ClassType::*) () const)&D::ClassType::super_metaObject);
-        _d.CPGF_MD_TEMPLATE _method("super_customEvent", (void (D::ClassType::*) (QEvent *))&D::ClassType::super_customEvent);
         _d.CPGF_MD_TEMPLATE _method("super_event", (bool (D::ClassType::*) (QEvent *))&D::ClassType::super_event);
-        _d.CPGF_MD_TEMPLATE _method("super_qt_metacall", (int (D::ClassType::*) (QMetaObject::Call, int, void **))&D::ClassType::super_qt_metacall);
-        _d.CPGF_MD_TEMPLATE _method("super_timerEvent", (void (D::ClassType::*) (QTimerEvent *))&D::ClassType::super_timerEvent);
-        _d.CPGF_MD_TEMPLATE _method("super_disconnectNotify", (void (D::ClassType::*) (const QMetaMethod &))&D::ClassType::super_disconnectNotify);
         _d.CPGF_MD_TEMPLATE _method("super_isSubtreeBlocked", (bool (D::ClassType::*) () const)&D::ClassType::super_isSubtreeBlocked);
+        _d.CPGF_MD_TEMPLATE _method("super_eventFilter", (bool (D::ClassType::*) (QObject *, QEvent *))&D::ClassType::super_eventFilter);
+        _d.CPGF_MD_TEMPLATE _method("super_timerEvent", (void (D::ClassType::*) (QTimerEvent *))&D::ClassType::super_timerEvent);
+        _d.CPGF_MD_TEMPLATE _method("super_metaObject", (const QMetaObject * (D::ClassType::*) () const)&D::ClassType::super_metaObject);
+        _d.CPGF_MD_TEMPLATE _method("super_qt_metacall", (int (D::ClassType::*) (QMetaObject::Call, int, void **))&D::ClassType::super_qt_metacall);
+        _d.CPGF_MD_TEMPLATE _method("super_childEvent", (void (D::ClassType::*) (QChildEvent *))&D::ClassType::super_childEvent);
     }
 };
 

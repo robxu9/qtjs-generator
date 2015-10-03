@@ -18,6 +18,24 @@
 namespace qt_metadata { 
 
 
+template <typename D, typename T>
+void buildMetaClass_QLazilyAllocated(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
+    _d.CPGF_MD_TEMPLATE _method("isAllocated", (bool (D::ClassType::*) () const)&D::ClassType::isAllocated);
+    _d.CPGF_MD_TEMPLATE _method("value", (T & (D::ClassType::*) ())&D::ClassType::value);
+    _d.CPGF_MD_TEMPLATE _method("value", (const T & (D::ClassType::*) () const)&D::ClassType::value);
+    _d.CPGF_MD_TEMPLATE _method("flag", (bool (D::ClassType::*) () const)&D::ClassType::flag);
+    _d.CPGF_MD_TEMPLATE _method("setFlag", (void (D::ClassType::*) ())&D::ClassType::setFlag);
+    _d.CPGF_MD_TEMPLATE _method("clearFlag", (void (D::ClassType::*) ())&D::ClassType::clearFlag);
+    _d.CPGF_MD_TEMPLATE _method("setFlagValue", (void (D::ClassType::*) (bool))&D::ClassType::setFlagValue);
+    _d.CPGF_MD_TEMPLATE _operator<T * (*)(const cpgf::GMetaSelf &)>(mopHolder -> mopHolder);
+}
+
+
 } // namespace qt_metadata
 
 

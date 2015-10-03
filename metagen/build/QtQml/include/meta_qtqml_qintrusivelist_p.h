@@ -18,6 +18,72 @@
 namespace qt_metadata { 
 
 
+template <class N, QIntrusiveListNode N::* member>
+inline N * opErAToRWrapper_QIntrusiveList_iterator__opDerefer(const typename QIntrusiveList<N, member >::iterator * self) {
+    return *(*self);
+}
+template <class N, QIntrusiveListNode N::* member>
+inline bool opErAToRWrapper_QIntrusiveList_iterator__opEqual(const typename QIntrusiveList<N, member >::iterator * self, const typename QIntrusiveList<N, member >::iterator& other) {
+    return (*self) == other;
+}
+template <class N, QIntrusiveListNode N::* member>
+inline bool opErAToRWrapper_QIntrusiveList_iterator__opNotEqual(const typename QIntrusiveList<N, member >::iterator * self, const typename QIntrusiveList<N, member >::iterator& other) {
+    return (*self) != other;
+}
+template <class N, QIntrusiveListNode N::* member>
+inline typename QIntrusiveList<N, member >::iterator& opErAToRWrapper_QIntrusiveList_iterator__opInc(typename QIntrusiveList<N, member >::iterator * self) {
+    return ++(*self);
+}
+
+
+template <typename D, class N, QIntrusiveListNode N::* member>
+void buildMetaClass_QIntrusiveList(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
+    _d.CPGF_MD_TEMPLATE _method("isEmpty", (bool (D::ClassType::*) () const)&D::ClassType::isEmpty);
+    _d.CPGF_MD_TEMPLATE _method("insert", (void (D::ClassType::*) (N *))&D::ClassType::insert);
+    _d.CPGF_MD_TEMPLATE _method("remove", (void (D::ClassType::*) (N *))&D::ClassType::remove);
+    _d.CPGF_MD_TEMPLATE _method("contains", (bool (D::ClassType::*) (N *) const)&D::ClassType::contains);
+    _d.CPGF_MD_TEMPLATE _method("first", (N * (D::ClassType::*) () const)&D::ClassType::first);
+    _d.CPGF_MD_TEMPLATE _method("begin", (typename QIntrusiveList<N, member >::iterator (D::ClassType::*) ())&D::ClassType::begin);
+    _d.CPGF_MD_TEMPLATE _method("end", (typename QIntrusiveList<N, member >::iterator (D::ClassType::*) ())&D::ClassType::end);
+    _d.CPGF_MD_TEMPLATE _method("next", (N * (*) (N *))&D::ClassType::next);
+    {
+        GDefineMetaClass<typename QIntrusiveList<N, member >::iterator> _nd = GDefineMetaClass<typename QIntrusiveList<N, member >::iterator>::declare("iterator");
+        _nd.CPGF_MD_TEMPLATE _constructor<void * ()>();
+        _nd.CPGF_MD_TEMPLATE _constructor<void * (N *)>();
+        _nd.CPGF_MD_TEMPLATE _method("erase", (typename QIntrusiveList<N, member >::iterator& (QIntrusiveList<N, member >::iterator::*) ())&QIntrusiveList<N, member >::iterator::erase);
+        _nd.CPGF_MD_TEMPLATE _operator<N * (*)(const cpgf::GMetaSelf &)>(*mopHolder);
+        _nd.CPGF_MD_TEMPLATE _method("_opDerefer", (N * (*) (const typename QIntrusiveList<N, member >::iterator *))&opErAToRWrapper_QIntrusiveList_iterator__opDerefer<N, member>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<N * (*)(const cpgf::GMetaSelf &)>(mopHolder -> mopHolder);
+        _nd.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const typename QIntrusiveList<N, member >::iterator&)>(mopHolder == mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+        _nd.CPGF_MD_TEMPLATE _method("_opEqual", (bool (*) (const typename QIntrusiveList<N, member >::iterator *, const typename QIntrusiveList<N, member >::iterator&))&opErAToRWrapper_QIntrusiveList_iterator__opEqual<N, member>, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<bool (*)(const cpgf::GMetaSelf &, const typename QIntrusiveList<N, member >::iterator&)>(mopHolder != mopHolder, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1> >());
+        _nd.CPGF_MD_TEMPLATE _method("_opNotEqual", (bool (*) (const typename QIntrusiveList<N, member >::iterator *, const typename QIntrusiveList<N, member >::iterator&))&opErAToRWrapper_QIntrusiveList_iterator__opNotEqual<N, member>, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<1>, cpgf::GMetaRuleExplicitThis >());
+        _nd.CPGF_MD_TEMPLATE _operator<typename QIntrusiveList<N, member >::iterator& (*)(cpgf::GMetaSelf)>(++mopHolder);
+        _nd.CPGF_MD_TEMPLATE _method("_opInc", (typename QIntrusiveList<N, member >::iterator& (*) (typename QIntrusiveList<N, member >::iterator *))&opErAToRWrapper_QIntrusiveList_iterator__opInc<N, member>, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
+        _d.CPGF_MD_TEMPLATE _class(_nd);
+    }
+}
+
+
+template <typename D>
+void buildMetaClass_QIntrusiveListNode(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
+    _d.CPGF_MD_TEMPLATE _field("_next", &D::ClassType::_next);
+    _d.CPGF_MD_TEMPLATE _field("_prev", &D::ClassType::_prev);
+    _d.CPGF_MD_TEMPLATE _method("remove", (void (D::ClassType::*) ())&D::ClassType::remove);
+    _d.CPGF_MD_TEMPLATE _method("isInList", (bool (D::ClassType::*) () const)&D::ClassType::isInList);
+}
+
+
 } // namespace qt_metadata
 
 

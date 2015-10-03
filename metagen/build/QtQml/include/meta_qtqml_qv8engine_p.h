@@ -34,7 +34,6 @@ void buildMetaClass_QQmlV4Function(D _d)
     _d.CPGF_MD_TEMPLATE _method("context", &D::ClassType::context);
     _d.CPGF_MD_TEMPLATE _method("qmlGlobal", &D::ClassType::qmlGlobal);
     _d.CPGF_MD_TEMPLATE _method("setReturnValue", &D::ClassType::setReturnValue);
-    _d.CPGF_MD_TEMPLATE _method("engine", &D::ClassType::engine);
     _d.CPGF_MD_TEMPLATE _method("v4engine", &D::ClassType::v4engine);
     _d.CPGF_MD_TEMPLATE _operator<QV4::ReturnedValue (*)(cpgf::GMetaSelf, int)>(mopHolder[0]);
     _d.CPGF_MD_TEMPLATE _method("_opArrayGet", (QV4::ReturnedValue (*) (QQmlV4Function *, int))&opErAToRWrapper_QQmlV4Function__opArrayGet, cpgf::MakePolicy<cpgf::GMetaRuleExplicitThis >());
@@ -48,7 +47,7 @@ void buildMetaClass_QQmlV4Handle(D _d)
     using namespace cpgf;
     
     _d.CPGF_MD_TEMPLATE _constructor<void * ()>();
-    _d.CPGF_MD_TEMPLATE _constructor<void * (QV4::ValueRef)>();
+    _d.CPGF_MD_TEMPLATE _constructor<void * (const QV4::Value &)>();
     _d.CPGF_MD_TEMPLATE _constructor<void * (QV4::ReturnedValue)>();
     _d.CPGF_MD_TEMPLATE _operator< QV4::ReturnedValue (cpgf::GMetaSelf)>(mopHolder());
 }

@@ -30,7 +30,7 @@ void buildMetaClass_Global_qaccessible(D _d)
     _d.CPGF_MD_TEMPLATE _method("qAccessibleRoleString", (const char * (*) (QAccessible::Role))&qAccessibleRoleString);
     _d.CPGF_MD_TEMPLATE _method("qAccessibleEventString", (const char * (*) (QAccessible::Event))&qAccessibleEventString);
     _d.CPGF_MD_TEMPLATE _method("qAccessibleLocalizedActionDescription", (QString (*) (const QString &))&qAccessibleLocalizedActionDescription, cpgf::MakePolicy<cpgf::GMetaRuleCopyConstReference<0> >());
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtGui_14")
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtGui_12")
         ._element("QAccessibleInterface_iid", QAccessibleInterface_iid)
     ;
     _d.CPGF_MD_TEMPLATE _operator<bool (*)(const QAccessible::State &, const QAccessible::State &)>(mopHolder == mopHolder);

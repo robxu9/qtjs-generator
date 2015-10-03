@@ -27,7 +27,7 @@
 #include <private/qsgrenderer_p.h>
 #include <private/qsgrenderloop_p.h>
 
-#include "QtQuick/5.3.2/QtQuick/private/qquickwindow_p.h"
+#include "QtQuick/5.5.0/QtQuick/private/qquickwindow_p.h"
 
 #include "meta_qtqml_qquickwindow_p.h"
 
@@ -57,11 +57,47 @@ GDefineMetaInfo createMetaClass_QQuickCloseEvent()
 #ifdef CPGF_METAGEN_LINKAGE_SPEC
 CPGF_METAGEN_LINKAGE_SPEC
 #endif
+GDefineMetaInfo createMetaClass_QQuickCustomRenderStage()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QQuickCustomRenderStage> _nd = GDefineMetaClass<QQuickCustomRenderStage>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QQuickCustomRenderStage", &buildMetaClass_QQuickCustomRenderStage);
+        _d._class(_nd);
+    }
+    {
+        GDefineMetaClass<QQuickCustomRenderStageWrapper, QQuickCustomRenderStage> _nd = GDefineMetaClass<QQuickCustomRenderStageWrapper, QQuickCustomRenderStage>::lazyDeclare("QQuickCustomRenderStageWrapper", &buildMetaClass_QQuickCustomRenderStageWrapper);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
 GDefineMetaInfo createMetaClass_QQuickWindowPrivate()
 {
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
     {
         GDefineMetaClass<QQuickWindowPrivate, QWindowPrivate> _nd = GDefineMetaClass<QQuickWindowPrivate, QWindowPrivate>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QQuickWindowPrivate", &buildMetaClass_QQuickWindowPrivate);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
+GDefineMetaInfo createMetaClass_QQuickWindowQObjectCleanupJob()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QQuickWindowQObjectCleanupJob, QRunnable> _nd = GDefineMetaClass<QQuickWindowQObjectCleanupJob, QRunnable>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent> >::lazyDeclare("QQuickWindowQObjectCleanupJob", &buildMetaClass_QQuickWindowQObjectCleanupJob);
+        _d._class(_nd);
+    }
+    {
+        GDefineMetaClass<QQuickWindowQObjectCleanupJobWrapper, QQuickWindowQObjectCleanupJob> _nd = GDefineMetaClass<QQuickWindowQObjectCleanupJobWrapper, QQuickWindowQObjectCleanupJob>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent> >::lazyDeclare("QQuickWindowQObjectCleanupJobWrapper", &buildMetaClass_QQuickWindowQObjectCleanupJobWrapper);
         _d._class(_nd);
     }
     return _d.getMetaInfo();

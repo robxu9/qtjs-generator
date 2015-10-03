@@ -52,6 +52,8 @@ void buildMetaClass_QQuickShaderEffect(D _d)
     _d.CPGF_MD_TEMPLATE _method("setCullMode", &D::ClassType::setCullMode);
     _d.CPGF_MD_TEMPLATE _method("log", &D::ClassType::log);
     _d.CPGF_MD_TEMPLATE _method("status", &D::ClassType::status);
+    _d.CPGF_MD_TEMPLATE _method("supportsAtlasTextures", &D::ClassType::supportsAtlasTextures);
+    _d.CPGF_MD_TEMPLATE _method("setSupportsAtlasTextures", &D::ClassType::setSupportsAtlasTextures);
     _d.CPGF_MD_TEMPLATE _method("parseLog", &D::ClassType::parseLog);
     _d.CPGF_MD_TEMPLATE _method("event", &D::ClassType::event);
     _d.CPGF_MD_TEMPLATE _method("fragmentShaderChanged", &D::ClassType::fragmentShaderChanged);
@@ -61,6 +63,7 @@ void buildMetaClass_QQuickShaderEffect(D _d)
     _d.CPGF_MD_TEMPLATE _method("cullModeChanged", &D::ClassType::cullModeChanged);
     _d.CPGF_MD_TEMPLATE _method("logChanged", &D::ClassType::logChanged);
     _d.CPGF_MD_TEMPLATE _method("statusChanged", &D::ClassType::statusChanged);
+    _d.CPGF_MD_TEMPLATE _method("supportsAtlasTexturesChanged", &D::ClassType::supportsAtlasTexturesChanged);
     _d.CPGF_MD_TEMPLATE _method("tr", &D::ClassType::tr)
         ._default(copyVariantFromCopyable(-1))
         ._default(copyVariantFromCopyable(0))

@@ -25,6 +25,7 @@ void buildMetaClass_QQmlQtQuick2Module(D _d)
     using namespace cpgf;
     
     _d.CPGF_MD_TEMPLATE _method("defineModule", &D::ClassType::defineModule);
+    _d.CPGF_MD_TEMPLATE _method("undefineModule", &D::ClassType::undefineModule);
 }
 
 

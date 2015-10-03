@@ -14,7 +14,7 @@
 
 
 using namespace org;
-using namespace org::bluez;
+using namespace org::neard;
 
 
 namespace qt_metadata { 

@@ -19,6 +19,17 @@ namespace qt_metadata {
 
 
 template <typename D>
+void buildMetaClass_Global_qsgmaterialshader_p(D _d)
+{
+    (void)_d;
+    using namespace cpgf;
+    
+    _d.CPGF_MD_TEMPLATE _method("qsg_test_and_clear_material_failure", (bool (*) ())&qsg_test_and_clear_material_failure);
+    _d.CPGF_MD_TEMPLATE _method("qsg_set_material_failure", (void (*) ())&qsg_set_material_failure);
+}
+
+
+template <typename D>
 void buildMetaClass_QSGMaterialShaderPrivate(D _d)
 {
     (void)_d;

@@ -27,7 +27,7 @@ void buildMetaClass_Global_qiconengineplugin(D _d)
     (void)_d;
     using namespace cpgf;
     
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtGui_19")
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtGui_21")
         ._element("QIconEngineFactoryInterface_iid", QIconEngineFactoryInterface_iid)
     ;
 }

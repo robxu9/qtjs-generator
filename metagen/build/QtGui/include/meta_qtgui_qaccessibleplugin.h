@@ -27,7 +27,7 @@ void buildMetaClass_Global_qaccessibleplugin(D _d)
     (void)_d;
     using namespace cpgf;
     
-    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtGui_15")
+    _d.CPGF_MD_TEMPLATE _enum<long long>("GlobalDefine_QtGui_19")
         ._element("QAccessibleFactoryInterface_iid", QAccessibleFactoryInterface_iid)
     ;
 }

@@ -27,7 +27,7 @@
 #include <private/qsgrenderer_p.h>
 #include <private/qsgrenderloop_p.h>
 
-#include "QtQuick/5.3.2/QtQuick/private/qquickwindowmodule_p.h"
+#include "QtQuick/5.5.0/QtQuick/private/qquickwindowmodule_p.h"
 
 #include "meta_qtqml_qquickwindowmodule_p.h"
 
@@ -44,6 +44,24 @@ GDefineMetaInfo createMetaClass_QQuickWindowModule()
     GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
     {
         GDefineMetaClass<QQuickWindowModule> _nd = GDefineMetaClass<QQuickWindowModule>::lazyDeclare("QQuickWindowModule", &buildMetaClass_QQuickWindowModule);
+        _d._class(_nd);
+    }
+    return _d.getMetaInfo();
+}
+
+
+#ifdef CPGF_METAGEN_LINKAGE_SPEC
+CPGF_METAGEN_LINKAGE_SPEC
+#endif
+GDefineMetaInfo createMetaClass_QQuickWindowQmlImpl()
+{
+    GDefineMetaGlobalDangle _d = GDefineMetaGlobalDangle::dangle();
+    {
+        GDefineMetaClass<QQuickWindowQmlImpl, QQuickWindow, QQmlParserStatus> _nd = GDefineMetaClass<QQuickWindowQmlImpl, QQuickWindow, QQmlParserStatus>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QQuickWindowQmlImpl", &buildMetaClass_QQuickWindowQmlImpl);
+        _d._class(_nd);
+    }
+    {
+        GDefineMetaClass<QQuickWindowQmlImplWrapper, QQuickWindowQmlImpl> _nd = GDefineMetaClass<QQuickWindowQmlImplWrapper, QQuickWindowQmlImpl>::Policy<MakePolicy<GMetaRuleDefaultConstructorAbsent, GMetaRuleCopyConstructorAbsent> >::lazyDeclare("QQuickWindowQmlImplWrapper", &buildMetaClass_QQuickWindowQmlImplWrapper);
         _d._class(_nd);
     }
     return _d.getMetaInfo();
